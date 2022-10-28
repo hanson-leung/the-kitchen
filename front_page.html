@@ -1,0 +1,190 @@
+<html>
+    <head>
+        <title>The Kitchen</title>
+
+        <link rel="stylesheet" href="front_page.css">
+    </head>
+    <body>
+        <div id="maincontainer">
+            <div id="header">
+                <div id="leftheader">
+                    <!--Look online for menu options-->
+
+                </div><!--close leftheader-->
+                <div id="middleheader">
+                    <img class="headerlogo" src="#">
+
+                </div><!--close middleheader-->
+                <div id="rightheader">
+                    <div id="login">
+                        <button class="loginbutton">Login</button>
+                    </div><!--close login-->
+                    <div id="signup">
+                        <button class="signup">Sign Up</button>
+                    </div><!--close signup-->
+
+                </div><!--close rightheader-->
+
+            </div><!--close header-->
+
+
+
+            <div id="pagecontent">
+                <div id="copybox">
+                    <h1>Decide What to Eat</h1>
+                    <p class="copyboxparagraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. At adipiscing enim justo, enim ultrices etiam.</p>
+                </div><!--close copybox-->
+
+
+                <div id="searchbox">
+                    <div id="searchfuntions">
+                        <form action="resultspage.php">
+                        <input class="searchbar" type="text" name="usertext" value="What are we eating?">
+                        <input type="submit" class="searchbutton">
+                    </form>
+                        <button class="randombutton">
+                            <img class="randombuttonimg" src="#">
+                        </button>
+                    </div><!--close searchfunctions-->
+
+                    <div id="searchfilters">
+                        <form action="resultspage.php">
+                            
+
+                            <div id="cusineoptions">
+                                <p class="filterheader">Cusine/Diet</p> <br>
+                            <select class="selectmenu" name="cusine">
+                                <option value="ALL">Select a Cusine</option>
+                                <option value="ALL">---------------</option>
+                                <?php
+                    
+                                $sql = "SELECT * FROM cusines";
+                    
+                                $results = $mysql->query($sql);
+                    
+                                if(!$results) {
+                                    echo "Your SQL: " . $sql . "<br><br>";
+                                    echo "SQL Error: " . mysqli_error($conn);
+                                    exit();
+                                }
+                    
+                                while($currentrow = $results->fetch_assoc()) {
+                                    echo "<option>" . $currentrow['cusine'] . "</option>";
+                                }
+                                ?>
+                                </select>
+                            </div><!--close cusineoptions-->
+
+
+                            <div id="timeoptions">
+                                <p class="filterheader">Cooking Time</p> <br>
+                            <select class="selectmenu" name="time">
+                                <option value="ALL">Select a Time</option>
+                                <option value="ALL">---------------</option>
+                                <?php
+                    
+                                $sql = "SELECT * FROM times";
+                    
+                                $results = $mysql->query($sql);
+                    
+                                if(!$results) {
+                                    echo "Your SQL: " . $sql . "<br><br>";
+                                    echo "SQL Error: " . mysqli_error($conn);
+                                    exit();
+                                }
+                    
+                                while($currentrow = $results->fetch_assoc()) {
+                                    echo "<option>" . $currentrow['time'] . "</option>";
+                                }
+                                ?>
+                                </select>
+                            </div><!--close timeoptions-->
+
+                            <div id="meatoptions">
+                                <p class="filterheader">Meats</p> <br>
+                            <select class="selectmenu" name="meat">
+                                <option value="ALL">Select a Meat</option>
+                                <option value="ALL">---------------</option>
+                                <?php
+                    
+                                $sql = "SELECT * FROM meats";
+                    
+                                $results = $mysql->query($sql);
+                    
+                                if(!$results) {
+                                    echo "Your SQL: " . $sql . "<br><br>";
+                                    echo "SQL Error: " . mysqli_error($conn);
+                                    exit();
+                                }
+                    
+                                while($currentrow = $results->fetch_assoc()) {
+                                    echo "<option>" . $currentrow['meat'] . "</option>";
+                                }
+                                ?>
+                                </select>
+                            </div><!--close meatoptions-->
+
+                            <div id="vegetableoptions">
+                                <p class="filterheader">Vegetables</p> <br>
+                            <select class="selectmenu" name="vegetable">
+                                <option value="ALL">Select a Vegetable</option>
+                                <option value="ALL">---------------</option>
+                                <?php
+                    
+                                $sql = "SELECT * FROM vegetables";
+                    
+                                $results = $mysql->query($sql);
+                    
+                                if(!$results) {
+                                    echo "Your SQL: " . $sql . "<br><br>";
+                                    echo "SQL Error: " . mysqli_error($conn);
+                                    exit();
+                                }
+                    
+                                while($currentrow = $results->fetch_assoc()) {
+                                    echo "<option>" . $currentrow['vegetable'] . "</option>";
+                                }
+                                ?>
+                                </select>
+                            </div><!--close vegetableoptions-->
+
+                            <div id="grainoptions">
+                                <p class="filterheader">Grains</p> <br>
+                            <select class="selectmenu" name="grain">
+                                <option value="ALL">Select a Grain</option>
+                                <option value="ALL">---------------</option>
+                                <?php
+                    
+                                $sql = "SELECT * FROM grains";
+                    
+                                $results = $mysql->query($sql);
+                    
+                                if(!$results) {
+                                    echo "Your SQL: " . $sql . "<br><br>";
+                                    echo "SQL Error: " . mysqli_error($conn);
+                                    exit();
+                                }
+                    
+                                while($currentrow = $results->fetch_assoc()) {
+                                    echo "<option>" . $currentrow['grains'] . "</option>";
+                                }
+                                ?>
+                                </select>
+                            </div><!--close grainoptions-->
+
+                            <div id="clearall">
+                                <input type="reset" name="resetform" value="Clear All">
+                            </div>
+
+                        </form>
+                    </div><!--close searchfilters-->
+                </div><!--close searchbox-->
+
+
+
+            </div><!--close pagecontent-->
+
+
+        </div><!--close maincointainer-->
+    </body>
+</html>
