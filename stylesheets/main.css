@@ -41,7 +41,10 @@ h2 {
   line-height: 1em;
 }
 
-p {
+p,
+select,
+option,
+input {
   font-family: sans-serif, Arial;
   font-weight: var(--regular);
   font-style: normal;

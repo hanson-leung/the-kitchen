@@ -69,7 +69,6 @@ if ($mysql->connect_errno) {
       </div>
 
       <div class="searchbox">
-        <div id="searchfilters">
           <form class="filter" action="results.php">
             <!-- search -->
             <div>
@@ -80,13 +79,13 @@ if ($mysql->connect_errno) {
             <!-- cuisine type -->
             <div>
               <p>Cuisine</p>
-              <select class="selectmenu" name="cusine">
-                <option value="all">Select</option>
+              <select>
+                <option value="all">All</option>
                   <?php
-                   $sql_name = "SELECT * FROM course_name";
-                    $results = $mysql->query($sql_name);
+                   $sql = "SELECT * FROM cuisine";
+                    $results = $mysql->query($sql);
                     while ($currentrow = $results->fetch_assoc()) {
-                        echo "<option>" . $currentrow["course_name"] . "</option>";
+                        echo "<option>" . $currentrow["cuisine"] . "</option>";
                     }
                   ?>
               </select>
@@ -95,34 +94,54 @@ if ($mysql->connect_errno) {
             <!-- cooking time -->
             <div>
               <p>Cooking Time</p>
-              <select class="selectmenu" name="cusine">
+              <select>
                 <option value="all">Select</option>
+                  <?php
+                   $sql = "SELECT * FROM recipe";
+                    $results = $mysql->query($sql);
+                    while ($currentrow = $results->fetch_assoc()) {
+                        echo "<option>" . $currentrow["prep_time"] . "</option>";
+                    }
+                  ?>
               </select>
             </div>
 
             <!-- ingredients -->
             <div>
               <p>Ingredients</p>
-              <select class="selectmenu" name="cusine">
+              <select>
                 <option value="all">Select</option>
+                  <?php
+                   $sql = "SELECT * FROM ingredient";
+                    $results = $mysql->query($sql);
+                    while ($currentrow = $results->fetch_assoc()) {
+                        echo "<option>" . $currentrow["ingredient"] . "</option>";
+                    }
+                  ?>
               </select>
             </div>
 
             <!-- restrictions -->
             <div>
-              <p>Restrictions</p>
-              <select class="selectmenu" name="cusine">
+              <p>Allergies</p>
+              <select>
                 <option value="all">Select</option>
+                  <?php
+                   $sql = "SELECT * FROM ingredient";
+                    $results = $mysql->query($sql);
+                    while ($currentrow = $results->fetch_assoc()) {
+                        echo "<option>" . $currentrow["ingredient"] . "</option>";
+                    }
+                  ?>
               </select>
             </div>
 
             <div>
-              <input type="reset" name="resetform" value="Clear All" />
               <input type="submit" />
             </div>
           </form>
         </div>
       </div>
-    </div>
+
   </body>
 </html>
