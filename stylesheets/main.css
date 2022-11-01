@@ -1,0 +1,96 @@
+:root {
+  --transparent: #fff0;
+  --yellow: #fed330;
+  --hover-grey: #999999;
+
+  /* light mode styles */
+  --black: #000;
+  --white: #fff;
+  --lightgrey: #fafafa;
+
+  /* dark mode styles */
+  --darkmode-darkgrey: #101010;
+  --darkmode-lightgrey: #191818;
+
+  /* fonts */
+  --headline: "Times";
+  --bodycopy: "Helvetica";
+  --bold: 400;
+  --regular: 400;
+}
+
+.gap-2rem {
+  display: grid;
+  grid-gap: 2rem;
+}
+
+.gap-4rem {
+  display: grid;
+  grid-gap: 4rem;
+}
+
+h1,
+h2 {
+  font-family: var(--headline), Arial, sans-serif;
+  font-weight: var(--bold);
+  font-style: normal;
+  font-size: 52px;
+  margin: 0;
+  color: var(--black);
+  letter-spacing: -0.02em;
+  line-height: 1em;
+}
+
+p,
+select,
+option,
+input {
+  font-family: sans-serif, Arial;
+  font-weight: var(--regular);
+  font-style: normal;
+  margin: 0;
+  color: var(--black);
+  letter-spacing: -0.02em;
+  line-height: 1em;
+}
+
+/* general */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100%;
+  min-height: 400px;
+  overflow-x: hidden;
+  margin: 0;
+  opacity: 1;
+  transition: 1s opacity;
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0 4rem;
+}
+
+.root {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* header */
+.header,
+.header div {
+  display: grid;
+  grid-auto-flow: column;
+  width: 100%;
+}
+
+.header {
+  margin: 2rem 0;
+  padding-bottom: 4rem;
+}
