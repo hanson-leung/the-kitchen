@@ -73,6 +73,10 @@ body {
   scroll-behavior: smooth;
 }
 
+body {
+  padding: 0 4rem;
+}
+
 .root {
   max-width: 1440px;
   margin: 0 auto;

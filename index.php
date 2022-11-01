@@ -73,13 +73,13 @@ if ($mysql->connect_errno) {
             <!-- search -->
             <div>
               <p>Search</p>
-              <input class="searchbar" type="text" value="" />
+              <input class="searchbar" type="text" name="search"/>
             </div>
 
             <!-- cuisine type -->
             <div>
               <p>Cuisine</p>
-              <select>
+              <select name="cuisine">
                 <option value="all">All</option>
                   <?php
                    $sql = "SELECT * FROM cuisine";
@@ -94,7 +94,7 @@ if ($mysql->connect_errno) {
             <!-- cooking time -->
             <div>
               <p>Cooking Time</p>
-              <select>
+              <select name="cooking_time">
                 <option value="all">Select</option>
                   <?php
                    $sql = "SELECT * FROM recipe";
@@ -109,7 +109,7 @@ if ($mysql->connect_errno) {
             <!-- ingredients -->
             <div>
               <p>Ingredients</p>
-              <select>
+              <select name="ingredients">
                 <option value="all">Select</option>
                   <?php
                    $sql = "SELECT * FROM ingredient";
@@ -124,7 +124,7 @@ if ($mysql->connect_errno) {
             <!-- restrictions -->
             <div>
               <p>Allergies</p>
-              <select>
+              <select name="allergies">
                 <option value="all">Select</option>
                   <?php
                    $sql = "SELECT * FROM ingredient";
@@ -138,6 +138,11 @@ if ($mysql->connect_errno) {
 
             <div>
               <input type="submit" />
+            </div>
+             <div>
+               <p>
+                 Or, find a <a href="#">random recipe</a>
+               </p>
             </div>
           </form>
         </div>
