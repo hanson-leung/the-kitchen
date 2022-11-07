@@ -6,14 +6,11 @@
   /* light mode styles */
   --black: #000;
   --white: #fff;
-  --lightgrey: #fafafa;
-
-  /* dark mode styles */
-  --darkmode-darkgrey: #101010;
-  --darkmode-lightgrey: #191818;
-
+  --lightgrey: #f6f6f6;
+  --grey: #e7e7e7;
+  --link: #0066cc;
   /* fonts */
-  --headline: "Times";
+  --headline: "Helvetica";
   --bodycopy: "Helvetica";
   --bold: 400;
   --regular: 400;
@@ -34,6 +31,7 @@ h2 {
   font-family: var(--headline), Arial, sans-serif;
   font-weight: var(--bold);
   font-style: normal;
+  font-weight: 600;
   font-size: 52px;
   margin: 0;
   color: var(--black);
@@ -41,17 +39,36 @@ h2 {
   line-height: 1em;
 }
 
+h2 {
+  font-size: 16px;
+}
+
 p,
+a,
 select,
 option,
-input {
+input,
+button,
+::placeholder {
   font-family: sans-serif, Arial;
   font-weight: var(--regular);
   font-style: normal;
   margin: 0;
   color: var(--black);
   letter-spacing: -0.02em;
-  line-height: 1em;
+}
+
+p {
+  line-height: 1.4em;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 0.2rem;
+  display: inline-block;
+  width: fit-content;
 }
 
 /* general */
@@ -82,15 +99,69 @@ body {
   margin: 0 auto;
 }
 
-/* header */
-.header,
-.header div {
+/* buttons */
+
+input,
+select,
+button {
+  border: 1px solid var(--grey);
+  border-radius: 6px;
+  width: 100%;
+  height: 3.6rem;
+  padding: 1rem;
+}
+
+select,
+button,
+input[type="submit"] {
+  appearance: none;
+  cursor: pointer;
+}
+
+button,
+input[type="submit"] {
+  background-color: var(--lightgrey);
+}
+
+/* grid */
+.grid-columns {
   display: grid;
   grid-auto-flow: column;
+  align-items: center;
+}
+
+.grid-rows {
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+}
+
+.grid-gap-2rem {
+  grid-gap: 2rem;
+}
+
+.grid-center {
+  justify-self: center;
+}
+
+.grid-end {
+  justify-self: flex-end;
+}
+
+/* header */
+.header {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
+  align-items: center;
 }
 
 .header {
   margin: 2rem 0;
   padding-bottom: 4rem;
+}
+
+.logo {
+  width: 10rem;
 }
