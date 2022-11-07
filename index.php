@@ -19,134 +19,119 @@ if ($mysql->connect_errno) {
 ?>
 
 <html>
-  <!-- head -->
-  <head>
+<!-- head -->
+<head>
     <title>The Kitchen</title>
-    <meta charset="utf-8" />
-    <meta name="description" content="Find your next favorite recipe." />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8"/>
+    <meta name="description" content="Find your next favorite recipe."/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
     <!-- stylesheets -->
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+            integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="stylesheets/main.css" />
-    <link rel="stylesheet" href="stylesheets/home.css" />
-  </head>
+    <link rel="stylesheet" href="stylesheets/main.css"/>
+    <link rel="stylesheet" href="stylesheets/home.css"/>
+</head>
 
-  <!-- begin body -->
-  <body class="root">
-    <div class="header">
-      <div>
-        <p>Menu</p>
-      </div>
-      <div>
-        <img class="headerlogo" src="#" alt="logo" />
-      </div>
-      <div>
-        <div id="login">
-          <button class="loginbutton">Login</button>
-        </div>
-        <div id="signup">
-          <button class="signup">Sign Up</button>
-        </div>
-      </div>
-    </div>
-    <!--close header-->
+<!-- begin body -->
+<body class="root">
 
-    <div class="main-container">
-      <div class="gap-2rem">
-        <h1>Decide What to Eat</h1>
+<!-- header -->
+<?php
+include 'header.php';
+?>
+
+<div class="main-container">
+    <div class="gap-2rem">
+        <h1>What's Cookin', Good Lookin'?</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. At adipiscing
-          enim justo, enim ultrices etiam.
+            Find your next favorite recipe, tailored specifically for you.
         </p>
-      </div>
+    </div>
 
-      <div class="searchbox">
-          <form class="filter" action="results.php">
+    <div class="searchbox grid-rows grid-gap-2rem">
+        <form class="filter" action="results.php">
             <!-- search -->
-            <div>
-              <p>Search</p>
-              <input class="searchbar" type="text" name="search"/>
+            <div id="search">
+                <p class="filter-term">Search</p>
+                <input class="searchbar" type="text" name="search" placeholder="What's on the menu?"/>
             </div>
 
             <!-- cuisine type -->
             <div>
-              <p>Cuisine</p>
-              <select name="cuisine">
-                <option value="all">All</option>
-                  <?php
-                   $sql = "SELECT * FROM cuisine";
+                <p class="filter-term">Cuisine</p>
+                <select name="cuisine">
+                    <option value="any" selected>No Preference</option>
+                    <?php
+                    $sql = "SELECT * FROM cuisine";
                     $results = $mysql->query($sql);
                     while ($currentrow = $results->fetch_assoc()) {
-                        echo "<option>" . $currentrow["cuisine"] . "</option>";
+                        echo "<option value='" . $currentrow["cuisine_id"] . "'>" . $currentrow["cuisine"] . "</option>";
                     }
-                  ?>
-              </select>
+                    ?>
+                </select>
             </div>
 
             <!-- cooking time -->
             <div>
-              <p>Cooking Time</p>
-              <select name="cooking_time">
-                <option value="all">Select</option>
-                  <?php
-                   $sql = "SELECT * FROM recipe";
-                    $results = $mysql->query($sql);
-                    while ($currentrow = $results->fetch_assoc()) {
-                        echo "<option>" . $currentrow["prep_time"] . "</option>";
-                    }
-                  ?>
-              </select>
+                <p class="filter-term">Cooking Time</p>
+                 <select name="cooking_time">
+                        <option value="any" selected>No Preference</option>
+                        <option value="0">Quick</option>
+                        <option value="1">Eh</option>
+                        <option value="2">Hefty</option>
+                 </select>
             </div>
 
             <!-- ingredients -->
-            <div>
-              <p>Ingredients</p>
-              <select name="ingredients">
-                <option value="all">Select</option>
-                  <?php
-                   $sql = "SELECT * FROM ingredient";
+            <!-- <div>
+                <p class="filter-term">Ingredients</p>
+                <select name="ingredients[]" multiple>
+                    <option value="all">Select</option>
+                    <?php
+                    $sql = "SELECT * FROM ingredient";
                     $results = $mysql->query($sql);
                     while ($currentrow = $results->fetch_assoc()) {
-                        echo "<option>" . $currentrow["ingredient"] . "</option>";
+                        echo "<option value='" . $currentrow["ingredient_id"] . "'>" . $currentrow["ingredient"] . "</option>";
                     }
-                  ?>
-              </select>
-            </div>
+                    ?>
+                </select>
+            </div> -->
 
             <!-- restrictions -->
-            <div>
-              <p>Allergies</p>
-              <select name="allergies">
-                <option value="all">Select</option>
-                  <?php
-                   $sql = "SELECT * FROM ingredient";
+            <!-- <div>
+                <p class="filter-term">Allergies</p>
+                <select name="allergies">
+                    <option value="all">Select</option>
+                    <?php
+                    $sql = "SELECT * FROM ingredient";
                     $results = $mysql->query($sql);
                     while ($currentrow = $results->fetch_assoc()) {
                         echo "<option>" . $currentrow["ingredient"] . "</option>";
                     }
-                  ?>
-              </select>
+                    ?>
+                </select>
+            </div> -->
+
+            <div id="submit" >
+                          <p class="filter-term">&nbsp</p>
+                <input type="submit"/>
             </div>
 
-            <div>
-              <input type="submit" />
-            </div>
+        </form>
              <div>
-               <p>
-                 Or, find a <a href="#">random recipe</a>
-               </p>
+                <p>
+                    Or, <a href="recipe.php?recordid=16">surprise me!</a>
+                </p>
             </div>
-          </form>
-        </div>
-      </div>
+    </div>
+</div>
 
-  </body>
+</body>
 </html>
