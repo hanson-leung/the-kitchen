@@ -35,8 +35,8 @@ if ($mysql->connect_errno) {
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
-        <link rel="stylesheet" href="main.css"/>
-        <link rel="stylesheet" href="home.css"/>
+        <link rel="stylesheet" href="stylesheets/main.css"/>
+        <link rel="stylesheet" href="stylesheets/home.css"/>
     </head>
 
     <!-- begin body -->
