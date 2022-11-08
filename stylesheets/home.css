@@ -7,6 +7,12 @@
   align-items: flex-start;
 }
 
+.filter-term{
+  color: var(--orange);
+  font-size: 11pt;
+  letter-spacing: 1px;
+}
+
 #search {
   grid-column: 1 / span 2;
 }
