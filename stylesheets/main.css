@@ -2,6 +2,7 @@
   --transparent: #fff0;
   --yellow: #fed330;
   --hover-grey: #999999;
+  --orange: #ff5800;
 
   /* light mode styles */
   --black: #000;
@@ -62,6 +63,10 @@ p {
   line-height: 1.4em;
 }
 
+option {
+  background-color: transparent;
+}
+
 a:link,
 a:visited {
   text-decoration: none;
@@ -92,6 +97,9 @@ body {
 
 body {
   padding: 0 4rem;
+  background-image: url("../uploads/branding/backgroundimage.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .root {
@@ -120,7 +128,7 @@ input[type="submit"] {
 
 button,
 input[type="submit"] {
-  background-color: var(--lightgrey);
+  background-color: white;
 }
 
 /* grid */
@@ -164,4 +172,15 @@ input[type="submit"] {
 
 .logo {
   width: 10rem;
+}
+
+.text {
+  font-size: 11pt;
+  font-family: var(--headline), Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+.menu-icon {
+  width: 20px;
+  margin-right: 20px;
 }

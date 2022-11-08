@@ -1,15 +1,15 @@
 <div class="header">
-    <div>
-        <p>Menu</p>
+    <div class="text">
+        <img class = "menu-icon" src="uploads/branding/menu.png">MENU
     </div>
     <div  class="grid-center">
-        <a href="/index.php"><img class="logo" src="/uploads/branding/logo.png" alt="logo"/></a>
+        <a href="index.php" style="border: none !important"><img class="logo" src="uploads/branding/logo2.png" alt="logo" /></a>
     </div>
     <div class="grid-columns grid-end grid-gap-2rem">
-        <div id="login" >
+        <div class="text" id="login" >
             <a href="#" id="loginbutton">Login</a>
         </div>
-        <div id="signup" >
+        <div class="text" id="signup" >
             <button id="signup">Sign Up</button>
         </div>
     </div>
