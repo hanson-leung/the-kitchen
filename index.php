@@ -59,13 +59,13 @@ include 'header.php';
         <form class="filter" action="results.php">
             <!-- search -->
             <div id="search">
-                <p class="filter-term">Search</p>
+                <p class="filter-term"><strong>Search</strong></p>
                 <input class="searchbar" type="text" name="search" placeholder="What's on the menu?"/>
             </div>
 
             <!-- cuisine type -->
             <div>
-                <p class="filter-term">Cuisine</p>
+                <p class="filter-term"><strong>Cuisine</strong></p>
                 <select name="cuisine">
                     <option value="any" selected>No Preference</option>
                     <?php
@@ -80,7 +80,7 @@ include 'header.php';
 
             <!-- cooking time -->
             <div>
-                <p class="filter-term">Cooking Time</p>
+                <p class="filter-term"><strong>Cooking Time</strong></p>
                  <select name="cooking_time">
                         <option value="any" selected>No Preference</option>
                         <option value="0">Quick</option>
@@ -127,7 +127,7 @@ include 'header.php';
         </form>
              <div>
                 <p>
-                    Or, <a href="recipe.php?recordid=16">surprise me!</a>
+                    Or, <a href="recipe.php?recordid=16"><strong>surprise me!</strong></a>
                 </p>
             </div>
     </div>

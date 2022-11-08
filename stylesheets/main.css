@@ -62,6 +62,11 @@ p {
   line-height: 1.4em;
 }
 
+option{
+  background-color: none;
+  
+}
+
 a:link,
 a:visited {
   text-decoration: none;
@@ -163,5 +168,5 @@ input[type="submit"] {
 }
 
 .logo {
-  width: 10rem;
+  width: 8rem;
 }
