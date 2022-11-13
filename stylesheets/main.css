@@ -15,7 +15,7 @@
   /* fonts */
   --headline: "Helvetica";
   --bodycopy: "Helvetica";
-  --bold: 400;
+  --bold: 800;
   --regular: 400;
 }
 
@@ -29,9 +29,21 @@
   grid-gap: 4rem;
 }
 
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/HelveticaNowDisplay-Bold.woff2') format('woff2');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/HelveticaNowDisplay-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+
 h1,
 h2 {
-  font-family: var(--headline), Arial, sans-serif;
+  font-family: var(--headline), sans-serif, Arial;
   font-weight: var(--bold);
   font-style: normal;
   font-weight: 600;
@@ -53,12 +65,12 @@ option,
 input,
 button,
 ::placeholder {
-  font-family: sans-serif, Arial;
+  font-family: var(--headline),sans-serif, Arial;
   font-weight: var(--regular);
   font-style: normal;
   margin: 0;
   color: var(--black);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.0em;
 }
 
 p {
@@ -76,6 +88,10 @@ a:visited {
   padding-bottom: 0.2rem;
   display: inline-block;
   width: fit-content;
+}
+
+a.no-declaration {
+  border-bottom: 1px solid var(--transparent);
 }
 
 /* general */
@@ -99,7 +115,7 @@ body {
 
 body {
   padding: 0 4rem;
-  background-image: url("../uploads/branding/backgroundimage.png");
+  /*background-image: url("../uploads/branding/backgroundimage.png");*/
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -108,6 +124,18 @@ body {
 .root {
   max-width: 1440px;
   margin: 0 auto;
+}
+
+.root.small {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+
+.main-container {
+  display: grid;
+  grid-gap: 4rem;
+  padding: 4rem 0;
 }
 
 /* buttons */
@@ -131,7 +159,7 @@ input[type="submit"] {
 
 button,
 input[type="submit"] {
-  background-color: white;
+  background-color: var(--lightgrey);
 }
 
 /* grid */
@@ -187,3 +215,4 @@ input[type="submit"] {
   width: 20px;
   margin-right: 20px;
 }
+

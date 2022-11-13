@@ -9,9 +9,11 @@
         <div class="text" id="login" >
             <a href="#" id="loginbutton">Login</a>
         </div>
+        <a href="signup.php" class="no-declaration"
         <div class="text" id="signup" >
             <button id="signup">Sign Up</button>
         </div>
+        </a>
     </div>
 </div>
 <!--close header-->
