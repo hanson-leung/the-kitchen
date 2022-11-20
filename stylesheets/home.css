@@ -21,11 +21,6 @@
   align-items: flex-end;
 }
 
-.main-container {
-  display: grid;
-  grid-gap: 4rem;
-}
-
 form div {
   display: grid;
   grid-auto-flow: row;
