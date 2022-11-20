@@ -12,24 +12,29 @@ if($_SESSION["security_level"]==1 || $_SESSION["security_level"]==2) {
         $status = "2";
 }
 
-$sql = "UPDATE recipe SET
-            recipe = '" . $_REQUEST['recipe'] . "',
-            cuisine_id = '" . $_REQUEST['cuisine'] . "',
-            prep_time = '" . $_REQUEST['prep_time'] . "',
-            cooking_time = '" . $_REQUEST['cooking_time'] . "',
-            img_url = '" . $_REQUEST['img_url'] . "',
-            recipe_url = '" . $_REQUEST['recipe_url'] . "',
-            status = '" . $status . "'
-        WHERE recipe_id = " . $_REQUEST['recipe_id'];
+$sql = "INSERT INTO recipe
+        (recipe, cuisine_id, user_id, prep_time, cooking_time, img_url, recipe_url, status)
+        VALUES 
+        ('" . $_REQUEST["recipe"] . "', 
+        '" . $_REQUEST["cuisine"] . "', 
+        '" . $_REQUEST["user_id"] . "', 
+        '" . $_REQUEST["prep_time"] . "', 
+        '" . $_REQUEST["cooking_time"] . "', 
+        '" . $_REQUEST["img_url"] . "', 
+        '" . $_REQUEST["recipe_url"] . "', 
+        '" . $status . "')";
 
 echo $sql;
 
 $results = $mysql->query($sql);
 
 
+// if moderator or admin, alert that it is live
 if($_SESSION["security_level"]==1 || $_SESSION["security_level"]==2) {
     header("Location: /user/user-recipes.php?alert=2");
     exit();
+
+// if normal user, alert that it is awaiting approval
 } else {
     header("Location: /user/user-recipes.php?alert=1");
     exit();

@@ -1,19 +1,21 @@
 <?php
 session_start();
+include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_check.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/logic/recipelist_logic.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
+adminOnly();
 ?>
 
 <html>
 <!-- begin header -->
-<?php
-    include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
-    include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
-?>
+
     <!-- additional stylesheets -->
-    <link rel="stylesheet" href="/stylesheets/results.css"/>
+    <link rel="stylesheet" href="/stylesheets/recipe-list.css"/>
 
 <!-- insert php logic -->
 <?php
-    include $_SERVER['DOCUMENT_ROOT'] . '/logic/results_logic.php';
+
 ?>
 
 <body>
@@ -23,9 +25,11 @@ session_start();
            include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
         ?>
 
+<p>There are 
     <?php
-        echo $alert;
+     echo $num_results;
     ?>
+ results.</p>
 
         <div class="results-container grid-gap-2rem">
             <?php
@@ -35,13 +39,21 @@ session_start();
                         $recipe = $currentrow["recipe"];
                         $img_url = $currentrow["img_url"];
                         $cuisine =  $currentrow["cuisine"];
+                        $prep_time =  $currentrow["prep_time"];
+                        $cooking_time =  $currentrow["cooking_time"];
+                        $total_time = $currentrow["total_time"];
+                        $recipe_url = $currentrow["recipe_url"];
                         $total_time = ($currentrow["total_time"]/60) . " min";
 
                         echo
-                        "<a class='card' href='/dish.php?recipe=" . $recipe_id . "'>" .
+                        "<a class='card' href='/edit-dish.php?recipe=" . $recipe_id . "'>" .
                             "<img src='" . $img_url . "' class='card-img'>" .
-                            "<h2>" . $recipe . "</h2>" .
-                            "<p>" . $total_time . "</p></a>";
+                            "<h2>" . $cuisine . "</h2>" .
+                            "<p>" . $recipe_url . "</p>" .
+                            "<p>" . $prep_time . "</p>" .
+                            "<p>" . $cooking_time . "</p>" .
+                            "<p>" . $total_time . "</p>
+                        </a>";
                 }
             ?>
         </div>

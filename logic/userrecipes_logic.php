@@ -10,10 +10,20 @@
     elseif ($_REQUEST["alert"] == 1) {
         $alert =  
             '<div class="alert">
-                <p>Your changes have been noted! Please wait 24-48 hours for moderator approval.</p>
+                <p>Your recipe has been noted! Please wait 24-48 hours for moderator approval.</p>
             </div>';
     
     // if error is set any number, set the following error
+    } elseif ($_REQUEST["alert"] == 2) {
+        $alert =  
+            '<div class="alert">
+                <p>Your recipe has been saved and have been published for immediate viewing.</p>
+            </div>';
+     } elseif ($_REQUEST["alert"] == 3) {
+        $alert =  
+            '<div class="alert">
+                <p>Your recipe has been successfully deleted.</p>
+            </div>';
     } else {
         $alert =  
             '<div class="alert">

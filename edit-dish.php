@@ -8,6 +8,7 @@ session_start();
     include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
     include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_check.php';
     include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/logic/editdish_logic.php';
 ?>
 
 <!-- begin body -->
@@ -52,8 +53,9 @@ session_start();
                 ?>
             </select>
             <input type="hidden" name="recipe_id" value="<?php echo $recipe_id ?>">
-            <input type="submit" value="Update">
+            <input type="submit" name="update" value="Update">
         </form>
+        <a href="delete-dish-complete.php?confirm=1&recipe=<?php echo $_REQUEST["recipe"]?>" class="link">Delete</a>
 
 
 

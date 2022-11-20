@@ -1,6 +1,5 @@
 <?php
-
-// searching through database
+// searching through database to populate account page
     $sql = "SELECT * FROM user WHERE user_id = " . $_SESSION["user_id"];
     $results = $mysql->query($sql);
         while ($currentrow = $results->fetch_assoc()) {
@@ -8,7 +7,7 @@
         $phone = $currentrow["phone"];
     }   
 
-    
+// set alert for new users
 $alert = "";
 
 if(isset($_REQUEST["signup"])) {
