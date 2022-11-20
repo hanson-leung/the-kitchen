@@ -1,51 +1,22 @@
 <?php
-// connect to database
-$host = "webdev.iyaclasses.com";
-$user = "hansonle";
-$pw = "AcadDev_Leung_5214698370";
-$dbname = "hansonle_thekitchen";
-
-$mysql = new mysqli(
-    $host,
-    $user,
-    $pw,
-    $dbname
-);
-
-if ($mysql->connect_errno) {
-    echo "db connection error : " . $mysql->connect_error;
-    exit();
-}
+session_start();
 ?>
 
-    <html>
-    <!-- head -->
-    <head>
-        <title>The Kitchen</title>
-        <meta charset="utf-8"/>
-        <meta name="description" content="Find your next favorite recipe."/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<html>
+<!-- begin header -->
+<?php
+    include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
+?>
+    <!-- additional stylesheets -->
+    <link rel="stylesheet" href="/stylesheets/home.css"/>
 
-        <!-- stylesheets -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-            integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-        <link rel="stylesheet" href="stylesheets/main.css"/>
-        <link rel="stylesheet" href="stylesheets/home.css"/>
-    </head>
-
-    <!-- begin body -->
-    <body class="root" >
-
-    <!-- header -->
-    <?php
-    include 'header.php';
-    ?>
+<body>
+    <div  class="root">
+    <!-- insert navbar -->
+        <?php
+           include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
+        ?>
 
     <div class="main-container">
         <div class="gap-2rem">
@@ -57,6 +28,10 @@ if ($mysql->connect_errno) {
 
         <div class="searchbox grid-rows grid-gap-2rem">
             <form class="filter" action="results.php">
+                <div>
+                    <input name="page" type="hidden" value="1"/>
+                </div>
+
                 <!-- search -->
                 <div id="search">
                     <p class="filter-term"><strong>SEARCH</strong></p>
@@ -127,11 +102,11 @@ if ($mysql->connect_errno) {
             </form>
             <div>
                 <p>
-                    Or, <a href="recipe.php?recordid=16" style="color:var(--orange);"><strong>surprise me!</strong></a>
+                    Or, <a href="dish.php?recipe=16" style="color:var(--orange);"><strong>surprise me!</strong></a>
                 </p>
             </div>
         </div>
     </div>
 
-    </body>
-    </html>
+</body>
+</html>
