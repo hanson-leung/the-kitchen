@@ -6,7 +6,7 @@
     <?php
     // display menu for account holders
     if (isset($_SESSION['logged_in'])) {
-        if ($_SESSION['logged_in'] == 1 && $_SESSION['security_level'] == 0) {
+        if ($_SESSION['logged_in'] == 1) {
         echo
         '<div>
             <div id="dropdown-parent">
@@ -22,38 +22,26 @@
                 <a href="/user/user-recipes.php">
                     Your Recipes
                 </a>
-                <a href="#">
+                <a href="/add-dish.php">
                     Add Recipes
-                </a>
-                <a href="/account/logout-complete.php">
-                    Log Out
-                </a>
-            </div>
-        </div>';
+                </a>';
 
-        // display menu for admins
-        } elseif ($_SESSION['logged_in'] == 1 && $_SESSION['security_level'] == 1) {
-        echo
-        '<div>
-            <div id="dropdown-parent">
-                <p>Hi ' . $_SESSION['user_fname'] . '</p>
-                <a href="#" class="menu">
-                    <p>Menu</p>
-                </a>
-            </div>
-            <div id="dropdown" class="grid-rows grid-gap-2rem">
-                <a href="#">
-                    Account
-                </a>
-                <a href="#">
-                    Admin Panel
-                </a>
-                <a href="/account/logout-complete.php">
+            if ($_SESSION['logged_in'] == 1 && $_SESSION['security_level'] >= 1) {
+                echo
+                '
+                    <a href="/admin/admin-dashboard.php">
+                        Admin Panel
+                    </a>
+                ';
+            }
+
+            echo
+                '<a href="/account/logout-complete.php">
                     Log Out
                 </a>
             </div>
         </div>';
-        }
+        } 
     }
 
     // display menu for guests

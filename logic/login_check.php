@@ -5,18 +5,18 @@ if($_SESSION["logged_in"]!=1) {
     exit();
 }
 
-// to use moderator or admin check functions, insert the function name before the logic_check.php include code
+// to use moderator or admin check functions, insert the function name after the logic_check.php include code
 
-function moderatorCheck() {
-    if($_SESSION["security_level"]<=1) {
+function moderatorOnly() {
+    if($_SESSION["security_level"]!=1 || $_SESSION["security_level"]!=2) {
     // redirect to 403 page
     header("Location: /support/error.php?code=403");
     exit();
 }
 }
 
-function adminCheck() {
-    if($_SESSION["security_level"]<=2) {
+function adminOnly() {
+    if($_SESSION["security_level"]!=2) {
     // redirect to 403 page
     header("Location: /support/error.php?code=403");
     exit();

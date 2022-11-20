@@ -6,17 +6,19 @@ $offset = ($page - 1) * 6;
 
 
 // searching through database
-    // base sql statement
-    $sql = "SELECT * FROM main_view WHERE 1=1 ";
+    // base sql statement, only showing recipes with a status of 2 (have been approved)
+    $sql = "";
+    $sql_base = "SELECT * FROM main_view WHERE status = '2' ";
+    $sql_conditional = "";
 
     // if user types in a search term
     if ($_REQUEST['search'] != "") {
-    $sql = $sql . "AND recipe LIKE '%" . $_REQUEST["search"] . "%' ";
+    $sql_conditional = $sql_conditional . "AND recipe LIKE '%" . $_REQUEST["search"] . "%' ";
     }
 
     // if user selects a cuisine type
     if ($_REQUEST['cuisine'] != "any") {
-    $sql = $sql . "AND cuisine_id = '" . $_REQUEST["cuisine"] . "' ";
+    $sql_conditional = $sql_conditional . "AND cuisine_id = '" . $_REQUEST["cuisine"] . "' ";
     }
 
     // if user selects a cooking time
@@ -33,15 +35,25 @@ $offset = ($page - 1) * 6;
         ];
 
         // parse array
-        $sql = $sql . " AND " . $time[$_REQUEST['cooking_time']]. " ";
+        $sql_conditional = $sql_conditional . " AND " . $time[$_REQUEST['cooking_time']]. " ";
         }
 
     // limits number of results returned to the user
-    $sql = $sql . "LIMIT " . $limit . " OFFSET " . $offset;
+    $sql = $sql_base . $sql_conditional . "LIMIT " . $limit . " OFFSET " . $offset;
 
     $results = $mysql->query($sql);
     $num_results = $results->num_rows;
 
+    // add count
+    $sql_base = "SELECT COUNT(recipe) AS count FROM main_view WHERE status = '2' ";
+    $sql = $sql_base . $sql_conditional;
+    $count = $mysql->query($sql);
+
+    $currentrow = mysqli_fetch_array($count);
+    $total_count = $currentrow['count'];
+
+
+    // display depending on num of matches
     $alert = "";
 
     if ($num_results == 0) {
@@ -51,6 +63,8 @@ $offset = ($page - 1) * 6;
             </div>';
     } else {
         $alert =
-        '<p>Enjoy the taste of our crowd-sourced recipes!</p>';
+       '<p> We found ' . $total_count . ' crowd-sourced recipes for you to enjoy!</p>';
     }
+    
+
 ?>
