@@ -48,12 +48,12 @@ session_start();
 
         <!-- next/prev page buttons -->
         <div class="grid-rows grid-gap-2rem">
-            <button onclick="nextpage()">
+            <a href=>
                 Next Page
-            </button>
-            <button onclick="prevpage()">
+            </a>
+            <a onclick="prevpage()">
                 Previous Page
-            </button>
+            </a>
         </div>
 
 

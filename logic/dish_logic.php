@@ -18,7 +18,7 @@
 $edit = "";
 
 // if logged in, and created recipe, allow to edit
-if ($_SESSION["logged_in"] == 1 && $_SESSION["user_id"] == $user_id || $_SESSION["security_level"] <= 1) {
+if ($_SESSION["logged_in"] == 1 && $_SESSION["user_id"] == $user_id || $_SESSION["security_level"] >= 1) {
      $edit = "<a href='edit-dish.php?recipe=" . $_REQUEST["recipe"] . "' class='link'>Edit</a>";
 } else {
 

@@ -15,11 +15,11 @@ session_start();
     } elseif ($_REQUEST["code"] == "404") {
         $error = "404 Page Not Found";
         $desc = "The page your are looking for cannot be found or may be been moved.";
-        $action = "Let's take you <a href='/index.php'>home</a class='link'>.";
+        $action = "Let's take you <a href='/index.php' class='link'>home</a>.";
     } else {
         $error = "An Unknown Error Occurred";
         $desc = "It's not your fault, something is going on. Please try again in a few minutes.";
-        $action = "Let's take you <a href='/index.php' class='link'>home</a>.";
+        $action = "Let's take you <a href='/index.php' class='link' >home</a>.";
     }
 
 

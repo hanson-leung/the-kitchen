@@ -1,6 +1,6 @@
 <?php
 // search db if there is a matching user id and recipe
-    $sql = "SELECT * FROM recipe WHERE user_id = " . $_SESSION["user_id"] . " AND recipe_id = " . $_REQUEST["recipe"];
+    $sql = "SELECT user_id FROM user WHERE user_id = " . $_REQUEST["user"];
     $results = $mysql->query($sql);
     $num_results = $results->num_rows;
 
@@ -15,7 +15,7 @@
     }
 
 // prevent admins from landing on a recipe that doesn't exist
-    $sql = "SELECT * FROM recipe WHERE recipe_id = " . $_REQUEST["recipe"];;
+    $sql = "SELECT * FROM user WHERE user_id = " . $_REQUEST["user"];
     $results = $mysql->query($sql);
     $num_results = $results->num_rows;
 
@@ -24,4 +24,5 @@
         header("Location: /support/error.php?code=404");
         exit();
         }
+
 ?>

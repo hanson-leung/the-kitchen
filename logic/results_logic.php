@@ -1,14 +1,17 @@
 <?php
 // pagination settings
 $page = $_REQUEST["page"];
-$limit = 6;
-$offset = ($page - 1) * 6;
+$limit = 8;
+$offset = ($page - 1) * $limit;
+
+// sql pagination string
+$sql_pagination = "LIMIT " . $limit . " OFFSET " . $offset;
 
 
 // searching through database
     // base sql statement, only showing recipes with a status of 2 (have been approved)
     $sql = "";
-    $sql_base = "SELECT * FROM main_view WHERE status = '2' ";
+    $sql_base = "SELECT * FROM main_view WHERE status_id = '2' ";
     $sql_conditional = "";
 
     // if user types in a search term
@@ -39,13 +42,13 @@ $offset = ($page - 1) * 6;
         }
 
     // limits number of results returned to the user
-    $sql = $sql_base . $sql_conditional . "LIMIT " . $limit . " OFFSET " . $offset;
+    $sql = $sql_base . $sql_conditional . $sql_pagination;
 
     $results = $mysql->query($sql);
     $num_results = $results->num_rows;
 
     // add count
-    $sql_base = "SELECT COUNT(recipe) AS count FROM main_view WHERE status = '2' ";
+    $sql_base = "SELECT COUNT(recipe) AS count FROM main_view WHERE status_id = '2' ";
     $sql = $sql_base . $sql_conditional;
     $count = $mysql->query($sql);
 
@@ -67,4 +70,23 @@ $offset = ($page - 1) * 6;
     }
     
 
+    // pagination setting
+
+    // determine number of required pages
+
+    // $total_pages ceil ($total_count / $limit);
+    // if (!isset ($_GET['page']) ) {  
+    //     $page_number = 1;  
+    // } else {  
+    //     $page_number = $_GET['page'];  
+    // }    
+
+    // $initial_page = ($page_number-1) * $limit;  
+    // $getQuery = "SELECT *FROM Countries LIMIT " . $initial_page . ',' . $limit;  
+
+    //     for($page_number = 1; $page_number<= $total_pages; $page_number++) {  
+
+    //     echo '<a href = "index.php?page=' . $page_number . '">' . $page_number . ' </a>';  
+
+    // }    
 ?>

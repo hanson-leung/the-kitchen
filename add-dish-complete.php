@@ -13,7 +13,7 @@ if($_SESSION["security_level"]==1 || $_SESSION["security_level"]==2) {
 }
 
 $sql = "INSERT INTO recipe
-        (recipe, cuisine_id, user_id, prep_time, cooking_time, img_url, recipe_url, status)
+        (recipe, cuisine_id, user_id, prep_time, cooking_time, img_url, recipe_url, status_id)
         VALUES 
         ('" . $_REQUEST["recipe"] . "', 
         '" . $_REQUEST["cuisine"] . "', 

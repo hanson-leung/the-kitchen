@@ -9,7 +9,7 @@ $status = "1";
 
 if($_SESSION["security_level"]==1 || $_SESSION["security_level"]==2) {
         // immediately published
-        $status = "2";
+        $status = $_REQUEST['status'];
 }
 
 $sql = "UPDATE recipe SET
@@ -19,7 +19,7 @@ $sql = "UPDATE recipe SET
             cooking_time = '" . $_REQUEST['cooking_time'] . "',
             img_url = '" . $_REQUEST['img_url'] . "',
             recipe_url = '" . $_REQUEST['recipe_url'] . "',
-            status = '" . $status . "'
+            status_id = '" . $status . "'
         WHERE recipe_id = " . $_REQUEST['recipe_id'];
 
 echo $sql;
@@ -28,11 +28,12 @@ $results = $mysql->query($sql);
 
 
 if($_SESSION["security_level"]==1 || $_SESSION["security_level"]==2) {
-    header("Location: /user/user-recipes.php?alert=2");
+    header("Location: /admin/recipe-check.php?alert=2");
     exit();
 } else {
     header("Location: /user/user-recipes.php?alert=1");
     exit();
 }
-?>
+
+?>  
 
