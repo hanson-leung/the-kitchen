@@ -7,6 +7,7 @@ session_start();
 <?php
     include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
     include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_logic.php';
 ?>
 
 
@@ -26,6 +27,8 @@ session_start();
             </p>
         </div>
 
+        <?php echo $alert ?>
+
         <div class="searchbox grid-rows grid-gap-2rem">
             <form class="signup grid-rows grid-gap-2rem" action="/account/signup-complete.php">
                 <!-- search -->
@@ -42,7 +45,7 @@ session_start();
                     <input class="" type="tel" name="phone" placeholder="Phone" required/>
                 </div>
                 <div id="password">
-                    <input class="" type="text" name="password" placeholder="Password" required/>
+                    <input class="" minlength="8" type="text" name="password" placeholder="Password" required/>
                 </div>
                 <div id="security-level">
                     <input class="" type="hidden" name="security-level" value="0" required/>

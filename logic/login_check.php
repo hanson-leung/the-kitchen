@@ -22,4 +22,21 @@ function adminOnly() {
     exit();
 }
 }
+
+
+
+// allow mods and admins to see
+
+function moderatorView($codeToVerify) {
+    if($_SESSION["security_level"]==1 || $_SESSION["security_level"]==2) {
+    echo $codeToVerify;
+}
+}
+
+function adminView($codeToVerify) {
+    if($_SESSION["security_level"]!=2) {
+        $code;
+}
+}
+
 ?>

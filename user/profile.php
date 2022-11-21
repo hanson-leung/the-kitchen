@@ -29,8 +29,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <h1>Hi, <?php echo $_SESSION["user_fname"] ?></h1>
         </div>
         <p>Account Info</p>
+            <p><?php echo $fname ." " .  $lname ?></p>
             <p><?php echo $email ?></p>
             <p><?php echo $phone ?></p>
+            <p><?php echo print_r($_SESSION); ?></p>
+            <a href="/user/edit/edit.php?user=<?php echo $user_id ?>" class="link">Update Profile</a>
         </div>
         <p>Recipes</p>
             <a href="/user/user-recipes.php" class="link">Your Recipes</a>

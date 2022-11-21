@@ -3,6 +3,7 @@ session_start();
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_check.php';
 adminOnly();
+include $_SERVER['DOCUMENT_ROOT'] . '/logic/admindashboard_logic.php';
 ?>
 
 <html>
@@ -29,7 +30,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <!-- card container -->
         <div class="grid-columns grid-gap-2rem">
             <a href="/admin/recipe-check.php" class="card">
-                <p>There are 4 reviews awaiting approval</p>
+            <p>There are <?php echo $num_results ?> reviews awaiting approval</p>
             </a>
         </div>
 
@@ -43,7 +44,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                 <p>Modify Categories</p>
             </a>
 
-            <a href="/admin/recipe-check.php" class="card">
+            <a href="/admin/users.php" class="card">
                 <p>Modify Users</p>
             </a>
 

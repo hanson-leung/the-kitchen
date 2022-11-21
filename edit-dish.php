@@ -18,7 +18,7 @@ session_start();
         <?php
            include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
         ?>
-
+        <h1>Update Recipe</h1>
         <?php
         // search through main_view  where recipe_id matches, assign results to php variables
             $sql_recipe = "SELECT * from main_view WHERE recipe_id = " . $_REQUEST["recipe"];
@@ -33,10 +33,19 @@ session_start();
                 $cooking_time =  $currentrow["cooking_time"];
                 $total_time = $currentrow["total_time"];
                 $recipe_url = $currentrow["recipe_url"];
+                $status_id = $currentrow["status_id"];
+                $status = $currentrow["status"];
             }      
         ?> 
 
         <form action="edit-dish-complete.php">
+            <?php
+              if($_SESSION["security_level"]==1 || $_SESSION["security_level"]==2) {
+                include $_SERVER['DOCUMENT_ROOT'] . '/logic/editdish_forminclude.php';
+              } else {
+                  echo ' <input type="hidden" name="status" value="1">';
+              }
+            ?>
             <input type="text" name="recipe" value="<?php echo $recipe ?>">
             <input type="text" name="prep_time" value="<?php echo $prep_time ?>">
             <input type="text" name="cooking_time" value="<?php echo $cooking_time ?>">
@@ -55,7 +64,7 @@ session_start();
             <input type="hidden" name="recipe_id" value="<?php echo $recipe_id ?>">
             <input type="submit" name="update" value="Update">
         </form>
-        <a href="delete-dish-complete.php?confirm=1&recipe=<?php echo $_REQUEST["recipe"]?>" class="link">Delete</a>
+        <a href="/delete-dish-complete.php?confirm=1&recipe=<?php echo $_REQUEST["recipe"]?>" class="link">Delete</a>
 
 
 
