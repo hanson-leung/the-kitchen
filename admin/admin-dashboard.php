@@ -40,7 +40,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                 <p>Modify Recipes</p>
             </a>
 
-            <a href="/admin/recipe-check.php" class="card">
+            <a href="/admin/categories/categories.php" class="card">
                 <p>Modify Categories</p>
             </a>
 
