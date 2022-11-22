@@ -66,6 +66,28 @@ session_start();
         </form>
         <a href="/delete-dish-complete.php?confirm=1&recipe=<?php echo $_REQUEST["recipe"]?>" class="link">Delete</a>
 
+        
+
+
+        <!-- <h2>Ingredients</h2>
+        <form action="edit-dish-complete.php">
+            <select name="cuisine">
+                <option value="<?php echo $ingredients ?>" selected><?php echo $cuisine ?></option>
+                <?php
+                $sql = "SELECT * FROM cuisine";
+                $results = $mysql->query($sql);
+                while ($currentrow = $results->fetch_assoc()) {
+                    echo "<option value='" . $currentrow["ingredients"] . "'>" . $currentrow["cuisine"] . "</option>";
+                }
+                ?>
+            </select>
+            <input type="hidden" name="recipe_id" value="<?php echo $recipe_id ?>">
+            <input type="submit" name="update" value="Update">
+        </form>
+        <div id="extra_field" style="display: none">
+            <input type="text" name="item[]" placeholder="check list item" class="input-text">
+        </div>
+         -->
 
 
     </div>

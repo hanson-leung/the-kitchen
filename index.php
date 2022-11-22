@@ -1,12 +1,12 @@
 <?php
 session_start();
+include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
 <html>
 <!-- begin header -->
 <?php
-    include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
-    include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
     <!-- additional stylesheets -->
     <link rel="stylesheet" href="/stylesheets/home.css"/>
