@@ -1,4 +1,12 @@
 <?php
+// redirect if no search terms exist
+if (empty($_REQUEST["page"])) {
+    header("Location: /index.php?error=2");
+    exit(); 
+}
+
+
+
 // pagination settings
 $page = $_REQUEST["page"];
 $limit = 8;
