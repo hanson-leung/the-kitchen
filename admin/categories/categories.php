@@ -1,5 +1,6 @@
 <?php
 session_start();
+include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_check.php';
 adminOnly();
@@ -35,7 +36,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   <!-- card container -->
         <div class="grid-columns grid-gap-2rem">
             <div>
-                <form action="/admin/categories/delete-cuisine-complete.php">
+                <form action="<?php echo $link ?>/admin/categories/delete-cuisine-complete.php">
                     <select name="cuisine">
                         <?php
                         $sql = "SELECT * FROM cuisine";
@@ -48,14 +49,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                     <input type="hidden" name="confirm" value="1">
                     <input value="Delete" type="submit">
                 </form>
-                <form action="/admin/categories/add-cuisine-complete.php">
+                <form action="<?php echo $link ?>/admin/categories/add-cuisine-complete.php">
                     <input type="text" name="cuisine">
                     <input value="Add" type="submit">
                 </form>
             </div>
 
             <div>
-                <form action="/admin/categories/delete-tag-complete.php">
+                <form action="<?php echo $link ?>/admin/categories/delete-tag-complete.php">
                     <select name="tag">
                         <?php
                         $sql = "SELECT * FROM tag";
@@ -68,14 +69,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                     <input type="hidden" name="confirm" value="1">
                     <input value="Delete" type="submit">
                 </form>
-                <form action="/admin/categories/add-tag-complete.php">
+                <form action="<?php echo $link ?>/admin/categories/add-tag-complete.php">
                     <input type="text" name="tag">
                     <input value="Add" type="submit">
                 </form>
             </div>
 
             <div>
-                <form action="/admin/categories/delete-ingredient-complete.php">
+                <form action="<?php echo $link ?>/admin/categories/delete-ingredient-complete.php">
                     <select name="ingredient">
                         <?php
                         $sql = "SELECT * FROM ingredient";
@@ -88,7 +89,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                     <input type="hidden" name="confirm" value="1">
                     <input value="Delete" type="submit">
                 </form>
-                <form action="/admin/categories/add-ingredient-complete.php">
+                <form action="<?php echo $link ?>/admin/categories/add-ingredient-complete.php">
                     <input type="text" name="ingredient">
                     <input value="Add" type="submit">
                 </form>

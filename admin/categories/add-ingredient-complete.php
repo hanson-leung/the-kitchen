@@ -1,5 +1,6 @@
 <?php
 session_start();
+include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_check.php';
 adminOnly();
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
@@ -8,7 +9,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 // if no data is set, redirect
 
 if (!isset($_REQUEST["ingredient"])) {
-    header("Location: /admin/categories/categories.php?alert=3");
+    header("Location: <?php echo $link ?>/admin/categories/categories.php?alert=3");
     exit();
 }
 
@@ -24,7 +25,7 @@ $results = $mysql->query($sql);
 
 
 // redirect once done
-header("Location: /admin/categories/categories.php?alert=2");
+header("Location: <?php echo $link ?>/admin/categories/categories.php?alert=2");
 exit();
 ?>  
 

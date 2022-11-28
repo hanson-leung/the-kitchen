@@ -1,5 +1,6 @@
 <?php
 session_start();
+include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_check.php';
 adminOnly();
@@ -44,10 +45,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                         $total_time = ($currentrow["total_time"]/60) . " min";
 
                         echo
-                        "<a class='card' href='/edit-dish.php?recipe=" . $recipe_id . "'>" .
+                        "<a class='card' href='<?php echo $link ?>/edit-dish.php?recipe=" . $recipe_id . "'>" .
                             "<img src='" . $img_url . "' class='card-img'>" .
                             "<h2>" . $recipe . "</h2>" .
-                            "<p>" . $total_time . "</p></a><a href='/edit-dish.php?recipe=" . $recipe_id . "'>Edit Dish</a> ";
+                            "<p>" . $total_time . "</p></a><a href='<?php echo $link ?>/edit-dish.php?recipe=" . $recipe_id . "'>Edit Dish</a> ";
                 }
             ?>
         </div>

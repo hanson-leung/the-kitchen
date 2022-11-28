@@ -1,5 +1,6 @@
 <?php
 session_start();
+include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_check.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/profile_logic.php';
@@ -33,10 +34,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <p><?php echo $email ?></p>
             <p><?php echo $phone ?></p>
             <p><?php echo print_r($_SESSION); ?></p>
-            <a href="/user/edit/edit.php?user=<?php echo $user_id ?>" class="link">Update Profile</a>
+            <a href="<?php echo $link ?>/user/edit/edit.php?user=<?php echo $user_id ?>" class="link">Update Profile</a>
         </div>
         <p>Recipes</p>
-            <a href="/user/user-recipes.php" class="link">Your Recipes</a>
+            <a href="<?php echo $link ?>/user/user-recipes.php" class="link">Your Recipes</a>
         </div>
     </div>
 

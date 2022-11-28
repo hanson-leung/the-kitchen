@@ -9,7 +9,7 @@
         // if not a mod or admin
         if ($_SESSION["security_level"] == 0) {
          // redirect to 403 page
-        header("Location: /support/error.php?code=403");
+        header("Location: <?php echo $link ?>/support/error.php?code=403");
         exit();
         }
     }
@@ -21,7 +21,7 @@
 
 // if there are no matching results, boot them to an error page
     if ($num_results == 0) {
-        header("Location: /support/error.php?code=404");
+        header("Location: <?php echo $link ?>/support/error.php?code=404");
         exit();
         }
 ?>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
 ?>
 
 <html>
@@ -35,7 +36,7 @@ session_start();
             }      
         ?> 
 
-        <form action="/user/edit/update-complete.php">
+        <form action="<?php echo $link ?>/user/edit/update-complete.php">
             <?php
               if($_SESSION["security_level"]==1 || $_SESSION["security_level"]==2) {
                 include $_SERVER['DOCUMENT_ROOT'] . '/logic/edituser_forminclude.php';
@@ -50,7 +51,7 @@ session_start();
             <input type="hidden" name="user_id" value="<?php echo $user_id ?>">
             <input type="submit" name="update" value="Update">
         </form>
-        <a href="/user/edit/delete-complete.php?confirm=1&user=<?php echo $user_id?>" class="link">Delete</a>
+        <a href="<?php echo $link ?>/user/edit/delete-complete.php?confirm=1&user=<?php echo $user_id?>" class="link">Delete</a>
 
 
 

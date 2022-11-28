@@ -1,5 +1,6 @@
 <?php
 session_start();
+include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -9,7 +10,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <?php
 ?>
     <!-- additional stylesheets -->
-    <link rel="stylesheet" href="/stylesheets/home.css"/>
+    <link rel="stylesheet" href="<?php echo $link ?>/stylesheets/home.css"/>
 
 <body>
     <div  class="root">

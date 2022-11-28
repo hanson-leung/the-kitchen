@@ -1,5 +1,6 @@
 <?php
 session_start();
+include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
 ?>
 
 <html>
@@ -30,7 +31,7 @@ session_start();
         <?php echo $alert ?>
 
         <div class="searchbox grid-rows grid-gap-2rem">
-            <form class="signup grid-rows grid-gap-2rem" action="/account/signup-complete.php">
+            <form class="signup grid-rows grid-gap-2rem" action="<?php echo $link ?>/account/signup-complete.php">
                 <!-- search -->
                 <div id="fname">
                     <input class="" type="text" name="fname" placeholder="First Name" required/>

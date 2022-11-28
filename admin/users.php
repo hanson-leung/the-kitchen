@@ -1,5 +1,6 @@
 <?php
 session_start();
+include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_check.php';
 adminOnly();
@@ -46,7 +47,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                         $security_level =  $currentrow["security_level"];
 
                         echo
-                        "<a class='card' href='/user/edit/edit.php?user=" . $user_id . "'>" .
+                        "<a class='card' href='<?php echo $link ?>/user/edit/edit.php?user=" . $user_id . "'>" .
                             "<p>" . $fname . " " . $lname . "</p>" .
                             "<p>" . $email . "</p>" .
                             "<p>" . $phone . "</p>" .

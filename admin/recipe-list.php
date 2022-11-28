@@ -1,5 +1,6 @@
 <?php
 session_start();
+include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_check.php';
     include $_SERVER['DOCUMENT_ROOT'] . '/logic/recipelist_logic.php';
@@ -11,7 +12,7 @@ adminOnly();
 <!-- begin header -->
 
     <!-- additional stylesheets -->
-    <link rel="stylesheet" href="/stylesheets/recipe-list.css"/>
+    <link rel="stylesheet" href="<?php echo $link ?>/stylesheets/recipe-list.css"/>
 
 <!-- insert php logic -->
 <?php
@@ -46,7 +47,7 @@ adminOnly();
                         $total_time = ($currentrow["total_time"]/60) . " min";
 
                         echo
-                        "<a class='card' href='/edit-dish.php?recipe=" . $recipe_id . "'>" .
+                        "<a class='card' href='<?php echo $link ?>/edit-dish.php?recipe=" . $recipe_id . "'>" .
                             "<img src='" . $img_url . "' class='card-img'>" .
                             "<h2>" . $cuisine . "</h2>" .
                             "<p>" . $recipe_url . "</p>" .

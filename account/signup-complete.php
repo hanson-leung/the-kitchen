@@ -1,4 +1,5 @@
 <?php
+include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 
 // check if same email exists
@@ -22,10 +23,10 @@ if ($num_results == 0) {
 
     $results = $mysql->query($sql);
 
-    header("Location: /account/login-complete.php?signup=1&email=" . $_REQUEST["email"] . "&password=" . $_REQUEST["password"]);
+    header("Location: <?php echo $link ?>/account/login-complete.php?signup=1&email=" . $_REQUEST["email"] . "&password=" . $_REQUEST["password"]);
     exit();
 } else {
-    header("Location: /account/signup.php?error=2");
+    header("Location: <?php echo $link ?>/account/signup.php?error=2");
     exit();
 };
 

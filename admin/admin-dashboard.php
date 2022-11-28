@@ -1,5 +1,6 @@
 <?php
 session_start();
+include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_check.php';
 adminOnly();
@@ -29,26 +30,26 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <!-- card container -->
         <div class="grid-columns grid-gap-2rem">
-            <a href="/admin/recipe-check.php" class="card">
+            <a href="<?php echo $link ?>/admin/recipe-check.php" class="card">
             <p>There are <?php echo $num_results ?> reviews awaiting approval</p>
             </a>
         </div>
 
          <!-- card container -->
         <div class="grid-columns grid-gap-2rem">
-            <a href="/admin/recipe-list.php" class="card">
+            <a href="<?php echo $link ?>/admin/recipe-list.php" class="card">
                 <p>Modify Recipes</p>
             </a>
 
-            <a href="/admin/categories/categories.php" class="card">
+            <a href="<?php echo $link ?>/admin/categories/categories.php" class="card">
                 <p>Modify Categories</p>
             </a>
 
-            <a href="/admin/users.php" class="card">
+            <a href="<?php echo $link ?>/admin/users.php" class="card">
                 <p>Modify Users</p>
             </a>
 
-            <a href="/admin/recipe-check.php" class="card">
+            <a href="<?php echo $link ?>/admin/recipe-check.php" class="card">
                 <p>View Insights</p>
             </a>
         </div>
