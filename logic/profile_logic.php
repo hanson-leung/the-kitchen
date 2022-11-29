@@ -16,7 +16,7 @@ $alert = "";
 if(isset($_REQUEST["signup"])) {
     $alert =
         '<div class="alert">
-            <p>Thanks for joining. Start by customizing your <a href="<?php echo $link ?>/user-allergies.php" class="link">allergy profile</a>.</p>
+            <p>Thanks for joining. Start by customizing your <a href="' . $link . '/user/allergies/user-allergies.php" class="link">allergy profile</a>.</p>
         </div>';
 }
 

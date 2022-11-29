@@ -43,7 +43,7 @@
     if ($num_results == 0) {
         $alert_2 =
             '<div class="alert">
-                <p>Looks like you have not submitted any recipes yet. Help us grow our community by adding your favorites to our site. Upload them <a href="<?php echo $link ?>/add-dish.php" class="link">here</a>!</p>
+                <p>Looks like you have not submitted any recipes yet. Help us grow our community by adding your favorites to our site. Upload them <a href="' . $link . '/add-dish.php" class="link">here</a>!</p>
             </div>';
     } else {
         $alert_2 =
