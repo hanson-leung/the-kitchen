@@ -4,8 +4,8 @@ session_start();
 if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     $link = "";
 } else {
-    include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
-    $link = "<?php echo $link ?>";
+    $_SERVER['DOCUMENT_ROOT'] = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
+    $link = $_SERVER['DOCUMENT_ROOT'];
 }
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_check.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
@@ -38,12 +38,12 @@ $results = $mysql->query($sql);
 
 // if moderator or admin, alert that it is live
 if($_SESSION["security_level"]==1 || $_SESSION["security_level"]==2) {
-    header("Location: <?php echo $link ?>/user/user-recipes.php?alert=2");
+    header("Location:" . $link . "/user/user-recipes.php?alert=2");
     exit();
 
 // if normal user, alert that it is awaiting approval
 } else {
-    header("Location: <?php echo $link ?>/user/user-recipes.php?alert=1");
+    header("Location:" . $link . "/user/user-recipes.php?alert=1");
     exit();
 }
 ?>

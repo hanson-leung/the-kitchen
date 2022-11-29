@@ -93,7 +93,6 @@ a:visited {
   padding-bottom: 0.2rem;
   border-bottom: 1px solid var(--transparent);
   display: inline-block;
-  width: fit-content;
 }
 
 a.link {

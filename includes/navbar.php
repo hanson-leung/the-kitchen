@@ -16,27 +16,27 @@
                 </a>
             </div>
             <div id="dropdown" class="grid-rows grid-gap-2rem">
-                <a href="<?php echo $link ?>/user/profile.php">
+                <a href="' . $link . '/user/profile.php">
                     Account
                 </a>
-                <a href="<?php echo $link ?>/user/user-recipes.php">
+                <a href="' . $link . '/user/user-recipes.php">
                     Your Recipes
                 </a>
-                <a href="<?php echo $link ?>/add-dish.php">
+                <a href="' . $link . '/add-dish.php">
                     Add Recipes
                 </a>';
 
             if ($_SESSION['logged_in'] == 1 && $_SESSION['security_level'] >= 1) {
                 echo
                 '
-                    <a href="<?php echo $link ?>/admin/admin-dashboard.php">
+                    <a href="' . $link . '/admin/admin-dashboard.php">
                         Admin Panel
                     </a>
                 ';
             }
 
             echo
-                '<a href="<?php echo $link ?>/account/logout-complete.php">
+                '<a href="' . $link . '/account/logout-complete.php">
                     Log Out
                 </a>
             </div>
@@ -49,10 +49,10 @@
     echo 
     '<div class="grid-columns grid-end grid-gap-2rem">
         <div class="text" id="login" >
-            <a href="<?php echo $link ?>/account/login.php" id="loginbutton">Login</a>
+            <a href="' . $link . '/account/login.php" id="loginbutton">Login</a>
         </div>
 
-        <a href="<?php echo $link ?>/account/signup.php" class="no-declaration">
+        <a href="' . $link . '/account/signup.php" class="no-declaration">
             <button id="signup">Sign Up</button>
         </a>
     </div>';

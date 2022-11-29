@@ -1,7 +1,7 @@
 <?php
 if($_SESSION["logged_in"]!=1) {
     // redirect to 403 page
-    header("Location: <?php echo $link ?>/support/error.php?code=403");
+    header("Location:" . $link . "/support/error.php?code=403");
     exit();
 }
 
@@ -10,7 +10,7 @@ if($_SESSION["logged_in"]!=1) {
 function moderatorOnly() {
     if($_SESSION["security_level"]!=1 || $_SESSION["security_level"]!=2) {
     // redirect to 403 page
-    header("Location: <?php echo $link ?>/support/error.php?code=403");
+    header("Location:" . $link . "/support/error.php?code=403");
     exit();
 }
 }
@@ -18,7 +18,7 @@ function moderatorOnly() {
 function adminOnly() {
     if($_SESSION["security_level"]!=2) {
     // redirect to 403 page
-    header("Location: <?php echo $link ?>/support/error.php?code=403");
+    header("Location:" . $link . "/support/error.php?code=403");
     exit();
 }
 }

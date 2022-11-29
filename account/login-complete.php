@@ -4,8 +4,8 @@ session_start();
 if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     $link = "";
 } else {
-    include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
-    $link = "<?php echo $link ?>";
+    $_SERVER['DOCUMENT_ROOT'] = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
+    $link = $_SERVER['DOCUMENT_ROOT'];
 }
 
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
@@ -39,16 +39,16 @@ if ($results->num_rows == 1) {
     $_SESSION["user_fname"]=$fname;
 
     if (!isset($_REQUEST["signup"])) {
-    header("Location: <?php echo $link ?>/index.php");
+    header("Location:" . $link . "/index.php?logout=2");
     exit(); 
     } else {
-        header("Location: <?php echo $link ?>/user/profile.php?signup=1");
+        header("Location:" . $link . "/user/profile.php?signup=1");
         exit(); 
     }
 }
     else {
     // redirect back if no match with error code
-    header("Location: <?php echo $link ?>/account/login.php?error=1");
+    header("Location:" . $link . "/account/login.php?error=1");
     exit();
 }
 ?>
