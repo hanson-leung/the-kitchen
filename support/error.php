@@ -11,15 +11,15 @@ session_start();
     if ($_REQUEST["code"] == "403") {
         $error = "403 Forbidden Access";
         $desc = "The page your are trying to access has restricted access.";
-        $action = "Please <a href='/account/login.php' class='link'>login</a> to see this page.";
+        $action = "Please <a href='<?php echo $link ?>/account/login.php' class='link'>login</a> to see this page.";
     } elseif ($_REQUEST["code"] == "404") {
         $error = "404 Page Not Found";
         $desc = "The page your are looking for cannot be found or may be been moved.";
-        $action = "Let's take you <a href='/index.php' class='link'>home</a>.";
+        $action = "Let's take you <a href='<?php echo $link ?>/index.php' class='link'>home</a>.";
     } else {
         $error = "An Unknown Error Occurred";
         $desc = "It's not your fault, something is going on. Please try again in a few minutes.";
-        $action = "Let's take you <a href='/index.php' class='link' >home</a>.";
+        $action = "Let's take you <a href='<?php echo $link ?>/index.php' class='link' >home</a>.";
     }
 
 

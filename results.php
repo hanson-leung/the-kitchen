@@ -1,5 +1,12 @@
 <?php
 session_start();
+// check if on localhost or on server
+if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
+    $link = "";
+} else {
+    include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
+    $link = "<?php echo $link ?>";
+}
 ?>
 
 <html>
@@ -9,7 +16,7 @@ session_start();
     include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
     <!-- additional stylesheets -->
-    <link rel="stylesheet" href="/stylesheets/results.css"/>
+    <link rel="stylesheet" href="stylesheets/results.css"/>
 
 <!-- insert php logic -->
 <?php
@@ -38,7 +45,7 @@ session_start();
                         $total_time = ($currentrow["total_time"]/60) . " min";
 
                         echo
-                        "<a class='card' href='/dish.php?recipe=" . $recipe_id . "'>" .
+                        "<a class='card' href='<?php echo $link ?>/dish.php?recipe=" . $recipe_id . "'>" .
                             "<img src='" . $img_url . "' class='card-img'>" .
                             "<h2>" . $recipe . "</h2>" .
                             "<p>" . $total_time . "</p></a>";

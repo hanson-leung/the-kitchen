@@ -1,5 +1,12 @@
 <?php
 session_start();
+// check if on localhost or on server
+if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
+    $link = "";
+} else {
+    include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
+    $link = "<?php echo $link ?>";
+}
 
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 
@@ -32,16 +39,16 @@ if ($results->num_rows == 1) {
     $_SESSION["user_fname"]=$fname;
 
     if (!isset($_REQUEST["signup"])) {
-    header("Location: /index.php");
+    header("Location: <?php echo $link ?>/index.php");
     exit(); 
     } else {
-        header("Location: /user/profile.php?signup=1");
+        header("Location: <?php echo $link ?>/user/profile.php?signup=1");
         exit(); 
     }
 }
     else {
     // redirect back if no match with error code
-    header("Location: /account/login.php?error=1");
+    header("Location: <?php echo $link ?>/account/login.php?error=1");
     exit();
 }
 ?>

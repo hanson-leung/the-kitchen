@@ -1,4 +1,11 @@
 <?php
+// check if on localhost or on server
+if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
+    $link = "";
+} else {
+    include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
+    $link = "<?php echo $link ?>";
+}
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 
 // check if same email exists
@@ -22,10 +29,10 @@ if ($num_results == 0) {
 
     $results = $mysql->query($sql);
 
-    header("Location: /account/login-complete.php?signup=1&email=" . $_REQUEST["email"] . "&password=" . $_REQUEST["password"]);
+    header("Location: <?php echo $link ?>/account/login-complete.php?signup=1&email=" . $_REQUEST["email"] . "&password=" . $_REQUEST["password"]);
     exit();
 } else {
-    header("Location: /account/signup.php?error=2");
+    header("Location: <?php echo $link ?>/account/signup.php?error=2");
     exit();
 };
 

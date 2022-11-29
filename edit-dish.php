@@ -1,5 +1,12 @@
 <?php
 session_start();
+// check if on localhost or on server
+if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
+    $link = "";
+} else {
+    include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
+    $link = "<?php echo $link ?>";
+}
 ?>
 
 <html>
@@ -64,7 +71,7 @@ session_start();
             <input type="hidden" name="recipe_id" value="<?php echo $recipe_id ?>">
             <input type="submit" name="update" value="Update">
         </form>
-        <a href="/delete-dish-complete.php?confirm=1&recipe=<?php echo $_REQUEST["recipe"]?>" class="link">Delete</a>
+        <a href="<?php echo $link ?>/delete-dish-complete.php?confirm=1&recipe=<?php echo $_REQUEST["recipe"]?>" class="link">Delete</a>
 
         
 

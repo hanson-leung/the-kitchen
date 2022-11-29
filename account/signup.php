@@ -1,5 +1,12 @@
 <?php
 session_start();
+// check if on localhost or on server
+if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
+    $link = "";
+} else {
+    include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
+    $link = "<?php echo $link ?>";
+}
 ?>
 
 <html>
@@ -30,7 +37,7 @@ session_start();
         <?php echo $alert ?>
 
         <div class="searchbox grid-rows grid-gap-2rem">
-            <form class="signup grid-rows grid-gap-2rem" action="/account/signup-complete.php">
+            <form class="signup grid-rows grid-gap-2rem" action="<?php echo $link ?>/account/signup-complete.php">
                 <!-- search -->
                 <div id="fname">
                     <input class="" type="text" name="fname" placeholder="First Name" required/>

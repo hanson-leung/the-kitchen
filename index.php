@@ -1,5 +1,12 @@
 <?php
 session_start();
+// check if on localhost or on server
+if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
+    $link = "";
+} else {
+    include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
+    $link = "<?php echo $link ?>";
+}
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -9,7 +16,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 <?php
 ?>
     <!-- additional stylesheets -->
-    <link rel="stylesheet" href="/stylesheets/home.css"/>
+    <link rel="stylesheet" href="<?php echo $link ?>/stylesheets/home.css"/>
 
 <body>
     <div  class="root">

@@ -1,5 +1,12 @@
 <?php
 session_start();
+// check if on localhost or on server
+if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
+    $link = "";
+} else {
+    include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
+    $link = "<?php echo $link ?>";
+}
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_logic.php';
 ?>
@@ -11,7 +18,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
     <!-- additional stylesheets -->
-    <link rel="stylesheet" href="../../stylesheets/login.css"/>
+    <link rel="stylesheet" href="<?php echo $link ?>/stylesheets/login.css"/>
 
 
 <!-- begin body -->
@@ -36,7 +43,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         ?>
         
         <div class="searchbox grid-rows grid-gap-2rem">
-            <form class="signup grid-rows grid-gap-2rem" action="/account/login-complete.php">
+            <form class="signup grid-rows grid-gap-2rem" action="<?php echo $link ?>/account/login-complete.php">
                 <!-- search -->
                 <div id="email">
                     <input class="" type="email" name="email" placeholder="Email" required/>

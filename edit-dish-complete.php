@@ -1,5 +1,12 @@
 <?php
 session_start();
+// check if on localhost or on server
+if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
+    $link = "";
+} else {
+    include $_SERVER['DOCUMENT_ROOT'] . '/logic/link_logic.php';
+    $link = "<?php echo $link ?>";
+}
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_check.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 
@@ -28,10 +35,10 @@ $results = $mysql->query($sql);
 
 
 if($_SESSION["security_level"]==1 || $_SESSION["security_level"]==2) {
-    header("Location: /admin/recipe-check.php?alert=2");
+    header("Location: <?php echo $link ?>/admin/recipe-check.php?alert=2");
     exit();
 } else {
-    header("Location: /user/user-recipes.php?alert=1");
+    header("Location: <?php echo $link ?>/user/user-recipes.php?alert=1");
     exit();
 }
 

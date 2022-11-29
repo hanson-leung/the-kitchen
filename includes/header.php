@@ -13,7 +13,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="stylesheets/main.css"/>
+    <link rel="stylesheet" href="<?php echo $link ?>/stylesheets/main.css"/>
 
     <!-- jQuery -->
     <script
