@@ -1,7 +1,7 @@
 <?php
 // redirect if no search terms exist
 if (empty($_REQUEST["page"])) {
-    header("Location: <?php echo $link ?>/index.php?error=2");
+    header("Location: ' . $link . '/index.php?error=2");
     exit(); 
 }
 
@@ -67,14 +67,17 @@ $sql_pagination = "LIMIT " . $limit . " OFFSET " . $offset;
     // display depending on num of matches
     $alert = "";
 
+    ?>
+    <link rel="stylesheet" href="stylesheets/results.css"/>
+<?php
     if ($num_results == 0) {
         $alert =
             '<div class="alert">
-                <p>Looks we could not find any good matches. Help us grow our community by adding your favorites recipes to our site. Upload them <a href="<?php echo $link ?>/add-dish.php" class="link">here</a> or try <a href="<?php echo $link ?>/index.php" class="link">searching again</a>!</p>
+                <p>Looks we could not find any good matches. Help us grow our community by adding your favorites recipes to our site. Upload them <a href="' . $link . '/add-dish.php" class="link">here</a> or try <a href="' . $link . '/index.php" class="link">searching again</a>!</p>
             </div>';
     } else {
         $alert =
-       '<p> We found ' . $total_count . ' crowd-sourced recipes for you to enjoy!</p>';
+       '<p class= "finding"> We found ' . $total_count . ' crowd-sourced recipes for you to enjoy!</p>';
     }
     
 

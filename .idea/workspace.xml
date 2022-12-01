@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7c63d5e5-6230-44a7-93be-2247b312df9f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/logic/results_logic.php" beforeDir="false" afterPath="$PROJECT_DIR$/logic/results_logic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stylesheets/results.css" beforeDir="false" afterPath="$PROJECT_DIR$/stylesheets/results.css" afterDir="false" />
+>>>>>>> f621ab1cbd72cdc7fc8ced4a03ecd5cad06d6c4e
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +33,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -49,6 +55,20 @@
       </list>
     </recent_temporary>
   </component>
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+>>>>>>> f621ab1cbd72cdc7fc8ced4a03ecd5cad06d6c4e
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -56,9 +76,19 @@
       <created>1666304909048</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1666304909048</updated>
       <workItem from="1666304920697" duration="43000" />
       <workItem from="1669936127108" duration="112000" />
+=======
+      <updated>1667862529444</updated>
+      <workItem from="1667862534707" duration="12848000" />
+      <workItem from="1668902654278" duration="838000" />
+      <workItem from="1669071871026" duration="4620000" />
+      <workItem from="1669667721260" duration="29000" />
+      <workItem from="1669844716168" duration="41000" />
+      <workItem from="1669853290373" duration="2021000" />
+>>>>>>> f621ab1cbd72cdc7fc8ced4a03ecd5cad06d6c4e
     </task>
     <servers />
   </component>

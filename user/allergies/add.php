@@ -25,23 +25,18 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
            include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
         ?>
 
-        <form action="<?php echo $link ?>/add-dish-complete.php">
-            <input type="text" name="recipe" placeholder="Recipe Name">
-            <input type="text" name="prep_time" placeholder="Prep Time">
-            <input type="text" name="cooking_time" placeholder="Cooking Time">
-            <input type="text" name="recipe_url" placeholder="Link to Recipe">
-            <input type="text" name="img_url" placeholder="Image URL">
-            <select name="cuisine">
+        <form action="<?php echo $link ?>/user/allergies/add-allergy-complete.php">
+            <select name="ingredient">
                 <?php
-                $sql = "SELECT * FROM cuisine";
+                $sql = "SELECT * FROM ingredient";
                 $results = $mysql->query($sql);
                 while ($currentrow = $results->fetch_assoc()) {
-                echo "<option value='" . $currentrow["cuisine_id"] . "'>" . $currentrow["cuisine"] . "</option>";
+                echo "<option value='" . $currentrow["ingredient_id"] . "'>" . $currentrow["ingredient"] . "</option>";
                 }
                 ?>
             </select>
             <input type="hidden" name="user_id" value="<?php echo $_SESSION["user_id"] ?>">
-            <input type="submit" value="Add Recipe">
+            <input type="submit" value="Add Allergy">
         </form>
     </div>
 </body>

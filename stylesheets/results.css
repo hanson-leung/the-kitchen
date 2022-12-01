@@ -11,6 +11,7 @@
   background-color: var(--white);
   padding: 1rem;
   border: 1px solid var(--grey);
+  width: 100%;
 }
 
 .card-img {
@@ -19,4 +20,43 @@
   object-fit: cover;
   border-radius: 10px;
   padding-bottom: 2rem;
+}
+
+.finding{
+  font-family: var(--headline), sans-serif, Arial;
+  font-weight: var(--bold);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 52px;
+  margin: 0;
+  color: var(--black);
+  letter-spacing: -0.02em;
+  line-height: 1em;
+}
+
+/* november 8 */
+
+:root {
+  --transparent: #fff0;
+  --yellow: #fed330;
+  --yellow-20pct: #fed33033;
+  --hover-grey: #999999;
+  --orange: #ff5800;
+  --orange-20pct: #ff580033;
+
+  /* light mode styles */
+  --black: #000;
+  --white: #fff;
+  --lightgrey: #f6f6f6;
+  --grey: #e7e7e7;
+  --link: #0066cc;
+
+  /* fonts */
+  --headline: "Helvetica";
+  --bodycopy: "Helvetica";
+  --bold: 800;
+  --regular: 400;
+
+  /* other */
+  --borderradius: 0.6rem;
 }
