@@ -67,6 +67,9 @@ $sql_pagination = "LIMIT " . $limit . " OFFSET " . $offset;
     // display depending on num of matches
     $alert = "";
 
+    ?>
+    <link rel="stylesheet" href="stylesheets/results.css"/>
+<?php
     if ($num_results == 0) {
         $alert =
             '<div class="alert">
@@ -74,7 +77,7 @@ $sql_pagination = "LIMIT " . $limit . " OFFSET " . $offset;
             </div>';
     } else {
         $alert =
-       '<p> We found ' . $total_count . ' crowd-sourced recipes for you to enjoy!</p>';
+       '<p class= "finding"> We found ' . $total_count . ' crowd-sourced recipes for you to enjoy!</p>';
     }
     
 
