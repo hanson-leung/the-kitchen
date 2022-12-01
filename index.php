@@ -29,6 +29,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';
 
     <div class="main-container">
         <div class="gap-2rem">
+
             <h1>What's Cookin', Good '?</h1>
             <p>
                 Find your next favorite recipe, tailored specifically for you.
