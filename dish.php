@@ -42,8 +42,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
 
         <div id="detailbox">
             <div id="url">
-                <input type="submit" value="See the full recipe">
-                    <a href="<?php echo $recipe_url ?>" target="_blank">See the Full Recipe</a>
+                    <a style = "width:100%;" href="<?php echo $recipe_url ?>" target="_blank"><input type="submit" value="See the full recipe" ></a>
                 </button>
             </div>
             <br>
