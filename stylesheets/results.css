@@ -126,11 +126,11 @@ button{
   background-color:white;
   border: var(--grey) 1px solid;
   border-radius: 10px;
-  margin-left:10%;
+  margin-left:0%;
 }
 
 @media (min-width: 900px) {
-  #detailbox {margin-left: 0%;}
+  #detailbox {margin-left: 10%;}
 }
 
 .orange{
