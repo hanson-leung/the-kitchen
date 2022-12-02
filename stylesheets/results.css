@@ -91,6 +91,7 @@
 
 #nextpage{
   margin-left:1em;
+  color:var(--black);
   background-color: var(--lightgrey);
 }
 
@@ -101,6 +102,7 @@ button[type='button']:hover {
 
 #previouspage{
   margin-right:1em;
+  color:var(--black);
   background-color: var(--lightgrey);
 }
 
