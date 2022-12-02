@@ -65,17 +65,15 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
                 echo   "<li><p class='detailp'>" . $currentrow["quantity"] . " " . $currentrow["unit"] . " " . $currentrow["ingredient"] . "</p></li>";
                 echo "</ul></div>";
             }
+
         ?>
 
-
-        <form action="<?php echo $link ?>email-confirm.php" method="get">
-
+        <form action="<?php echo $link ?>email.php">
             <div style="width:25%">
-                <input type="submit" value="Email me"/>
+                <br>
+                <input type="submit" value="Share"/>
             </div>
         </form>
-
-
 
         </div><!--close detailbox-->
     </div><!--close maincontainer-->
