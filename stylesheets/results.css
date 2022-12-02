@@ -95,7 +95,7 @@
   background-color: var(--lightgrey);
 }
 
-button[type='button']:hover {
+button[type='button'].a:hover {
   color:white;
   background-color: var(--orange);
 }
