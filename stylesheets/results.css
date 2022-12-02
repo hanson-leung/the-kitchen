@@ -37,9 +37,10 @@
 .editdish{
   display: grid;
   grid-auto-flow: row;
+  max-width:200px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
   .results-container2 {grid-template-columns: repeat(2, 1fr);}
 }
 
