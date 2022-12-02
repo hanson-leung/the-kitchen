@@ -91,10 +91,21 @@
 
 #nextpage{
   margin-left:1em;
+  color:var(--black);
+  background-color: var(--lightgrey);
+
+}
+
+button[type='button']:hover {
+  color:white;
+  background-color: var(--orange);
 }
 
 #previouspage{
   margin-right:1em;
+  color:var(--black);
+  background-color: var(--lightgrey);
+
 }
 
 button{
@@ -150,8 +161,9 @@ body{
   color:#ff5800;
 }
 
-white{
-  color:white;
+.orange-white{
+  color:black;
+  background-color: var(--lightgrey);
 }
 
 .detailheader{

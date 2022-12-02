@@ -16,7 +16,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
     <!-- additional stylesheets -->
-    <link rel="stylesheet" href="<?php echo $link ?>stylesheets/results.css"/>
+    <link rel="stylesheet" href="stylesheets/results.css"/>
 
 <!-- insert php logic -->
 <?php

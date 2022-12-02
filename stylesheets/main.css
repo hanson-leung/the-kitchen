@@ -95,9 +95,14 @@ a:visited {
   display: inline-block;
 }
 
+a.link:hover{
+  color: var(--hover-grey);
+}
+
 a.link {
   border-bottom: 1px solid var(--grey) ;
-  border-bottom-style: 100px;
+  width:100px;
+  margin-left:50px;
 }
 
 /* general */
