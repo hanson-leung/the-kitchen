@@ -58,7 +58,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                         "<a class='card' href='" . $link . "/dish.php?recipe=" . $recipe_id . "'>" .
                             "<img src='" . $img_url . "' class='card-img'>" .
                             "<h2>" . $recipe . "</h2>" .
-                            "<p>" . $total_time . "</p></a><button type='button'><a href='" . $link . "/edit-dish.php?recipe=" . $recipe_id . "'>Edit Dish</a></button> ";
+                            "<p>" . $total_time . "</p></a><button type='button' class='editdish'><a href='" . $link . "/edit-dish.php?recipe=" . $recipe_id . "'>Edit Dish</a></button> ";
                 }
             ?>
         </div>
