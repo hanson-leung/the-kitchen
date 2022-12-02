@@ -16,6 +16,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
     include $_SERVER['DOCUMENT_ROOT'] . '/logic/dish_logic.php';
     include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/logic/profile_logic.php';
 ?>
 
 <!-- begin body -->
@@ -43,13 +44,14 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
             <div id="url">
                 <button type="button" class="orange white">
                     <a href="<?php echo $recipe_url ?>" target="_blank">See the Full Recipe</a>
-                </button></div>
-    <br>
+                </button>
+            </div>
+            <br>
             <div id="cooktime">
                 <p class="detailheader">Recipe Time</p><br>
-        <p class="detailp">Prep Time: <?php echo $prep_time ?> Mins</p>
-        <p class="detailp">Cooking Time: <?php echo $cooking_time ?> Mins</p>
-        <p class="detailp orangetext">Total Time: <?php echo $total_time ?> Mins</p>
+                <p class="detailp">Prep Time: <?php echo $prep_time ?> Mins</p>
+                <p class="detailp">Cooking Time: <?php echo $cooking_time ?> Mins</p>
+                <p class="detailp orangetext">Total Time: <?php echo $total_time ?> Mins</p>
             </div>
     <br>
             <p class="detailheader">Ingredients</p>
@@ -62,10 +64,19 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
                 echo "<div><ul>";
                 echo   "<li><p class='detailp'>" . $currentrow["quantity"] . " " . $currentrow["unit"] . " " . $currentrow["ingredient"] . "</p></li>";
                 echo "</ul></div>";
-
             }
-
         ?>
+
+
+        <form action="<?php echo $link ?>email-confirm.php" method="get">
+
+            <div style="width:25%">
+                <input type="submit" value="Email me"/>
+            </div>
+        </form>
+
+
+
         </div><!--close detailbox-->
     </div><!--close maincontainer-->
 

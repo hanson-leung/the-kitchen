@@ -166,6 +166,11 @@ input[type="submit"] {
   background-color: var(--lightgrey);
 }
 
+input[type='submit']:hover {
+  color:white;
+  background-color: var(--orange);
+}
+
 /* grid */
 .grid-columns {
   display: grid;
