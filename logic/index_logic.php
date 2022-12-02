@@ -17,8 +17,8 @@
     } 
     elseif ($_REQUEST["error"] == 2) {
         $alert =  
-            '<div class="error">
-                <p></p>
+            '<div class="alert">
+                <p>Please enter a valid search criteria.</p>
             </div>';
     
     // if error is set to any, set the following error
@@ -34,7 +34,6 @@
     // logout alerts
     
     if (empty($_REQUEST["logout"])) {
-        $alert =  '';
     } elseif ($_REQUEST["logout"] == 1) {
         $alert =  
             '<div class="alert">

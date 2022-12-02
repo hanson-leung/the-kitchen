@@ -1,7 +1,7 @@
 <?php
 // redirect if no search terms exist
 if (empty($_REQUEST["page"])) {
-    header("Location: ' . $link . '/index.php?error=2");
+    header("Location:" . $link . "/index.php?error=2");
     exit(); 
 }
 
@@ -14,6 +14,7 @@ $offset = ($page - 1) * $limit;
 
 // sql pagination string
 $sql_pagination = "LIMIT " . $limit . " OFFSET " . $offset;
+
 
 
 // searching through database
@@ -67,37 +68,59 @@ $sql_pagination = "LIMIT " . $limit . " OFFSET " . $offset;
     // display depending on num of matches
     $alert = "";
 
-    ?>
-    <link rel="stylesheet" href="stylesheets/results.css"/>
-<?php
+
     if ($num_results == 0) {
         $alert =
             '<div class="alert">
-                <p>Looks we could not find any good matches. Help us grow our community by adding your favorites recipes to our site. Upload them <a href="' . $link . '/add-dish.php" class="link">here</a> or try <a href="' . $link . '/index.php" class="link">searching again</a>!</p>
+                <p>Looks we could not find any good matches. Help us grow our community by logging in and adding your favorites recipes or try <a href="' . $link . '/index.php" class="link">searching again</a>!</p>
             </div>';
     } else {
         $alert =
        '<p class= "finding"> We found ' . $total_count . ' crowd-sourced recipes for you to enjoy!</p>';
-    }
+    } 
+
+
+
+
+    // pagination settings
+
+    // take the url and add or subtract one page and update url
+    $search_path = $_SERVER['REQUEST_URI'];
+    $id_page = 'page=' . $_GET['page'];
+    $next_page = 'page=' . ($_GET['page'] + 1);
+    $previous_page = 'page=' . ($_GET['page'] - 1);
+    $search_path_next = str_replace($id_page, $next_page, $search_path);
+    $search_path_previous = str_replace($id_page, $previous_page, $search_path);
     
+    // find total number of pages needed to display all results
+    $total_pages = ceil ($total_count / $limit);
 
-    // pagination setting
+    // variables to display buttons
+    $button_previous_page = "";
+    $button_next_page = "";
 
-    // determine number of required pages
+    // display or hide next or previous buttons depending on page
+    if ($_GET['page'] >= 1 && $_GET['page'] < $total_pages) {  
+        $button_next_page = '
+                <button type="button" class="button">
+                    <a href="' . $search_path_next .'">
+                        Next Page
+                    </a>
+                </button>
+        ';
+    } elseif ($_GET['page'] <= $total_pages ) {
+         $button_previous_page = '
+                <button type="button" class="button">
+                    <a href="' . $search_path_previous . '">
+                        Previous Page
+                    </a>
+                </button>
+        ';
+    }
 
-    // $total_pages ceil ($total_count / $limit);
-    // if (!isset ($_GET['page']) ) {  
-    //     $page_number = 1;  
-    // } else {  
-    //     $page_number = $_GET['page'];  
-    // }    
-
-    // $initial_page = ($page_number-1) * $limit;  
-    // $getQuery = "SELECT *FROM Countries LIMIT " . $initial_page . ',' . $limit;  
-
-    //     for($page_number = 1; $page_number<= $total_pages; $page_number++) {  
-
-    //     echo '<a href = "index.php?page=' . $page_number . '">' . $page_number . ' </a>';  
-
-    // }    
+    // redirect if page number is more than the total pages needed to display all results
+    if ($_REQUEST["page"] > $total_pages) {
+        header("Location:" . $link . "/index.php?error=2");
+        exit(); 
+    }
 ?>

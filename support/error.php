@@ -1,5 +1,12 @@
 <?php
 session_start();
+// check if on localhost or on server
+if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
+    $link = "";
+} else {
+    $_SERVER['DOCUMENT_ROOT'] = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
+    $link = $_SERVER['DOCUMENT_ROOT'];
+}
 ?>
 
 <html>
