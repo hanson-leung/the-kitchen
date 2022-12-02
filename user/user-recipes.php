@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 // check if on localhost or on server
@@ -13,6 +14,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/userrecipes_logic.php';
 ?>
 
 <html>
+<head>
+    <link rel="stylesheet" href="/stylesheets/results.css"/>
+</head>
 <!-- begin header -->
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
@@ -36,8 +40,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         
         <div>
 
-        <?php echo $alert_2; ?>
-            <div class="results-container grid-gap-2rem">
+            <?php echo "<p class='alert2'>" . $alert_2 . "</p>";?>
+            <br>
+
+            <div class="results-container2 grid-gap-2rem">
+
             <?php
                 //  loop through results
                 while ($currentrow = mysqli_fetch_array($results)) {
@@ -51,7 +58,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                         "<a class='card' href='" . $link . "/dish.php?recipe=" . $recipe_id . "'>" .
                             "<img src='" . $img_url . "' class='card-img'>" .
                             "<h2>" . $recipe . "</h2>" .
-                            "<p>" . $total_time . "</p></a><a href='" . $link . "/edit-dish.php?recipe=" . $recipe_id . "'>Edit Dish</a> ";
+                            "<p>" . $total_time . "</p></a><button type='button'><a href='" . $link . "/edit-dish.php?recipe=" . $recipe_id . "'>Edit Dish</a></button> ";
                 }
             ?>
         </div>

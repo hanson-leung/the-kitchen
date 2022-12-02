@@ -48,19 +48,24 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
                         "<a class='card' href='" . $link . "/dish.php?recipe=" . $recipe_id . "'>" .
                             "<img src='" . $img_url . "' class='card-img'>" .
                             "<h2>" . $recipe . "</h2>" .
-                            "<p>" . $total_time . "</p></a>";
+                            "<p class='cardmargin'>" . $total_time . "</p></a>";
                 }
             ?>
         </div>
 
         <!-- next/prev page buttons -->
-        <div class="grid-rows grid-gap-2rem">
-            <a href=>
-                Next Page
-            </a>
+        <div id="pagebuttons">
+
+            <div id="previouspage">
+                <button type="button">
             <a onclick="prevpage()">
                 Previous Page
-            </a>
+            </a></button></div>
+            <div id="nextpage">
+                <button type="button">
+                    <a href=>
+                        Next Page
+                    </a></button></div>
         </div>
 
 

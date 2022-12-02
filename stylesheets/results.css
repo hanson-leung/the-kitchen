@@ -1,7 +1,26 @@
 .results-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
+
+}
+
+.results-container2{
+  display: grid;
+  grid-template-columns: auto auto;
+  padding-bottom: 2rem;
+}
+
+.alert2{
+  font-family: var(--headline), sans-serif, Arial;
+  font-weight: var(--regular);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  color: var(--black);
+  letter-spacing: 0em;
+  line-height: 1em;
+  margin-bottom: 2rem;
 }
 
 .card {
@@ -22,16 +41,133 @@
   padding-bottom: 2rem;
 }
 
+.cardmargin{
+  margin-bottom:1rem;
+}
+
 .finding{
   font-family: var(--headline), sans-serif, Arial;
   font-weight: var(--bold);
   font-style: normal;
   font-weight: 600;
-  font-size: 52px;
+  font-size: 48px;
   margin: 0;
   color: var(--black);
   letter-spacing: -0.02em;
   line-height: 1em;
+  margin-bottom: 2rem;
+}
+
+.pagenavigation{
+  background-color: white;
+}
+
+#pagebuttons{
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-right:70%;
+  margin-bottom: 10%;
+}
+
+@media only screen and (max-width: 768px) {
+  #pagebuttons{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin:0%;
+  }
+  .results-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding-bottom: 2rem;
+
+  }
+
+}
+
+#nextpage{
+  margin-left:1em;
+}
+
+#previouspage{
+  margin-right:1em;
+}
+
+button{
+  background-color:white;
+  font-family: var(--headline), sans-serif, Arial;
+
+}
+
+
+
+
+/* dish things*/
+#titlebutton{
+  margin-bottom:2rem;
+
+}
+
+.cusine{
+  font-family: var(--headline), sans-serif, Arial;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  margin: 0;
+  color: #D6D6D6;
+  letter-spacing: -0.02em;
+  line-height: 1em;
+  margin-bottom:0.5em;
+}
+
+#detailbox{
+  margin-top:2rem;
+  margin-bottom:2rem;
+  padding:2rem;
+  background-color:white;
+  border: #999999 1px solid;
+  border-radius: 10px;
+  margin-left:10%;
+}
+
+.orange{
+  background-color:#ff5800;
+}
+.orangetext{
+  color:#ff5800;
+}
+
+white{
+  color:white;
+}
+
+.detailheader{
+  font-family: var(--headline), sans-serif, Arial;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  margin: 0;
+  color: black;
+  letter-spacing: 0em;
+  line-height: 1em;
+  marign-top:2rem;
+}
+.detailp{
+  font-family: var(--headline), sans-serif, Arial;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 0;
+  letter-spacing: 0em;
+  line-height: 1.5em;
+}
+
+.headline_img{
+  margin-top:2rem;
+}
+
+#maincontainer{
+  display:grid;
+  grid-template-columns: 50% 50%;
 }
 
 /* november 8 */

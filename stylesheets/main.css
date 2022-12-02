@@ -122,8 +122,7 @@ body {
   padding: 0 4rem;
   /*background-image: url("../uploads/branding/Background_final.jpg");
   background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;*/
+  background-repeat: no-repeat;*/
 }
 
 .root {
@@ -164,6 +163,11 @@ input[type="submit"] {
 button,
 input[type="submit"] {
   background-color: var(--lightgrey);
+}
+
+input[type='submit']:hover {
+  color:white;
+  background-color: var(--orange);
 }
 
 /* grid */
