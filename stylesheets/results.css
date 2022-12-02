@@ -103,7 +103,12 @@ button{
 
 }
 
-
+body{
+  background-image: url("../uploads/branding/Background_ver5.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
 
 /* dish things*/
