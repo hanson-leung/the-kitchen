@@ -34,8 +34,6 @@
 }
 
 .editdish{
-  display: grid;
-  grid-auto-flow: row;
   max-width:200px;
 }
 
