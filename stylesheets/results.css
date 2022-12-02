@@ -170,9 +170,13 @@ white{
 
 #maincontainer{
   display:grid;
-  grid-template-columns: 50% 50%;
   grid-auto-flow: column;
 }
+
+@media (min-width: 600px) {
+  #maincontainer { grid-template-columns: repeat(2, 1fr); }
+}
+
 
 /* november 8 */
 
