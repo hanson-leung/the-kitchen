@@ -18,8 +18,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/profile_logic.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
-<!-- additional stylesheets --!>
-<link rel="stylesheet" href="<?php echo $link ?>/stylesheets/profile.css"/>
+<!-- additional stylesheets 
+<link rel="stylesheet" href="<?php echo $link ?>/stylesheets/profile.css"/>--!>
 
 
 <!-- begin body -->
