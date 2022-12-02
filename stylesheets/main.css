@@ -95,8 +95,8 @@ a:visited {
   display: inline-block;
 }
 
-a:link:hover{
-  color: var(--orange);
+a.link:hover{
+  color: var(--hover-grey);
 }
 
 a.link {
