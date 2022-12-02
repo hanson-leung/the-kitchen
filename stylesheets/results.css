@@ -7,7 +7,7 @@
 
 .results-container2{
   display: grid;
-  grid-template-columns: auto auto;
+  grid-auto-flow: row;
   padding-bottom: 2rem;
 }
 
@@ -34,8 +34,13 @@
   width: 100%;
 }
 
+.editdish{
+  display: grid;
+  grid-auto-flow: row;
+}
+
 @media (min-width: 600px) {
-  .card {grid-template-columns: repeat(2, 1fr);}
+  .results-container2 {grid-template-columns: repeat(2, 1fr);}
 }
 
 .card-img {
