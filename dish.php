@@ -10,6 +10,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
 ?>
 
 <html>
+<link rel="stylesheet" href="stylesheets/results.css"/>
 <!-- begin header -->
 <?php
     include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
@@ -25,28 +26,49 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
            include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
         ?>
 
+    <div id="maincontainer">
+        <div id="titlebutton">
+            <p class="cusine"> <?php echo $cuisine ?></p>
+            <div id="title">
         <h1><?php echo $recipe ?></h1>
+                <img src="<?php echo $img_url ?>" class="headline_img">
+                </div>
+
+        </div><!--close titlebutton-->
+
+
+
         <?php echo $edit ?>
-        <img src="<?php echo $img_url ?>" class="headline_img">
-        <p><?php echo $cuisine ?></p>
-        <p><?php echo $prep_time ?></p>
-        <p><?php echo $cooking_time ?></p>
-        <p><?php echo $total_time ?></p>
-        <p><?php echo $recipe_url ?></p>
 
 
+
+        <div id="detailbox">
+            <div id="url">
+                <button type="button" class="orange white">
+                    <a href="<?php echo $recipe_url ?>">Link to Recipe</a>
+                </button></div>
+    <br>
+            <div id="cooktime">
+                <p class="detailheader">Recipe Time</p><br>
+        <p class="detailp">Prep Time: <?php echo $prep_time ?> Mins</p>
+        <p class="detailp">Cooking Time: <?php echo $cooking_time ?> Mins</p>
+        <p class="detailp orangetext">Total Time: <?php echo $total_time ?> Mins</p>
+            </div>
+    <br>
+            <p class="detailheader">Ingredients</p>
         <?php
         // loop through ingredient_view where recipe_id matches
             $sql_ingredient = "SELECT * from ingredient_view WHERE recipe_id = " . $_REQUEST["recipe"];
             $ingredient_results = $mysql->query($sql_ingredient);
             while ($currentrow = mysqli_fetch_array($ingredient_results)) {
-                echo "<div>";
-                echo   "<p>" . $currentrow["quantity"] . "</p>";
-                echo   "<p>" . $currentrow["unit"] . "</p>";
-                echo   "<p>" . $currentrow["ingredient"] . "</p>";
-                echo "</div>";
+                echo "<div><ul>";
+                echo   "<li><p class='detailp'>" . $currentrow["quantity"] . " " . $currentrow["unit"] . " " . $currentrow["ingredient"] . "</p></li>";
+                echo "</ul></div>";
             }
         ?>
+        </div><!--close detailbox-->
+    </div><!--close maincontainer-->
+
     </div>
 </body>
 </html>

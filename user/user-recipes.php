@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 // check if on localhost or on server
@@ -13,6 +14,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/userrecipes_logic.php';
 ?>
 
 <html>
+<head>
+    <link rel="stylesheet" href="stylesheets/results.css"/>
+</head>
 <!-- begin header -->
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
@@ -37,7 +41,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <div>
 
         <?php echo $alert_2; ?>
+            <br>
+
             <div class="results-container grid-gap-2rem">
+
             <?php
                 //  loop through results
                 while ($currentrow = mysqli_fetch_array($results)) {

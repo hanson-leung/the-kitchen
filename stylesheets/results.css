@@ -62,6 +62,79 @@
 button{
   background-color:white;
   font-family: var(--headline), sans-serif, Arial;
+
+}
+
+
+
+
+/* dish things*/
+#titlebutton{
+  margin-bottom:2rem;
+
+}
+
+.cusine{
+  font-family: var(--headline), sans-serif, Arial;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  margin: 0;
+  color: #D6D6D6;
+  letter-spacing: -0.02em;
+  line-height: 1em;
+  margin-bottom:0.5em;
+}
+
+#detailbox{
+  margin-top:2rem;
+  margin-bottom:2rem;
+  padding:2rem;
+  background-color:white;
+  border: #999999 1px solid;
+  border-radius: 10px;
+  margin-left:10%;
+}
+
+.orange{
+  background-color:#ff5800;
+}
+.orangetext{
+  color:#ff5800;
+}
+
+white{
+  color:white;
+}
+
+.detailheader{
+  font-family: var(--headline), sans-serif, Arial;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  margin: 0;
+  color: black;
+  letter-spacing: 0em;
+  line-height: 1em;
+  marign-top:2rem;
+}
+.detailp{
+  font-family: var(--headline), sans-serif, Arial;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 0;
+  letter-spacing: 0em;
+  line-height: 1.5em;
+}
+
+.headline_img{
+  margin-top:2rem;
+}
+
+#maincontainer{
+  display:grid;
+  grid-template-columns: 50% 50%;
 }
 
 /* november 8 */
