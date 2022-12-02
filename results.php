@@ -16,7 +16,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
     <!-- additional stylesheets -->
-    <link rel="stylesheet" href="stylesheets/results.css"/>
+    <link rel="stylesheet" href="<?php echo $link ?>stylesheets/results.css"/>
 
 <!-- insert php logic -->
 <?php
@@ -55,6 +55,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
 
         <!-- next/prev page buttons -->
         <div id="pagebuttons">
+<<<<<<< HEAD
 
             <div id="previouspage">
                 
@@ -68,6 +69,10 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
                     </a></button></div>
                     <br>
                     <br>
+=======
+                <?php echo $button_next_page ?>
+                <?php echo $button_previous_page ?>
+>>>>>>> ba786696a0ab68e18b0815ec41dece74ad67de41
         </div>
 
 
