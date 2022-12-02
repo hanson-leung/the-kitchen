@@ -173,7 +173,7 @@ white{
   grid-auto-flow: row;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
   #maincontainer { grid-template-columns: repeat(2, 1fr); }
 }
 
