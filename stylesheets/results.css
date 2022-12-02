@@ -175,7 +175,7 @@ white{
 
 @media (min-width: 900px) {
   #maincontainer { grid-template-columns: repeat(2, 1fr); }
-  #detailbox {margin-left:0%; }
+  #detailbox {margin-left:-10%; }
 }
 
 
