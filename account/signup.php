@@ -16,7 +16,8 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_logic.php';
 ?>
-
+<!-- additional stylesheets -->
+<link rel="stylesheet" href="<?php echo $link ?>/stylesheets/signup.css"/>
 
 <!-- begin body -->
 <body>
