@@ -171,6 +171,7 @@ white{
 #maincontainer{
   display:grid;
   grid-template-columns: 50% 50%;
+  grid-auto-flow: column;
 }
 
 /* november 8 */
