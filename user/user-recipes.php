@@ -16,7 +16,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/userrecipes_logic.php';
 <html>
 <head>
     <link rel="stylesheet" href="/stylesheets/results.css"/>
-    <link rel="stylesheet" href="<?php echo $link ?>/stylesheets/profile.css"/>
+
 </head>
 <!-- begin header -->
 <?php
