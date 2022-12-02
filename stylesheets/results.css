@@ -163,6 +163,9 @@ white{
 
 .headline_img{
   margin-top:2rem;
+  width:100%;
+  max-height: 800px;
+  object-fit: contain;
 }
 
 #maincontainer{
