@@ -39,13 +39,25 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
         // loop through ingredient_view where recipe_id matches
             $sql_ingredient = "SELECT * from ingredient_view WHERE recipe_id = " . $_REQUEST["recipe"];
             $ingredient_results = $mysql->query($sql_ingredient);
+            
             while ($currentrow = mysqli_fetch_array($ingredient_results)) {
                 echo "<div>";
                 echo   "<p>" . $currentrow["quantity"] . "</p>";
                 echo   "<p>" . $currentrow["unit"] . "</p>";
                 echo   "<p>" . $currentrow["ingredient"] . "</p>";
+                echo "<br>";
                 echo "</div>";
             }
+        echo "<br>";
+        echo "<p> All ingredients:</p>";
+        $sql_ingredient = "SELECT * from ingredient_view WHERE recipe_id = " . $_REQUEST["recipe"];
+        $ingredient_results = $mysql->query($sql_ingredient);
+        while ($currentrow = mysqli_fetch_array($ingredient_results)) {
+            echo "<div>";
+            echo   "<p>" . $currentrow["ingredient"] . "</p>";
+            echo "</div>";
+        }
+
         ?>
     </div>
 </body>
