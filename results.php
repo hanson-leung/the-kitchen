@@ -57,12 +57,12 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
         <div id="pagebuttons">
 
             <div id="previouspage">
-                <button input type="submit">
+                <button type="button"><input type = "submit">
             <a onclick="prevpage()">
                 Previous Page
             </a></button></div>
             <div id="nextpage">
-                <button input type="submit">
+                <button type="button"><input type = "submit">
                     <a href=>
                         Next Page
                     </a></button></div>
