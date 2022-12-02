@@ -42,7 +42,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
 
         <div id="detailbox">
             <div id="url">
-                <button type="button" class="orange white">
+                <button type="button" class="orange-white">
                     <a href="<?php echo $recipe_url ?>" target="_blank">See the Full Recipe</a>
                 </button>
             </div>
