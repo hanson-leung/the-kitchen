@@ -8,8 +8,6 @@
 }
 
 .filter-term{
-  display: grid;
-  grid-gap: 2rem;
   color: var(--orange);
   font-size: 11pt;
   letter-spacing: 1px;
