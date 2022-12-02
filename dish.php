@@ -37,15 +37,12 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
         </div><!--close titlebutton-->
 
 
-
         <?php echo $edit ?>
-
-
 
         <div id="detailbox">
             <div id="url">
                 <button type="button" class="orange white">
-                    <a href="<?php echo $recipe_url ?>">Link to Recipe</a>
+                    <a href="<?php echo $recipe_url ?>" target="_blank">See the Full Recipe</a>
                 </button></div>
     <br>
             <div id="cooktime">
@@ -65,22 +62,8 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
                 echo "<div><ul>";
                 echo   "<li><p class='detailp'>" . $currentrow["quantity"] . " " . $currentrow["unit"] . " " . $currentrow["ingredient"] . "</p></li>";
                 echo "</ul></div>";
-                echo "<div>";
-                echo   "<p>" . $currentrow["quantity"] . "</p>";
-                echo   "<p>" . $currentrow["unit"] . "</p>";
-                echo   "<p>" . $currentrow["ingredient"] . "</p>";
-                echo "<br>";
-                echo "</div>";
+
             }
-        echo "<br>";
-        echo "<p> All ingredients:</p>";
-        $sql_ingredient = "SELECT * from ingredient_view WHERE recipe_id = " . $_REQUEST["recipe"];
-        $ingredient_results = $mysql->query($sql_ingredient);
-        while ($currentrow = mysqli_fetch_array($ingredient_results)) {
-            echo "<div>";
-            echo   "<p>" . $currentrow["ingredient"] . "</p>";
-            echo "</div>";
-        }
 
         ?>
         </div><!--close detailbox-->
