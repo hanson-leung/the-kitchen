@@ -91,10 +91,17 @@
 
 #nextpage{
   margin-left:1em;
+  background-color: var(--lightgrey);
+}
+
+button[type='button']:hover {
+  color:white;
+  background-color: var(--orange);
 }
 
 #previouspage{
   margin-right:1em;
+  background-color: var(--lightgrey);
 }
 
 button{
