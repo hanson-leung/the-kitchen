@@ -8,6 +8,8 @@
 }
 
 .filter-term{
+  display: grid;
+  grid-gap: 2rem;
   color: var(--orange);
   font-size: 11pt;
   letter-spacing: 1px;
@@ -29,4 +31,11 @@ form div {
 
 select::-ms-expand {
   display: none;
+}
+
+body {
+  background-image: url("../uploads/branding/Background_final.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
