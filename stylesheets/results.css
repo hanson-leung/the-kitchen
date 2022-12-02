@@ -129,6 +129,10 @@ button{
   margin-left:10%;
 }
 
+@media (min-width: 900px) {
+  #detailbox {margin-left: 0%;}
+}
+
 .orange{
   background-color:#ff5800;
 }
@@ -175,7 +179,6 @@ white{
 
 @media (min-width: 900px) {
   #maincontainer { grid-template-columns: repeat(2, 1fr); }
-  #detailbox {margin-left:none; }
 }
 
 
