@@ -16,6 +16,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
     include $_SERVER['DOCUMENT_ROOT'] . '/logic/dish_logic.php';
     include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/logic/profile_logic.php';
 ?>
 
 <!-- begin body -->
@@ -37,22 +38,20 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
         </div><!--close titlebutton-->
 
 
-
         <?php echo $edit ?>
-
-
 
         <div id="detailbox">
             <div id="url">
                 <button type="button" class="orange white">
-                    <a href="<?php echo $recipe_url ?>">Link to Recipe</a>
-                </button></div>
-    <br>
+                    <a href="<?php echo $recipe_url ?>" target="_blank">See the Full Recipe</a>
+                </button>
+            </div>
+            <br>
             <div id="cooktime">
                 <p class="detailheader">Recipe Time</p><br>
-        <p class="detailp">Prep Time: <?php echo $prep_time ?> Mins</p>
-        <p class="detailp">Cooking Time: <?php echo $cooking_time ?> Mins</p>
-        <p class="detailp orangetext">Total Time: <?php echo $total_time ?> Mins</p>
+                <p class="detailp">Prep Time: <?php echo $prep_time ?> Mins</p>
+                <p class="detailp">Cooking Time: <?php echo $cooking_time ?> Mins</p>
+                <p class="detailp orangetext">Total Time: <?php echo $total_time ?> Mins</p>
             </div>
     <br>
             <p class="detailheader">Ingredients</p>
@@ -65,24 +64,17 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
                 echo "<div><ul>";
                 echo   "<li><p class='detailp'>" . $currentrow["quantity"] . " " . $currentrow["unit"] . " " . $currentrow["ingredient"] . "</p></li>";
                 echo "</ul></div>";
-                echo "<div>";
-                echo   "<p>" . $currentrow["quantity"] . "</p>";
-                echo   "<p>" . $currentrow["unit"] . "</p>";
-                echo   "<p>" . $currentrow["ingredient"] . "</p>";
-                echo "<br>";
-                echo "</div>";
             }
-        echo "<br>";
-        echo "<p> All ingredients:</p>";
-        $sql_ingredient = "SELECT * from ingredient_view WHERE recipe_id = " . $_REQUEST["recipe"];
-        $ingredient_results = $mysql->query($sql_ingredient);
-        while ($currentrow = mysqli_fetch_array($ingredient_results)) {
-            echo "<div>";
-            echo   "<p>" . $currentrow["ingredient"] . "</p>";
-            echo "</div>";
-        }
 
         ?>
+
+        <form action="<?php echo $link ?>email.php">
+            <div style="width:25%">
+                <br>
+                <input type="submit" value="Share"/>
+            </div>
+        </form>
+
         </div><!--close detailbox-->
     </div><!--close maincontainer-->
 
