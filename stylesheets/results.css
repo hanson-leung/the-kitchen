@@ -91,8 +91,7 @@
 
 #nextpage{
   margin-left:1em;
-  color:var(--black);
-  background-color: var(--lightgrey);
+  
 
 }
 
@@ -103,8 +102,7 @@ button[type='button']:hover {
 
 #previouspage{
   margin-right:1em;
-  color:var(--black);
-  background-color: var(--lightgrey);
+  
 
 }
 
@@ -161,10 +159,6 @@ body{
   color:#ff5800;
 }
 
-.orange-white{
-  color:black;
-  background-color: var(--lightgrey);
-}
 
 .detailheader{
   font-family: var(--headline), sans-serif, Arial;
