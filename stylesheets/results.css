@@ -27,10 +27,15 @@
   /* border: 1px solid var(--grey); */
   border-radius: 12px;
   display: grid;
+  grid-auto-flow: row;
   background-color: var(--white);
   padding: 1rem;
   border: 1px solid var(--grey);
   width: 100%;
+}
+
+@media (min-width: 900px) {
+  .card {grid-template-columns: repeat(2, 1fr);}
 }
 
 .card-img {
