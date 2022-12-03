@@ -36,7 +36,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
     <div class="main-container">
         <div class="gap-2rem">
-            <h1>Hi, <strong><?php echo $_SESSION["user_fname"] ?></strong></h1>
+            <h1>Hi, <?php echo $_SESSION["user_fname"] ?> </h1>
             <p style="color: var(--orange)"><strong>Account Info:</strong></p>
             <p><strong>Name:</strong> <?php echo $fname ." " .  $lname ?></p>
             <p><strong>Email: </strong><?php echo $email ?></p>
