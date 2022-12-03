@@ -103,9 +103,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';
                 </select>
             </div> -->
 
-                <div id="submit" >
+                <div id="submit" style="width:auto;" >
                     <p class="filter-term">&nbsp</p>
-                    <input type="submit"/>
+                    <input type="submit" style="width:50%;"/>
                 </div>
 
             </form>
