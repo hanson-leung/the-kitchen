@@ -34,7 +34,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
         </div>
 
         <div class="searchbox grid-rows grid-gap-2rem">
-            <form class="signup grid-rows grid-gap-2rem" action="signup-complete.php">
+            <form class="signup grid-rows grid-gap-2rem" action="<?php echo $link ?>signup-complete.php">
                 <!-- search -->
                 <div id="email">
                     <input class="" type="email" name="email" placeholder="Email" required/>
