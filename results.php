@@ -54,7 +54,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
         </div>
 
         <!-- next/prev page buttons -->
-        <div id="pagebuttons">
+        <div id="pagebuttons" class="grid-columns grid-gap-2rem">
                 <?php echo $button_next_page ?>
                 <?php echo $button_previous_page ?>
         </div>

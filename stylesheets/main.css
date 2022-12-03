@@ -48,7 +48,8 @@
 }
 
 h1,
-h2, h3 {
+h2,
+h3 {
   font-family: var(--headline), sans-serif, Arial;
   font-weight: var(--bold);
   font-style: normal;
@@ -101,22 +102,22 @@ a:visited {
   display: inline-block;
 }
 
-a.link:hover{
+a.link:hover {
   color: var(--hover-grey);
 }
 
-a.link2:hover{
+a.link2:hover {
   color: var(--hover-grey);
 }
 
 a.link {
-  border-bottom: 1px solid var(--black) ;
-  width:auto;
+  border-bottom: 1px solid var(--black);
+  width: auto;
 }
 
 a.link2 {
-  border-bottom: 1px solid var(--grey) ;
-  width:100px;
+  border-bottom: 1px solid var(--grey);
+  width: 100px;
   margin-left: 50px;
 }
 
@@ -154,7 +155,6 @@ body {
 .root {
   max-width: 1440px;
   margin: 0 auto;
-
 }
 
 .root.small {
@@ -172,7 +172,8 @@ body {
 
 input,
 select,
-button {
+button,
+.button {
   border: 1px solid var(--grey);
   border-radius: 6px;
   width: 100%;
@@ -182,40 +183,41 @@ button {
 
 select,
 button,
+.button,
 input[type="submit"] {
   appearance: none;
   cursor: pointer;
 }
 
+.button,
 button,
 input[type="submit"] {
   background-color: var(--lightgrey);
 }
 
-input[type='submit']:hover {
-  color:white;
+input[type="submit"]:hover {
+  color: white;
   background-color: var(--orange);
 }
 
 input[type="text"] {
-  width:50%;
+  width: 50%;
   margin-bottom: 2rem;
   display: grid;
   grid-auto-flow: row;
 }
 
 input[type="email"] {
-  width:50%;
+  width: 50%;
   display: grid;
   grid-auto-flow: row;
 }
 
 input[type="tel"] {
-  width:50%;
+  width: 50%;
   display: grid;
   grid-auto-flow: row;
 }
-
 
 input[type="checkbox"] {
   width: 5%;
