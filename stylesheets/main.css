@@ -328,9 +328,30 @@ input[type="checkbox"] {
   display: grid;
   grid-auto-flow: row;
   grid-gap: 3rem;
-  width:75%;
+  width:100%;
 }
 
 @media (min-width: 900px) {
   .topcontainer { grid-template-columns: repeat(3, 1fr); }
 }
+
+/*for users.php*/
+
+.container{
+  border-radius: 6px;
+  background-color: var(--lightgrey);
+  padding: 1rem;
+  border: 1px solid var(--grey);
+  width: 50%;
+}
+
+.bigcontainer{
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 1rem;
+}
+
+@media (min-width: 900px) {
+  .bigcontainer { grid-template-columns: repeat(3, 1fr); }
+}
+
