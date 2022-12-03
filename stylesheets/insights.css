@@ -2,3 +2,30 @@
   height: 0.8rem;
   background-color: var(--orange);
 }
+
+body{ background-image: url("../uploads/branding/Background_ver4.jpg");
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: cover;
+}
+
+.smallcontainer{
+  border-radius: 6px;
+  display: grid;
+  background-color: var(--lightgrey);
+  padding: 1rem;
+  border: 1px solid var(--grey);
+  width: 50%;
+}
+
+.bottomcontainer{
+  display: grid;
+  grid-auto-flow: row;
+  width: auto;
+}
+
+@media (min-width: 900px) {
+  .bottomcontainer { grid-template-columns: repeat(3, 0.5fr); }
+}
+
+
