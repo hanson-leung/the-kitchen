@@ -11,8 +11,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_check.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/userallergy_logic.php';
 ?>
- <!-- additional stylesheets -->
- <link rel="stylesheet" href="<?php echo $link ?>stylesheets/allergies.css"/>
+
+
+ 
 
 <html>
 <!-- begin header -->
@@ -20,7 +21,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/userallergy_logic.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
-
+ <!-- additional stylesheets -->
+ <link rel="stylesheet" href="<?php echo $link ?>stylesheets/allergies.css"/>
 
 <!-- begin body -->
 <body>
