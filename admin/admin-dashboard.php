@@ -55,7 +55,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                 <p>Modify Users</p>
             </a>
 
-            <a href="<?php echo $link ?>/admin/recipe-check.php" class="card">
+            <a href="<?php echo $link ?>/admin/data/insights.php" class="card">
                 <p>View Insights</p>
             </a>
         </div>

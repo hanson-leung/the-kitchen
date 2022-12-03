@@ -45,7 +45,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
                         $total_time = ($currentrow["total_time"]/60) . " min";
 
                         echo
-                        "<a class='card' href='" . $link . "/dish.php?recipe=" . $recipe_id . "'>" .
+                        "<a class='card' href='" . $link . "/recipe-analytics.php?recipe=" . $recipe_id . "'>" .
                             "<img src='" . $img_url . "' class='card-img'>" .
                             "<h2>" . $recipe . "</h2>" .
                             "<p class='cardmargin'>" . $total_time . "</p></a>";
