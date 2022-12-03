@@ -17,7 +17,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/recipecheck_logic.php';
 <!-- begin header -->
 
 <!-- additional stylesheets -->
-<link rel="stylesheet" href="<?php echo $link ?>stylesheets/results.css"/>
+<link rel="stylesheet" href="/<?php echo $link ?>stylesheets/results.css"/>
 
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
@@ -60,7 +60,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                         "<a class='card' href='" . $link . "/edit-dish.php?recipe=" . $recipe_id . "'>" .
                             "<img src='" . $img_url . "' class='card-img'>" .
                             "<h2>" . $recipe . "</h2>" .
-                            "<p>" . $total_time . "</p></a><a href='" . $link . "/edit-dish.php?recipe=" . $recipe_id . "'><input type='submit' value='Edit Dish'></a> ";
+                            "<p>" . $total_time . "</p></a><a href='" . $link . "/edit-dish.php?recipe=" . $recipe_id . "'><input type='submit' value='Edit Dish' style = 'width:200px;'></a> ";
                 }
             ?>
         </div>
