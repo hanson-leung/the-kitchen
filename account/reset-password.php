@@ -16,6 +16,8 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
+<!-- additional stylesheets -->
+<link rel="stylesheet" href="<?php echo $link ?>stylesheets/misc.css"/>
 
 <!-- begin body -->
 <body>
@@ -29,7 +31,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
         <div class="gap-2rem">
             <h1>Reset Password</h1>
             <p>
-                The Kitchen
+                To reset your password, input your email.
             </p>
         </div>
 
@@ -40,7 +42,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
                     <input class="" type="email" name="email" placeholder="Email" required/>
                 </div>
                 <div id="submit" >
-                    <input type="submit"/>
+                    <input type="submit" style = "width:auto;"/>
                 </div>
             </form>
         </div>
