@@ -79,6 +79,7 @@
     display: grid;
     grid-template-columns: auto auto;
     margin:0%;
+    margin-bottom: 3rem;
   }
   .results-container {
     display: grid;
