@@ -177,6 +177,7 @@ input[type='submit']:hover {
   background-color: var(--orange);
 }
 
+<<<<<<< HEAD
 input[type="text"] {
   width:auto;
   margin-bottom: 1rem;
@@ -186,6 +187,17 @@ input[type="text"] {
 }
 
 
+=======
+input[type="checkbox"] {
+  width: 5%;
+  border: 1px solid var(--grey);
+  border-radius: 6px;
+  height: auto;
+  padding: auto;
+  font-family: "Helvetica";
+}
+
+>>>>>>> 16ec2a1ee8ef0adeb674d76afa73b57fa1fe87fb
 /* grid */
 .grid-columns {
   display: grid;
