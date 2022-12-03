@@ -43,11 +43,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <p><strong>Phone: </strong><?php echo $phone ?></p>
             <!-- <p><?php echo print_r($_SESSION); ?></p> --!>
             <p><strong>Profile</strong></p>
-            <a href="<?php echo $link ?>/user/edit/edit.php?user=<?php echo $user_id ?>" class="link">Update Profile</a>
+            <a href="<?php echo $link ?>/user/edit/edit.php?user=<?php echo $user_id ?>" class="link2">Update Profile</a>
             <p><strong>Recipes</strong></p>
-            <a href="<?php echo $link ?>/user/user-recipes.php" class="link">Your Recipes</a>
+            <a href="<?php echo $link ?>/user/user-recipes.php" class="link2">Your Recipes</a>
             <p><strong>Allergies</strong></p>
-            <a href="<?php echo $link ?>/user/allergies/user-allergies.php" class="link">Your Allergies</a>
+            <a href="<?php echo $link ?>/user/allergies/user-allergies.php" class="link2">Your Allergies</a>
         </div>
     </div>
 
