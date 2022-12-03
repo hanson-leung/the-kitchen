@@ -35,10 +35,10 @@ $results = $mysql->query($sql);
 
 
 if($_SESSION["security_level"]==1 || $_SESSION["security_level"]==2) {
-    header("Location: <?php echo $link ?>/admin/recipe-check.php?alert=2");
+    header("Location:" . $link . "/admin/recipe-check.php?alert=2");
     exit();
 } else {
-    header("Location: <?php echo $link ?>/user/user-recipes.php?alert=1");
+    header("Location:" . $link . "/user/user-recipes.php?alert=1");
     exit();
 }
 

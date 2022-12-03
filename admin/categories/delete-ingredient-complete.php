@@ -14,7 +14,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 // if no data is set, redirect
 
 if (!isset($_REQUEST["ingredient"])) {
-    header("Location: <?php echo $link ?>/admin/categories/categories.php?alert=3");
+    header("Location:" . $link . "/admin/categories/categories.php?alert=3");
     exit();
 }
 ?>
@@ -31,16 +31,16 @@ if (!isset($_REQUEST["ingredient"])) {
 
         <?php
             if (empty($_REQUEST["confirm"])) {
-                header("Location: <?php echo $link ?>/support/error.php?code=0");
+                header("Location:" . $link . "/support/error.php?code=0");
                 exit();
             } elseif ($_REQUEST["confirm"] == 1) {
-               echo '<a href="<?php echo $link ?>/admin/categories/delete-ingredient-complete.php?confirm=2&ingredient=' . $_REQUEST["ingredient"] .'" class="link">Confirm Delete</a>';
+               echo '<a href="' . $link . '/admin/categories/delete-ingredient-complete.php?confirm=2&ingredient=' . $_REQUEST["ingredient"] .'" class="link">Confirm Delete</a>';
             } elseif ($_REQUEST["confirm"] == 2) {
                 $sql = 'DELETE FROM ingredient WHERE ingredient_id = "' . $_REQUEST['ingredient'] .'"';
                 echo $sql;
                 $results = $mysql->query($sql);
                 // alert that ingredient has been deleted
-                header("Location: <?php echo $link ?>/admin/categories/categories.php?alert=1");
+                header("Location:" . $link . "/admin/categories/categories.php?alert=1");
                 exit();
         }
 ?>
