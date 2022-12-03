@@ -19,9 +19,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/admindashboard_logic.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
+<!-- additional stylesheets -->
+
 
 <!-- begin body -->
-<body>
+<body style="background-image: url('../uploads/branding/Background\ _ver3.jpg');
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: cover;"
+>
     <div  class="root">
         <!-- insert navbar -->
         <?php
@@ -43,19 +49,19 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
          <!-- card container -->
         <div class="grid-columns grid-gap-2rem">
-            <a href="<?php echo $link ?>/admin/recipe-list.php" class="card">
+            <a href="<?php echo $link ?>/admin/recipe-list.php" class="link3">
                 <p>Modify Recipes</p>
             </a>
 
-            <a href="<?php echo $link ?>/admin/categories/categories.php" class="card">
+            <a href="<?php echo $link ?>/admin/categories/categories.php" class="link3">
                 <p>Modify Categories</p>
             </a>
 
-            <a href="<?php echo $link ?>/admin/users.php" class="card">
+            <a href="<?php echo $link ?>/admin/users.php" class="link3">
                 <p>Modify Users</p>
             </a>
 
-            <a href="<?php echo $link ?>/admin/data/insights.php" class="card">
+            <a href="<?php echo $link ?>/admin/data/insights.php" class="link3">
                 <p>View Insights</p>
             </a>
         </div>
