@@ -38,18 +38,18 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         
         <!-- top card container -->
         <h2>General insights</h2>
-        <div class="grid-columns grid-gap-2rem">
+        <div class=" grid-columns grid-gap-2rem">
                 <p>There are <?php echo $total_recipes ?> total recipes</p>
             
-                <p><?php echo $top_contributor ?> is the top contributor with <?php echo $top_contributor_submissions ?> submissions</p>
+                <p><strong><?php echo $top_contributor ?></strong> is the top contributor with <?php echo $top_contributor_submissions ?> submissions</p>
             
-            <a href="<?php echo $link ?>/uploads/analytics/12-2-2022.pdf" class="card">
-                <p>Download Google Analytics Report</p>
-            </a>
+            <a href="<?php echo $link ?>/uploads/analytics/12-2-2022.pdf" class="link3">
+                <p>Download </a>  Google Analytics Report</p>
+            
         </div>
 
         <!-- bottom card container -->
-        <div class="grid-columns grid-gap-2rem">
+        <div class="bottomcontainer">
             <div class="grid-rows grid-gap-2rem">
                 <h2>See the most popular search terms</h2>
                 <?php
@@ -57,7 +57,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                             $search_term = $currentrow["dv_search"];
                             $num_searches = $currentrow["search_num"];
 
-                            echo '<div>';
+                            echo '<div class = "smallcontainer">';
                             echo '<p>' . $search_term . '</p>';
                             echo '<div class="grid-columns grid-gap-2rem" style="width:fit-content">';
                             echo '<div class="dv_bar" style="width:' . $num_searches . 'px"></div>';
@@ -67,6 +67,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                     }
             ?>
             </div>
+            <br>
+            <br>
+            <br>
             <div class="grid-rows grid-gap-2rem">
                 <h2>See the most popular recipes</h2>
                 <?php
@@ -74,7 +77,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                             $recipe_term = $currentrow["dv_recipe"];
                             $num_searches = $currentrow["recipe_num"];
 
-                            echo '<div>';
+                            echo '<div class = "smallcontainer">';
                             echo '<p>' . $recipe_term . '</p>';
                             echo '<div class="grid-columns grid-gap-2rem" style="width:fit-content">';
                             echo '<div class="dv_bar" style="width:' . $num_searches . 'px"></div>';
@@ -86,6 +89,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             </div>
         </div>
 
+    </div>
     </div>
 
 </body>
