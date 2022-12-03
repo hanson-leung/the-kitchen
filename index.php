@@ -9,13 +9,11 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
 }
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
-include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';;
 ?>
 
 <html>
 <!-- begin header -->
-<?php
-?>
     <!-- additional stylesheets -->
     <link rel="stylesheet" href="<?php echo $link ?>/stylesheets/home.css"/>
 
@@ -36,7 +34,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';
         </div>
 
         <div class="searchbox grid-rows grid-gap-2rem">
-            <form class="filter" action="<?php echo $link ?>search-analytics.php">
+            <form class="filter" action="<?php echo $link ?>/search-analytics.php">
                 <div>
                     <input name="page" type="hidden" value="1"/>
                 </div>
@@ -111,7 +109,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';
             </form>
             <div class="surprise">
                 <p>
-                         Or, <a class= "surprisebutton" href="dish.php?recipe=16" ><strong><span>surprise me!</span></strong></a>
+                         Or, <a class= "surprisebutton" href="<?php echo $link ?>/dish.php?recipe=16" ><strong><span>surprise me!</span></strong></a>
                    </p>
             </div>
         </div>
