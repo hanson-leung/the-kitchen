@@ -22,7 +22,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
  <!-- additional stylesheets -->
- <link rel="stylesheet" href="<?php echo $link ?>stylesheets/allergies.css"/>
+ <link rel="stylesheet" href="/<?php echo $link ?>stylesheets/allergies.css"/>
+ <link rel="stylesheet" href="/<?php echo $link ?>stylesheets/misc.css"/>
 
 <!-- begin body -->
 <body>
