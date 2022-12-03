@@ -15,6 +15,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/recipecheck_logic.php';
 
 <html>
 <!-- begin header -->
+
+<!-- additional stylesheets -->
+<link rel="stylesheet" href="<?php echo $link ?>stylesheets/results.css"/>
+
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
@@ -32,14 +36,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <!-- welcome text -->
         <div class="gap-2rem">
             <h1>Hi, <?php echo $_SESSION["user_fname"] ?></h1>
-            <p>There are <?php echo $num_results ?> reviews awaiting approval</p>
+        </div>
+        <div class="grid-gap-2rem">  
+            <p>There are currently <?php echo $num_results ?> reviews awaiting approval</p>
         </div>
 
         <?php
             echo $alert
         ?>
         <!-- card container -->
-        <div class="">
+        <div class="results-container grid-gap-2rem">
 
                     <?php
                 //  loop through results
@@ -54,7 +60,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                         "<a class='card' href='" . $link . "/edit-dish.php?recipe=" . $recipe_id . "'>" .
                             "<img src='" . $img_url . "' class='card-img'>" .
                             "<h2>" . $recipe . "</h2>" .
-                            "<p>" . $total_time . "</p></a><a href='" . $link . "/edit-dish.php?recipe=" . $recipe_id . "'>Edit Dish</a> ";
+                            "<p>" . $total_time . "</p></a><a href='" . $link . "/edit-dish.php?recipe=" . $recipe_id . "'><input type='submit' value='Edit Dish'></a> ";
                 }
             ?>
         </div>
