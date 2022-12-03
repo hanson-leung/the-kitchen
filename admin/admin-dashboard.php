@@ -36,9 +36,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <!-- card container -->
         <div class="grid-columns grid-gap-2rem">
-            <a href="<?php echo $link ?>/admin/recipe-check.php" class="card">
-            <p>There are <?php echo $num_results ?> reviews awaiting approval</p>
-            </a>
+            
+            <p>There are <a href="<?php echo $link ?>/admin/recipe-check.php" class="link"><strong><?php echo $num_results ?> reviews </strong></a> awaiting approval</p>
+            
         </div>
 
          <!-- card container -->
