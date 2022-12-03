@@ -110,6 +110,10 @@ a.link2:hover {
   color: var(--hover-grey);
 }
 
+a.link3:hover {
+  color: var(--hover-grey);
+}
+
 a.link {
   border-bottom: 1px solid var(--black);
   width: auto;
@@ -117,8 +121,13 @@ a.link {
 
 a.link2 {
   border-bottom: 1px solid var(--grey);
-  width: 100px;
+  width: fit-content;
   margin-left: 50px;
+}
+
+a.link3 {
+  border-bottom: 1px solid var(--grey);
+  width: fit-content;
 }
 
 /* general */
@@ -245,6 +254,8 @@ input[type="checkbox"] {
   grid-gap: 2rem;
 }
 
+
+
 .grid-center {
   justify-self: center;
 }
@@ -309,4 +320,17 @@ input[type="checkbox"] {
   border: 1px solid var(--yellow);
   background-color: var(--yellow-20pct);
   padding: 2rem;
+}
+
+/*for categories.php*/
+
+.topcontainer{
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 3rem;
+  width:75%;
+}
+
+@media (min-width: 900px) {
+  .topcontainer { grid-template-columns: repeat(3, 1fr); }
 }
