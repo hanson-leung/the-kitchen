@@ -19,6 +19,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
 ?>
 
 <!-- additional stylesheets -->
+<link rel="stylesheet" href="<?php echo $link ?>stylesheets/misc.css"/>
 <link rel="stylesheet" href="<?php echo $link ?>stylesheets/allergies.css"/>
 
 <!-- begin body -->
@@ -28,7 +29,11 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
         <?php
            include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
         ?>
-
+        <h1>Add Allergy</h1>
+        <br>
+        <p>Please choose one of the following if applicable.</p>
+        <br>
+        <br>
         <form action="<?php echo $link ?>/user/allergies/add-allergy-complete.php">
             <select name="ingredient">
                 <?php
