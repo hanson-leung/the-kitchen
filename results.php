@@ -55,8 +55,24 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
 
         <!-- next/prev page buttons -->
         <div id="pagebuttons">
+<<<<<<< HEAD
+
+            <div id="previouspage">
+                
+            <a style = "width:100%;" onclick="prevpage()">
+                <input type="submit" value ="Previous Page">
+            </a></button></div>
+            <div id="nextpage">
+                
+                    <a style = "width:100%;" href=>
+                        <input type="submit" value="Next Page">
+                    </a></button></div>
+                    <br>
+                    <br>
+=======
                 <?php echo $button_next_page ?>
                 <?php echo $button_previous_page ?>
+>>>>>>> ba786696a0ab68e18b0815ec41dece74ad67de41
         </div>
 
 
