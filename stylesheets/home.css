@@ -37,3 +37,16 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.surprise{
+  font-size: 20pt;
+  margin:auto;
+}
+
+a.surprisebutton{
+  color:var(--orange);
+}
+
+a.surprisebutton:hover{
+  color:var(--yellow);
+}
