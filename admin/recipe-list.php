@@ -31,15 +31,15 @@ adminOnly();
         <?php
            include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
         ?>
-    <h1>Modify Recipes</h1>
-    <br>
-<p>There are 
-    <?php
-     echo $num_results;
-    ?>
- recipes. Click on each recipe to modify.</p>
- <br><br><br>
-
+        <div class="main-container">
+        <!-- welcome text -->
+        <div class="gap-2rem">
+        <h1>Modify Recipes</h1>
+        </div>
+        <div class="grid-gap-2rem">
+            <p>There are <?php echo $num_results ?> recipes. Click on each recipe to modify.</p>
+</div>
+ 
         <div class="results-container2 grid-gap-2rem">
             <?php
                 //  loop through results
