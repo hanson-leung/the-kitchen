@@ -8,16 +8,15 @@ body{
 #allergylist{
     background-color: var(--lightgrey);
     display: grid;
-    grid-auto-flow: row;
     grid-gap: 2rem;
 }
 
 .allergy{
   border-radius: 6px;
   display: grid;
-  background-color: var(--white);
+  background-color: var(--yellow);
   padding: 1rem;
   border: 1px solid var(--grey);
-  width: 100%;
+  width: fit-content;
 }
 
