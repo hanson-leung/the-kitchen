@@ -102,24 +102,26 @@ $sql_pagination = "LIMIT " . $limit . " OFFSET " . $offset;
     // display or hide next or previous buttons depending on page
     if ($_GET['page'] >= 1 && $_GET['page'] < $total_pages) {  
         $button_next_page = '
-                <button type="button" class="button">
-                    <a href="' . $search_path_next .'">
+
+                    <a class="button" href="' . $search_path_next .'">
                         Next Page
                     </a>
-                </button>
+
         ';
-    } elseif ($_GET['page'] <= $total_pages ) {
+    } 
+
+        if ($_GET['page'] <= $total_pages ) {
          $button_previous_page = '
-                <button type="button" class="button">
-                    <a href="' . $search_path_previous . '">
+
+                    <a class="button" href="' . $search_path_previous . '">
                         Previous Page
                     </a>
-                </button>
+
         ';
     }
 
     // redirect if page number is more than the total pages needed to display all results
-    if ($_REQUEST["page"] > $total_pages) {
+    if ($total_pages != 0 && $_REQUEST["page"] > $total_pages) {
         header("Location:" . $link . "/index.php?error=2");
         exit(); 
     }
