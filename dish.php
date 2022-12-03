@@ -122,10 +122,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                     ?>
                     <p>
             <?php
-                    echo "<br>";
-                    echo "Thank You! The following email was sent:";
-                    echo "<br>";
+                    echo "<h3>Thank You! The following email was sent:</h3>";
+                    echo "<br><br>";
                     echo "<hr><p>Email string: " . "mail($to,$subject,$message,$headers</p>";
+                    ?>
+                        <br><br>
+                    <div id="url">
+                        <a style = "width:100%;" href="<?php echo $link ?>index.php"><input type="submit" value="Back to Homepage" style="background-color: var(--orange); color:white;"></a>
+                        </button>
+                    </div>
+                        <?php
                 } else {
                     echo "ERROR. |" , $test . "| Your email was not sent.";
                 }
