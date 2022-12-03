@@ -182,7 +182,7 @@ input[type="text"] {
   margin-bottom: 2rem;
   margin-top: 1rem;
   display: grid;
-  grid-auto-flow: column;
+  grid-auto-flow: row;
 }
 
 
