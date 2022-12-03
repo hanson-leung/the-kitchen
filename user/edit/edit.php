@@ -18,7 +18,8 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
- 
+ <!-- additional stylesheets -->
+ <link rel="stylesheet" href="<?php echo $link ?>stylesheets/misc.css"/>
 
 <!-- begin body -->
 <body>
@@ -54,10 +55,10 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
             ?>
             <br>
             <br>
-            <p><strong>First Name </strong></p><input type="text" name="fname" value="<?php echo $fname ?>">
-            <p><strong>Last Name </strong></p><input type="text" name="lname" value="<?php echo $lname ?>">
-            <p><strong>Email </strong></p><input type="text" name="email" value="<?php echo $email ?>">
-            <p><strong>Phone </strong></p><input type="text" name="phone" value="<?php echo $phone ?>">
+            <p><strong>First Name </strong></p><br><input type="text" name="fname" value="<?php echo $fname ?>">
+            <p><strong>Last Name </strong></p><br><input type="text" name="lname" value="<?php echo $lname ?>">
+            <p><strong>Email </strong></p><br><input type="text" name="email" value="<?php echo $email ?>">
+            <p><strong>Phone </strong></p><br><input type="text" name="phone" value="<?php echo $phone ?>">
             <input type="hidden" name="user_id" value="<?php echo $user_id ?>">
             <input type="submit" name="update" value="Update" style ="width:100px;">
         </form>
