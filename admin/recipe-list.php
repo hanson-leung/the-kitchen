@@ -40,7 +40,7 @@ adminOnly();
  recipes. Click on each recipe to modify.</p>
  <br><br><br>
 
-        <div class="results-container grid-gap-2rem">
+        <div class="results-container2 grid-gap-2rem">
             <?php
                 //  loop through results
                 while ($currentrow = mysqli_fetch_array($results)) {
@@ -68,10 +68,7 @@ adminOnly();
         </div>
 
         <!-- next/prev page buttons -->
-        <div id="pagebuttons" class="grid-columns grid-gap-2rem">
-                <?php echo $button_next_page ?>
-                <?php echo $button_previous_page ?>
-        </div>
+        
 
 
     </div>
