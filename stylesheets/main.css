@@ -99,6 +99,10 @@ a.link:hover{
   color: var(--hover-grey);
 }
 
+a.link2:hover{
+  color: var(--hover-grey);
+}
+
 a.link {
   border-bottom: 1px solid var(--black) ;
   width:auto;
