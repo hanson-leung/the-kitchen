@@ -18,6 +18,8 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
+ 
+
 <!-- begin body -->
 <body>
     <div  class="root">
@@ -26,7 +28,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
            include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
         ?>
         <h1>Update User</h1>
-        
+        <br><br><br>
         <?php
         // search through main_view  where recipe_id matches, assign results to php variables
             $sql = "SELECT * from user WHERE user_id = " . $_REQUEST["user"];
@@ -50,14 +52,18 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
                   echo ' <input type="hidden" name="security_level" value="' . $security_level . '">';
               }
             ?>
-            <input type="text" name="fname" value="<?php echo $fname ?>">
-            <input type="text" name="lname" value="<?php echo $lname ?>">
-            <input type="text" name="email" value="<?php echo $email ?>">
-            <input type="text" name="phone" value="<?php echo $phone ?>">
+            <br>
+            <br>
+            <p><strong>First Name </strong></p><input type="text" name="fname" value="<?php echo $fname ?>">
+            <p><strong>Last Name </strong></p><input type="text" name="lname" value="<?php echo $lname ?>">
+            <p><strong>Email </strong></p><input type="text" name="email" value="<?php echo $email ?>">
+            <p><strong>Phone </strong></p><input type="text" name="phone" value="<?php echo $phone ?>">
             <input type="hidden" name="user_id" value="<?php echo $user_id ?>">
-            <input type="submit" name="update" value="Update">
+            <input type="submit" name="update" value="Update" style ="width:100px;">
         </form>
-        <a href="<?php echo $link ?>/user/edit/delete-complete.php?confirm=1&user=<?php echo $user_id?>" class="link">Delete</a>
+        <br>
+        <br>
+        <a href="<?php echo $link ?>/user/edit/delete-complete.php?confirm=1&user=<?php echo $user_id?>"><input type = "submit" value = "Delete User"></a>
 
 
 
