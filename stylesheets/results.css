@@ -90,22 +90,12 @@
 
 }
 
-#nextpage{
-  margin-left:1em;
-  
-
-}
 
 button[type='button']:hover {
   color:white;
   background-color: var(--orange);
 }
 
-#previouspage{
-  margin-right:1em;
-  
-
-}
 
 button{
   background-color:white;
