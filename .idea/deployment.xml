@@ -6,7 +6,7 @@
       <paths name="webdev.iyaclasses.com">
         <serverdata>
           <mappings>
-            <mapping deploy="/public_html/acad276/the-kitchen" local="$PROJECT_DIR$" web="/~hansonle/acad276/the-kitchen" />
+            <mapping deploy="/public_html/acad276/Labs" local="$PROJECT_DIR$" web="webdev.iyaclasses.com" />
           </mappings>
         </serverdata>
       </paths>

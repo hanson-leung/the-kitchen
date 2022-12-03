@@ -176,6 +176,15 @@ input[type='submit']:hover {
   background-color: var(--orange);
 }
 
+input[type="checkbox"] {
+  width: 5%;
+  border: 1px solid var(--grey);
+  border-radius: 6px;
+  height: auto;
+  padding: auto;
+  font-family: "Helvetica";
+}
+
 /* grid */
 .grid-columns {
   display: grid;
