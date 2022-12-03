@@ -18,6 +18,9 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     include $_SERVER['DOCUMENT_ROOT'] . '/logic/editdish_logic.php';
 ?>
 
+<!-- additional stylesheets -->
+<link rel="stylesheet" href="<?php echo $link ?>stylesheets/misc.css"/>
+
 <!-- begin body -->
 <body>
     <div  class="root">
@@ -44,8 +47,13 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
                 $status = $currentrow["status"];
             }      
         ?> 
-
-        <form action="edit-dish-complete.php">
+        <br>
+        <p>Feeling creative? Customize recipes to create a personalized dish!</p>
+        <br>
+        <br>
+        <p><strong>Status</strong></p>
+        <br>
+        <form action="<?php echo $link ?>edit-dish-complete.php">
             <?php
               if($_SESSION["security_level"]==1 || $_SESSION["security_level"]==2) {
                 include $_SERVER['DOCUMENT_ROOT'] . '/logic/editdish_forminclude.php';
@@ -53,12 +61,15 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
                   echo ' <input type="hidden" name="status" value="1">';
               }
             ?>
-            <input type="text" name="recipe" value="<?php echo $recipe ?>">
-            <input type="text" name="prep_time" value="<?php echo $prep_time ?>">
-            <input type="text" name="cooking_time" value="<?php echo $cooking_time ?>">
-            <input type="text" name="recipe_url" value="<?php echo $recipe_url ?>">
-            <input type="text" name="img_url" value="<?php echo $img_url ?>">
-            <select name="cuisine">
+            <br>
+            <br>
+            <p><strong>Dish</strong></p><br><input type="text" name="recipe" value="<?php echo $recipe ?>">
+            <p><strong>Prep Time</strong></p><br><input type="text" name="prep_time" value="<?php echo $prep_time ?>">
+            <p><strong>Cooking Time</strong></p><br><input type="text" name="cooking_time" value="<?php echo $cooking_time ?>">
+            <p><strong>Recipe Link</strong></p><br><input type="text" name="recipe_url" value="<?php echo $recipe_url ?>">
+            <p><strong>Image Link</strong></p><br><input type="text" name="img_url" value="<?php echo $img_url ?>">
+            
+            <p><strong>Cuisine</strong></p><br><select name="cuisine" style="width:50%;">
                 <option value="<?php echo $cuisine_id ?>" selected><?php echo $cuisine ?></option>
                 <?php
                 $sql = "SELECT * FROM cuisine";
@@ -68,16 +79,23 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
                 }
                 ?>
             </select>
+            <br>
+            <br>
+            <br>
             <input type="hidden" name="recipe_id" value="<?php echo $recipe_id ?>">
-            <input type="submit" name="update" value="Update">
+            <input type="submit" name="update" value="Update" style="width:auto;">
         </form>
-        <a href="<?php echo $link ?>/delete-dish-complete.php?confirm=1&recipe=<?php echo $_REQUEST["recipe"]?>" class="link">Delete</a>
-
+        <br>
+        <br>
         
+        <a href="<?php echo $link ?>/delete-dish-complete.php?confirm=1&recipe=<?php echo $_REQUEST["recipe"]?>"><input type = "submit" value = "Delete Recipe"></a>
+        <br>
+        <br>
+        <br>
 
 
         <!-- <h2>Ingredients</h2>
-        <form action="edit-dish-complete.php">
+        <form action="<?php echo $link ?>edit-dish-complete.php">
             <select name="cuisine">
                 <option value="<?php echo $ingredients ?>" selected><?php echo $cuisine ?></option>
                 <?php

@@ -52,7 +52,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                     <input class="" type="text" name="password" placeholder="Password" required/>
                 </div>
                 <div>
-                    <input type="submit">
+                    <input type="submit" style="width:auto;">
                 </div>
             </form>
         </div>

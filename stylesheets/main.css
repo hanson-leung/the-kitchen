@@ -100,9 +100,14 @@ a.link:hover{
 }
 
 a.link {
+  border-bottom: 1px solid var(--black) ;
+  width:auto;
+}
+
+a.link2 {
   border-bottom: 1px solid var(--grey) ;
   width:100px;
-  margin-left:50px;
+  margin-left: 50px;
 }
 
 /* general */
@@ -134,6 +139,7 @@ body {
 .root {
   max-width: 1440px;
   margin: 0 auto;
+
 }
 
 .root.small {
@@ -175,6 +181,26 @@ input[type='submit']:hover {
   color:white;
   background-color: var(--orange);
 }
+
+input[type="text"] {
+  width:50%;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-auto-flow: row;
+}
+
+input[type="email"] {
+  width:50%;
+  display: grid;
+  grid-auto-flow: row;
+}
+
+input[type="tel"] {
+  width:50%;
+  display: grid;
+  grid-auto-flow: row;
+}
+
 
 input[type="checkbox"] {
   width: 5%;

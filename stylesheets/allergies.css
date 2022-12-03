@@ -1,1 +1,23 @@
+body{
+    background-image: url("../uploads/branding/Background_ver4.jpg");
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+#allergylist{
+    background-color: var(--lightgrey);
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 2rem;
+}
+
+.allergy{
+  border-radius: 6px;
+  display: grid;
+  background-color: var(--white);
+  padding: 1rem;
+  border: 1px solid var(--grey);
+  width: 100%;
+}
 

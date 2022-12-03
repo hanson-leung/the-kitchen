@@ -59,7 +59,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
                     <input class="" type="hidden" name="security-level" value="0" required/>
                 </div>
                 <div id="submit" >
-                    <input type="submit"/>
+                    <input type="submit" style="width:auto;"/>
                 </div>
 
             </form>

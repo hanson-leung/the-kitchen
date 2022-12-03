@@ -36,7 +36,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';
         </div>
 
         <div class="searchbox grid-rows grid-gap-2rem">
-            <form class="filter" action="results.php">
+            <form class="filter" action="<?php echo $link ?>search-analytics.php">
                 <div>
                     <input name="page" type="hidden" value="1"/>
                 </div>
@@ -111,7 +111,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';
             </form>
             <div>
                 <p>
-                    Or, <a href="dish.php?recipe=16" style="color:var(--orange);"><strong>surprise me!</strong></a>
+                    Or, <a href="dish.php?recipe=16" style="color:var(--orange);" ><strong>surprise me!</strong></a>
                 </p>
             </div>
         </div>
