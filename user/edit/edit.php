@@ -64,6 +64,9 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
         <br>
         <br>
         <a href="<?php echo $link ?>/user/edit/delete-complete.php?confirm=1&user=<?php echo $user_id?>"><input type = "submit" value = "Delete User"></a>
+        <br>
+        <br>
+        <br>
 
 
 
