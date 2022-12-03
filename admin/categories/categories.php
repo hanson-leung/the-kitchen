@@ -45,7 +45,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <div class="topcontainer">
             <div>
                 <form action="<?php echo $link ?>/admin/categories/delete-cuisine-complete.php">
-                    <select name="cuisine">
+                    <p><strong>Cuisine<select name="cuisine"></strong></p>
                         <?php
                         $sql = "SELECT * FROM cuisine";
                         $results = $mysql->query($sql);
@@ -54,18 +54,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                         }
                         ?>
                     </select>
+
                     <input type="hidden" name="confirm" value="1">
-                    <input value="Delete" type="submit">
+                    <br>
+                    <br>
+                    <input value="Delete" type="submit" style="width:auto;">
                 </form>
                 <form action="<?php echo $link ?>/admin/categories/add-cuisine-complete.php">
                     <input type="text" name="cuisine">
-                    <input value="Add" type="submit">
+                    
+                    <input value="Add" type="submit" style="width:auto;">
                 </form>
             </div>
             
             <div>
                 <form action="<?php echo $link ?>/admin/categories/delete-tag-complete.php">
-                    <select name="tag">
+                <p><strong>Tag<select name="tag"></strong></p>
                         <?php
                         $sql = "SELECT * FROM tag";
                         $results = $mysql->query($sql);
@@ -75,16 +79,19 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                         ?>
                     </select>
                     <input type="hidden" name="confirm" value="1">
-                    <input value="Delete" type="submit">
+                    <br>
+                    <br>
+                    <input value="Delete" type="submit" style="width:auto;">
                 </form>
                 <form action="<?php echo $link ?>/admin/categories/add-tag-complete.php">
                     <input type="text" name="tag">
-                    <input value="Add" type="submit">
+                    <input value="Add" type="submit" style="width:auto;">
                 </form>
             </div>
+
             <div>
                 <form action="<?php echo $link ?>/admin/categories/delete-ingredient-complete.php">
-                    <select name="ingredient">
+                <br><br><p><strong>Ingredients<select name="ingredient"></strong></p>
                         <?php
                         $sql = "SELECT * FROM ingredient";
                         $results = $mysql->query($sql);
@@ -94,11 +101,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                         ?>
                     </select>
                     <input type="hidden" name="confirm" value="1">
-                    <input value="Delete" type="submit">
+                    <br>
+                    <br>
+                    <input value="Delete" type="submit" style="width:auto;">
                 </form>
                 <form action="<?php echo $link ?>/admin/categories/add-ingredient-complete.php">
                     <input type="text" name="ingredient">
-                    <input value="Add" type="submit">
+                    <input value="Add" type="submit" style="width:auto;">
                 </form>
             </div>
         </div>
