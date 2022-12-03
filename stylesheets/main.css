@@ -100,9 +100,14 @@ a.link:hover{
 }
 
 a.link {
+  border-bottom: 1px solid var(--black) ;
+  width:auto;
+}
+
+a.link2 {
   border-bottom: 1px solid var(--grey) ;
   width:100px;
-  margin-left:50px;
+  margin-left: 50px;
 }
 
 /* general */
@@ -180,6 +185,18 @@ input[type='submit']:hover {
 input[type="text"] {
   width:50%;
   margin-bottom: 2rem;
+  display: grid;
+  grid-auto-flow: row;
+}
+
+input[type="email"] {
+  width:50%;
+  display: grid;
+  grid-auto-flow: row;
+}
+
+input[type="tel"] {
+  width:50%;
   display: grid;
   grid-auto-flow: row;
 }
