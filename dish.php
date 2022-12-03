@@ -53,9 +53,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                 <p class="detailp orangetext">Total Time: <?php echo $total_time ?> Mins</p>
             </div>
             <br>
+
+            <?php
+            $recipeTime = ["<strong><ul><li>Prep Time:</strong> $prep_time Mins</li>",
+                "<strong><li>Cooking Time:</strong> $cooking_time Mins</li>",
+                "<strong><li>Total Time:</strong> $total_time Mins</li></ul>"
+            ];
+            $formatRecipeTime = implode(", ", $recipeTime)."<br>";
+            $formatRecipeTime = str_replace(',', '', $formatRecipeTime);
+
+            ?>
+
             <p class="detailheader">Ingredients</p>
             <?php
             // loop through ingredient_view where recipe_id matches
+
+            $allIngredients = [];
             $sql_ingredient = "SELECT * from ingredient_view WHERE recipe_id = " . $_REQUEST["recipe"];
             $ingredient_results = $mysql->query($sql_ingredient);
 
@@ -63,152 +76,71 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                 echo "<div><ul>";
                 echo "<li><p class='detailp'>" . $currentrow["quantity"] . " " . $currentrow["unit"] . " " . $currentrow["ingredient"] . "</p></li>";
                 echo "</ul></div>";
+
+                array_push($allIngredients, "<ul><li>" . $currentrow["quantity"] . " " . $currentrow["unit"] . " " . $currentrow["ingredient"] . "</li></ul>");
             }
 
-            $recipeName = $recipe;
+
+            $formatAllIngredients = implode(", ", $allIngredients)."<br>";
+            $formatAllIngredients = str_replace(',', '', $formatAllIngredients);
 
             ?>
 
             <br><br>
             <hr>
             <p class="detailheader">Share this Recipe</p>
+            <br><br>
 
             <?php
+
             if(empty($_REQUEST["destinationemail"])) {
-            ?>
-                <form class="signup grid-rows"
-                      action="<?php echo $link ?>email-confirm.php" method="get">
-                    <br>
-
+                ?>
+                <form class="signup grid-rows" action="" method="post">
                     <div id="email">
-                        <input class="" type="email" name="destinationEmail" placeholder="example@gmail.com" required/>
-                        <br>
-                    </div>
-
-                    <br><br>
-                    <p class="detailp" style="line-height: 2.5em">What should we include:</p>
-                    <div style="font-family: Helvetica; line-height: 30px; padding-left: 1em">
-
-                        <input type="checkbox" id="emailChoice0" name="receive" value="cuisine"/>
-                        <label for="contactChoice1">Cuisine</label>
-                        <br>
-
-                        <input type="checkbox" id="emailChoice1" name="receive" value="link"/>
-                        <label for="contactChoice1">Recipe URL</label>
-                        <br>
-
-                        <input type="checkbox" id="emailChoice2" name="receive" value="prepTime"/>
-                        <label for="contactChoice2">Prep Time</label>
-                        <br>
-
-                        <input type="checkbox" id="emailChoice3" name="receive" value="cookTime"/>
-                        <label for="contactChoice2">Cook Time</label>
-                        <br>
-
-                        <input type="checkbox" id="emailChoice4" name="receive" value="totalTime"/>
-                        <label for="contactChoice2">Total Time</label>
-                        <br>
-
-                        <input type="checkbox" id="emailChoice5" name="receive" value="ingredients"/>
-                        <label for="contactChoice2">Ingredients</label>
+                        <input class="" type="text" name="destinationemail" placeholder="example@gmail.com" required/>
                         <br><br>
                     </div>
 
-                    <input type="submit" value="Send Email"/>
-                </form>
-            <?php
-
-    } else {
-        // form was submitted so email results
-
-        $to = "nhso@usc.edu";
-        $subject = "Ingredients for: " . "recipe" ;
-        $message = "testing";
-        $from = "thekitchenbot@gmail.com";
-        $headers = "FROM: The Kitchen < thekitchenbot@gmail.com>";
-        $test = mail($to,$subject,$message,$headers);
-
-        if ($test == 1) {
-            echo "Thank  You. Your email was sent.";
-            echo "<br><br><em>(Server response: " . $test . ")</em> ";
-            echo "<hr>Email string:" . "mail($to,$subject,$message,$headers)";
-        } else {
-            echo "ERROR. |" , $test . "| Your email was not sent.";
-            // probably should send email to webmaster that there was a problem.
-        }
-        exit();
-    }
-    ?>
-<!--
-
-                    <form class="signup grid-rows"
-                          action="">
-                        <br>
-
-                        <div id="email">
-                            <input class="" type="email" name="destinationEmail" placeholder="example@gmail.com" required/>
-                            <br>
-                        </div>
-
-                        <br><br>
-                        <p class="detailp" style="line-height: 2.5em">What should we include:</p>
-                        <div style="font-family: Helvetica; line-height: 30px; padding-left: 1em">
-
-                            <input type="checkbox" id="emailChoice0" name="receive" value="cuisine"/>
-                            <label for="contactChoice1">Cuisine</label>
-                            <br>
-
-                            <input type="checkbox" id="emailChoice1" name="receive" value="link"/>
-                            <label for="contactChoice1">Recipe URL</label>
-                            <br>
-
-                            <input type="checkbox" id="emailChoice2" name="receive" value="prepTime"/>
-                            <label for="contactChoice2">Prep Time</label>
-                            <br>
-
-                            <input type="checkbox" id="emailChoice3" name="receive" value="cookTime"/>
-                            <label for="contactChoice2">Cook Time</label>
-                            <br>
-
-                            <input type="checkbox" id="emailChoice4" name="receive" value="totalTime"/>
-                            <label for="contactChoice2">Total Time</label>
-                            <br>
-
-                            <input type="checkbox" id="emailChoice5" name="receive" value="ingredients"/>
-                            <label for="contactChoice2">Ingredients</label>
-                            <br><br>
-                        </div>
-
+                    <div style="width:25%">
                         <input type="submit" value="Send Email"/>
-                    </form>
-                    --><?php
-            /*                    // END of form... now close "if" branch...
-                            } else {
-                                // form was submitted so email results
+                    </div>
+                </form>
+                <?php
 
-                                $to = "nhso@usc.edu"; // populated by form
-                                // this would be the permanent address  you want all feedback to go to.
-                                $subject = "Ingredients for: " . $recipe; // from the form
+            } else {
+                // form was submitted so email results
 
-                                $message = $_REQUEST["userfeedback"]; // from the form
-                                $from = "thekitchenbot@gmail.com"; // from the form
-                                $headers = "From: $from"; // create a header entry for "FROM" field of email
-                                $headers = "From:$from"; // create a header entry for "FROM" field of email
-                                $headers = "FROM: The Kitchen < thekitchenbot@gmail.com>";
-                                // More complicated "FROM" field that has name <email> syntax
-                                $test = mail($to, $subject, $message, $headers);
+                $to = $_REQUEST["destinationemail"];
+                $subject = "Ingredients for " . $recipe . "";
+                $url = $recipe_url;
+                $message = "<strong>Recipe name: </strong>" . $recipe . "<br>" . "<strong>Cuisine: </strong>" . $cuisine . "<br>"  . "<strong>Url: </strong>" . $recipe_url . "<br>" . "<strong>Time: </strong>" . $formatRecipeTime . "<br>" . "<strong>All ingredients: </strong>" . $formatAllIngredients;
+                $from = "thekitchenbot@gmail.com";
+                $headers = "FROM: The Kitchen < thekitchenbot@gmail.com>";
+                $test = mail($to,$subject,$message,$headers);
 
-                                if ($test == 1) {
-                                    echo "Thank  You. Your email was sent.";
-                                    echo "<br><br><em>(Server response: " . $test . ")</em> ";
-                                    echo "<hr>Email string:" . "mail($to,$subject,$message,$headers)";
-                                } else {
-                                    echo "ERROR. |", $test . "| Your email was not sent.";
-                                    // probably should send email to webmaster that there was a problem.
-                                }
-                                exit();
-                            }*/
+                if ($test == 1) {
+                    ?>
+                    <p>
+            <?php
+                    echo "<h3>Thank You! The following email was sent:</h3>";
+                    echo "<br><br>";
+                    echo "<hr><p>Email string: " . "mail($to,$subject,$message,$headers</p>";
+                    ?>
+                        <br><br>
+                    <div id="url">
+                        <a style = "width:100%;" href="<?php echo $link ?>index.php"><input type="submit" value="Back to Homepage" style="background-color: var(--orange); color:white;"></a>
+                        </button>
+                    </div>
+                        <?php
+                } else {
+                    echo "ERROR. |" , $test . "| Your email was not sent.";
+                }
+                exit();
+            }
             ?>
+                    </p>
+
+
         </div>
 
         <!--<form action="<?php /*echo $link */ ?>email.php">
