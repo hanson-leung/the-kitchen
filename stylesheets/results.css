@@ -27,10 +27,16 @@
   /* border: 1px solid var(--grey); */
   border-radius: 12px;
   display: grid;
+  grid-auto-flow: column;
   background-color: var(--white);
   padding: 1rem;
   border: 1px solid var(--grey);
   width: 100%;
+}
+
+
+@media (min-width: 900px) {
+  #maincontainer { grid-template-columns: repeat(4, 1fr); }
 }
 
 .editdish{
