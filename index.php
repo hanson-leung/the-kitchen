@@ -110,9 +110,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';
 
             </form>
             <div>
-                <p>
-                    Or, <a href="dish.php?recipe=16" style="color:var(--orange);" ><strong>surprise me!</strong></a>
-                </p>
+                <p><mark>
+                         Or, <a href="dish.php?recipe=16"" ><strong><span style="color:white;">surprise me!</span></strong></a>
+                    </mark></p>
             </div>
         </div>
     </div>

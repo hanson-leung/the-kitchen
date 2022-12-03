@@ -123,6 +123,11 @@ a.link2 {
   box-sizing: border-box;
 }
 
+mark {
+  background-color: var(--orange);
+  color: white;
+}
+
 html,
 body {
   width: 100vw;
