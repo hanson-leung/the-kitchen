@@ -28,7 +28,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
         <?php
            include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
         ?>
-        <h1>Update User</h1>
+        <h1>Update User Profile</h1>
         <br><br><br>
         <?php
         // search through main_view  where recipe_id matches, assign results to php variables
