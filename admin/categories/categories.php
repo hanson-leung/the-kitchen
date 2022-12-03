@@ -19,6 +19,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/categories_logic.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
+<link rel="stylesheet" href="/<?php echo $link ?>stylesheets/login.css"/>
+
 
 <!-- begin body -->
 <body>
@@ -40,7 +42,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         ?>
 
   <!-- card container -->
-        <div class="grid-columns grid-gap-2rem">
+        <div class="topcontainer">
             <div>
                 <form action="<?php echo $link ?>/admin/categories/delete-cuisine-complete.php">
                     <select name="cuisine">
@@ -60,7 +62,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                     <input value="Add" type="submit">
                 </form>
             </div>
-
+            
             <div>
                 <form action="<?php echo $link ?>/admin/categories/delete-tag-complete.php">
                     <select name="tag">
@@ -80,7 +82,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                     <input value="Add" type="submit">
                 </form>
             </div>
-
             <div>
                 <form action="<?php echo $link ?>/admin/categories/delete-ingredient-complete.php">
                     <select name="ingredient">
@@ -105,4 +106,5 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     </div>
 
 </body>
+                    
 </html>
