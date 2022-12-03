@@ -183,12 +183,13 @@ button,
 
 select,
 button,
-b.utton,
+.button,
 input[type="submit"] {
   appearance: none;
   cursor: pointer;
 }
 
+.button,
 button,
 input[type="submit"] {
   background-color: var(--lightgrey);
