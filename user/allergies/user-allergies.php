@@ -11,6 +11,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_check.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/userallergy_logic.php';
 ?>
+ <!-- additional stylesheets -->
+ <link rel="stylesheet" href="<?php echo $link ?>stylesheets/allergies.css"/>
 
 <html>
 <!-- begin header -->
@@ -19,28 +21,36 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
 
+
 <!-- begin body -->
 <body>
-       <div  class="root">
+    <div  class="root">
         <!-- insert navbar -->
         <?php
            include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
            echo $alert;
         ?>
-
-
-
+    <div class = "main-container">
+        <div class = "gap-2rem">
+            <h1>Your Recorded Allergies</h1>
+        <br>
+        
+        
         <?php
             // searching through database
             $sql = "SELECT * FROM allergy_view WHERE user_id = " . $_SESSION["user_id"];
             $results = $mysql->query($sql);
             while ($currentrow = mysqli_fetch_array($results)) {
-                echo "<div>";
+                echo "<div class='allergy'>";
                 echo   "<p>" . $currentrow["ingredient"] . "</p>";
                 echo "</div>";
             }
         ?>
-        <a href='<?php echo $link ?>/user/allergies/add.php' class="link">Add Allergy</a>
+        
+        <br>
+        <a style="width: 150px;" href='<?php echo $link ?>/user/allergies/add.php'><input type = "submit" value = "Add Allergy" ></a>
+        </div>
+    </div>    
     </div>
 </body>
 </html>
