@@ -18,7 +18,7 @@ adminOnly();
 <!-- begin header -->
 
     <!-- additional stylesheets -->
-    <link rel="stylesheet" href="<?php echo $link ?>/stylesheets/recipe-list.css"/>
+    <link rel="stylesheet" href="<?php echo $link ?>/stylesheets/results.css"/>
 
 <!-- insert php logic -->
 <?php
@@ -31,12 +31,14 @@ adminOnly();
         <?php
            include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
         ?>
-
+    <h1>Modify Recipes</h1>
+    <br>
 <p>There are 
     <?php
      echo $num_results;
     ?>
- results.</p>
+ recipes. Click on each recipe to modify.</p>
+ <br><br><br>
 
         <div class="results-container grid-gap-2rem">
             <?php
@@ -66,13 +68,9 @@ adminOnly();
         </div>
 
         <!-- next/prev page buttons -->
-        <div class="grid-rows grid-gap-2rem">
-            <button onclick="nextpage()">
-                Next Page
-            </button>
-            <button onclick="prevpage()">
-                Previous Page
-            </button>
+        <div id="pagebuttons" class="grid-columns grid-gap-2rem">
+                <?php echo $button_next_page ?>
+                <?php echo $button_previous_page ?>
         </div>
 
 
