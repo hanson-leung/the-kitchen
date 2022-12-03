@@ -45,7 +45,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
             }      
         ?> 
 
-        <form action="edit-dish-complete.php">
+        <form action="<?php echo $link ?>edit-dish-complete.php">
             <?php
               if($_SESSION["security_level"]==1 || $_SESSION["security_level"]==2) {
                 include $_SERVER['DOCUMENT_ROOT'] . '/logic/editdish_forminclude.php';
@@ -77,7 +77,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
 
 
         <!-- <h2>Ingredients</h2>
-        <form action="edit-dish-complete.php">
+        <form action="<?php echo $link ?>edit-dish-complete.php">
             <select name="cuisine">
                 <option value="<?php echo $ingredients ?>" selected><?php echo $cuisine ?></option>
                 <?php
