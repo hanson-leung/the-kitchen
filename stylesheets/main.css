@@ -134,6 +134,7 @@ body {
 .root {
   max-width: 1440px;
   margin: 0 auto;
+
 }
 
 .root.small {
@@ -175,6 +176,15 @@ input[type='submit']:hover {
   color:white;
   background-color: var(--orange);
 }
+
+input[type="text"] {
+  width:auto;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  display: grid;
+  grid-auto-flow: column;
+}
+
 
 /* grid */
 .grid-columns {
