@@ -114,6 +114,10 @@ a.link3:hover {
   color: var(--hover-grey);
 }
 
+a.link4:hover {
+  color: var(--hover-grey);
+}
+
 a.link {
   border-bottom: 1px solid var(--black);
   width: auto;
@@ -128,6 +132,14 @@ a.link2 {
 a.link3 {
   border-bottom: 1px solid var(--grey);
   width: fit-content;
+}
+
+a.link4 {
+  width: fit-content;
+}
+
+.menu:hover{
+  color: var(--hover-grey);
 }
 
 /* general */
