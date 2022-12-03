@@ -110,7 +110,7 @@ $sql_pagination = "LIMIT " . $limit . " OFFSET " . $offset;
         ';
     } 
 
-        if ($_GET['page'] <= $total_pages ) {
+        if ($_GET['page'] <= $total_pages && $_GET['page'] > 1) {
          $button_previous_page = '
 
                     <a class="button" href="' . $search_path_previous . '">
