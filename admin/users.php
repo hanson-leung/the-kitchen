@@ -19,7 +19,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/users_logic.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
 
-
+ <!-- additional stylesheets -->
+ <link rel="stylesheet" href="<?php echo $link ?>/stylesheets/profile.css"/>
 <!-- begin body -->
 <body>
     <div  class="root">
@@ -40,7 +41,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         ?>
 
         <!-- card container -->
-        <div class="grid-rows grid-gap-2rem">
+        <div class="bigcontainer">
 
                     <?php
                 //  loop through results
@@ -53,12 +54,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                         $security_level =  $currentrow["security_level"];
 
                         echo
-                        "<a class='card' href='" . $link . "/user/edit/edit.php?user=" . $user_id . "'>" .
+                        "<div class='container'><a class='card' href='" . $link . "/user/edit/edit.php?user=" . $user_id . "'>" .
                             "<p>" . $fname . " " . $lname . "</p>" .
                             "<p>" . $email . "</p>" .
                             "<p>" . $phone . "</p>" .
                             "<p>" . $security_level . "</p>" .
-                        "</a>";
+                        "</a></div>";
                 }
             ?>
         </div>
