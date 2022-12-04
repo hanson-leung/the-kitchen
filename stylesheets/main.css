@@ -138,7 +138,7 @@ a.link4 {
   width: fit-content;
 }
 
-.menu:hover{
+.menu:hover {
   color: var(--hover-grey);
 }
 
@@ -178,15 +178,15 @@ body {
   margin: 0 auto;
 }
 
-.root.small {
-  max-width: 768px;
-  margin: 0 auto;
-}
-
 .main-container {
   display: grid;
   grid-gap: 4rem;
   padding: 4rem 0;
+}
+
+.main-container.small {
+  max-width: 768px;
+  margin: 0 auto;
 }
 
 /* buttons */
@@ -197,9 +197,12 @@ button,
 .button {
   border: 1px solid var(--grey);
   border-radius: 6px;
-  width: 100%;
   height: 3.6rem;
   padding: 1rem;
+}
+
+input {
+  width: 100%;
 }
 
 select,
@@ -222,20 +225,16 @@ input[type="submit"]:hover {
 }
 
 input[type="text"] {
-  width: 50%;
-  margin-bottom: 2rem;
   display: grid;
   grid-auto-flow: row;
 }
 
 input[type="email"] {
-  width: 50%;
   display: grid;
   grid-auto-flow: row;
 }
 
 input[type="tel"] {
-  width: 50%;
   display: grid;
   grid-auto-flow: row;
 }
@@ -265,8 +264,6 @@ input[type="checkbox"] {
 .grid-gap-2rem {
   grid-gap: 2rem;
 }
-
-
 
 .grid-center {
   justify-self: center;
@@ -336,20 +333,22 @@ input[type="checkbox"] {
 
 /*for categories.php*/
 
-.topcontainer{
+.topcontainer {
   display: grid;
   grid-auto-flow: row;
   grid-gap: 3rem;
-  width:100%;
+  width: 100%;
 }
 
 @media (min-width: 900px) {
-  .topcontainer { grid-template-columns: repeat(3, 1fr); }
+  .topcontainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /*for users.php*/
 
-.container{
+.container {
   border-radius: 6px;
   background-color: var(--lightgrey);
   padding: 1rem;
@@ -357,13 +356,14 @@ input[type="checkbox"] {
   width: 50%;
 }
 
-.bigcontainer{
+.bigcontainer {
   display: grid;
   grid-auto-flow: row;
   grid-gap: 1rem;
 }
 
 @media (min-width: 900px) {
-  .bigcontainer { grid-template-columns: repeat(3, 1fr); }
+  .bigcontainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
-

@@ -9,9 +9,12 @@
         $img_url = $currentrow["img_url"];
         $recipe = $currentrow["recipe"];
         $cuisine =  $currentrow["cuisine"];
-        $prep_time =  $currentrow["prep_time"];
-        $cooking_time =  $currentrow["cooking_time"];
-        $total_time = $currentrow["total_time"];
+        $prep_time =  $currentrow["prep_time"] / 60;
+        $prep_time = round($prep_time, 1);
+        $cooking_time = $currentrow["cooking_time"] / 60;
+        $cooking_time = round($cooking_time, 1);
+        $total_time = $currentrow["total_time"] / 60;
+        $total_time = round($total_time, 1);
         $recipe_url = $currentrow["recipe_url"];
         $user_id = $currentrow["user_id"];
     }     

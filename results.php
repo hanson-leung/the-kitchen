@@ -4,8 +4,8 @@ session_start();
 if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     $link = "";
 } else {
-    $_SERVER['DOCUMENT_ROOT'] = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
-    $link = $_SERVER['DOCUMENT_ROOT'];
+    $_SERVER['DOCUMENT_ROOT'] = '/home/hansonle/public_html/acad276/the-kitchen';
+    $link = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
 }
 ?>
 
@@ -16,7 +16,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
     <!-- additional stylesheets -->
-    <link rel="stylesheet" href="<?php echo $link ?>stylesheets/results.css"/>
+    <link rel="stylesheet" href="<?php echo $link ?>/stylesheets/results.css"/>
 
 <!-- insert php logic -->
 <?php

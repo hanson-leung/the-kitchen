@@ -4,8 +4,8 @@ session_start();
 if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     $link = "";
 } else {
-    $_SERVER['DOCUMENT_ROOT'] = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
-    $link = $_SERVER['DOCUMENT_ROOT'];
+    $_SERVER['DOCUMENT_ROOT'] = '/home/hansonle/public_html/acad276/the-kitchen';
+    $link = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
 }
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_check.php';
@@ -43,7 +43,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             
                 <p><strong><?php echo $top_contributor ?></strong> is the top contributor with <?php echo $top_contributor_submissions ?> submissions</p>
             
-            <a href="<?php echo $link ?>/uploads/analytics/12-2-2022.pdf" class="link3">
+            <a href="<?php echo $link ?>/uploads/analytics/12-2-2022.pdf" target="_blank" class="link3">
                 <p>Download </a>  Google Analytics Report</p>
             
         </div>

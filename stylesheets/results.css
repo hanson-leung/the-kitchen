@@ -2,16 +2,15 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding-bottom: 2rem;
-
 }
 
-.results-container2{
+.results-container2 {
   display: grid;
   grid-auto-flow: row;
   padding-bottom: 2rem;
 }
 
-.alert2{
+.alert2 {
   font-family: var(--headline), sans-serif, Arial;
   font-weight: var(--regular);
   font-style: normal;
@@ -34,15 +33,15 @@
   width: 100%;
 }
 
-
 @media (min-width: 900px) {
-  #maincontainer { grid-template-columns: repeat(4, 1fr); }
+  #maincontainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-.editdish{
-  max-width:200px;
+.editdish {
+  max-width: 200px;
 }
-
 
 .card-img {
   width: 100%;
@@ -52,11 +51,11 @@
   padding-bottom: 2rem;
 }
 
-.cardmargin{
-  margin-bottom:1rem;
+.cardmargin {
+  margin-bottom: 1rem;
 }
 
-.finding{
+.finding {
   font-family: var(--headline), sans-serif, Arial;
   font-weight: var(--bold);
   font-style: normal;
@@ -69,95 +68,89 @@
   margin-bottom: 2rem;
 }
 
-.pagenavigation{
+.pagenavigation {
   background-color: white;
 }
 
-#pagebuttons{
+#pagebuttons {
   display: grid;
   grid-template-columns: auto auto;
-  margin-right:70%;
+  margin-right: 70%;
   margin-bottom: 10%;
 }
 
 @media only screen and (max-width: 768px) {
-  #pagebuttons{
+  #pagebuttons {
     display: grid;
     grid-template-columns: auto auto;
-    margin:0%;
+    margin: 0%;
     margin-bottom: 3rem;
   }
   .results-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     padding-bottom: 2rem;
-
   }
-
 }
 
-
-button[type='button']:hover {
-  color:white;
+button[type="button"]:hover {
+  color: white;
   background-color: var(--orange);
 }
 
-
-button{
-  background-color:white;
+button {
+  background-color: white;
   font-family: var(--headline), sans-serif, Arial;
-
 }
 
-body{
+body {
   background-image: url("../uploads/branding/Background_ver1.jpg");
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 /* dish things*/
-#titlebutton{
-  margin-bottom:2rem;
-
+#titlebutton {
+  margin-bottom: 2rem;
 }
 
-.cusine{
+.cusine {
   font-family: var(--headline), sans-serif, Arial;
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
   margin: 0;
-  color: #D6D6D6;
+  color: #d6d6d6;
   letter-spacing: -0.02em;
   line-height: 1em;
-  margin-bottom:0.5em;
+  margin-bottom: 0.5em;
 }
 
-#detailbox{
-  margin-top:2rem;
-  margin-bottom:2rem;
-  padding:2rem;
-  background-color:white;
+#detailbox {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: white;
   border: var(--grey) 1px solid;
   border-radius: 10px;
-  margin-left:0%;
+  margin-left: 0%;
 }
 
 @media (min-width: 900px) {
-  #detailbox {margin-left: 10%;}
+  #detailbox {
+    margin-left: 10%;
+  }
 }
 
-.orange{
-  background-color:#ff5800;
+.orange {
+  background-color: #ff5800;
 }
-.orangetext{
-  color:#ff5800;
+.orangetext {
+  color: #ff5800;
 }
 
-
-.detailheader{
+.detailheader {
   font-family: var(--headline), sans-serif, Arial;
   font-style: normal;
   font-weight: 600;
@@ -166,9 +159,9 @@ body{
   color: black;
   letter-spacing: 0em;
   line-height: 1em;
-  margin-top:2rem;
+  margin-top: 2rem;
 }
-.detailp{
+.detailp {
   font-family: var(--headline), sans-serif, Arial;
   font-style: normal;
   font-weight: 400;
@@ -178,22 +171,23 @@ body{
   line-height: 1.5em;
 }
 
-.headline_img{
-  margin-top:2rem;
-  width:100%;
+.headline_img {
+  margin-top: 2rem;
+  width: 100%;
   max-height: 650px;
   object-fit: contain;
 }
 
-#maincontainer{
-  display:grid;
+#maincontainer {
+  display: grid;
   grid-auto-flow: row;
 }
 
 @media (min-width: 900px) {
-  #maincontainer { grid-template-columns: repeat(2, 1fr); }
+  #maincontainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-
 
 /* november 8 */
 
