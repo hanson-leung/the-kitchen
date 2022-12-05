@@ -184,9 +184,16 @@ body {
   padding: 4rem 0;
 }
 
+
 .main-container.small {
   max-width: 768px;
   margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  .bigcontainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* buttons */
@@ -353,7 +360,7 @@ input[type="checkbox"] {
   background-color: var(--lightgrey);
   padding: 1rem;
   border: 1px solid var(--grey);
-  width: 50%;
+  width: fit-content;
 }
 
 .bigcontainer {
