@@ -1,13 +1,15 @@
 .filter {
   display: grid;
-  grid-auto-flow: row;
+  grid-auto-flow: column;
   grid-gap: 2rem;
   width: 100%;
   align-items: flex-start;
 }
 
-@media (min-width: 900px) {
-  .filter { grid-template-columns: repeat(5, 1fr); }
+@media (max-width: 600px) {
+  .filter {
+    grid-template-rows: repeat(5, 1fr);
+  }
 }
 
 .filter-term{
@@ -20,15 +22,37 @@
   grid-column: 1 / span 2;
 }
 
+@media (max-width: 375px) {
+  #search {
+    width:fit-content;
+  }
+}
+
+@media (max-width: 375px) {
+   .filterterm {
+    width:fit-content;
+  }
+}
+
 #submit {
   align-items: flex-end;
+  width:fit-content;
+  display: grid;
 }
+
 
 form div {
   display: grid;
   grid-auto-flow: row;
   grid-gap: 1rem;
 }
+
+.filterterm{
+  display: grid;
+  grid-auto-flow: row;
+  width:fit-content;
+}
+
 
 select::-ms-expand {
   display: none;
@@ -41,6 +65,8 @@ body {
   background-size: cover;
 }
 
+
+
 .surprise{
   font-size: 20pt;
   margin:auto;
@@ -48,6 +74,10 @@ body {
 
 a.surprisebutton{
   color:var(--orange);
+}
+
+@media (max-width: 600px) {
+  .surprise { margin-left:0;}
 }
 
 a.surprisebutton:hover{
