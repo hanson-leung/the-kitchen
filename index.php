@@ -27,7 +27,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';;
         ?>
 
     <div class="main-container">
-        <div class="gap-2rem">
+        <div class="gap-2rem" >
             <h1>What's Cookin', Good Lookin'?</h1>
             <p>
                 Find your next favorite recipe, tailored specifically for you.
@@ -47,7 +47,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';;
                 </div>
 
                 <!-- cuisine type -->
-                <div>
+                <div class="filterterm">
                     <p class="filter-term"><strong>CUISINE</strong></p>
                     <select name="cuisine">
                         <option value="any" selected>No Preference</option>
@@ -60,9 +60,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';;
                         ?>
                     </select>
                 </div>
-
+                        
                 <!-- cooking time -->
-                <div>
+                <div class="filterterm">
                     <p class="filter-term"><strong>COOKING TIME</strong></p>
                     <select name="cooking_time">
                         <option value="any" selected>No Preference</option>
@@ -101,10 +101,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';;
                 ?>
                 </select>
             </div> -->
-
-                <div id="submit" style="width:auto;" >
+                
+                <div id="submit"  >
                     <p class="filter-term">&nbsp</p>
-                    <input type="submit" style="width:50%;"/>
+                    <input type="submit" style="width:auto;"/>
                 </div>
 
             </form>
