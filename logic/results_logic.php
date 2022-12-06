@@ -76,7 +76,7 @@ $sql_pagination = "LIMIT " . $limit . " OFFSET " . $offset;
             </div>';
     } else {
         $alert =
-       '<h1> We found ' . $total_count . ' crowd-sourced recipes for you to enjoy!</h1>';
+       '<p> We found ' . $total_count . ' crowd-sourced recipes for you to enjoy!</p>';
     } 
 
 

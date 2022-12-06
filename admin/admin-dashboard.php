@@ -37,7 +37,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     <div class="main-container">
         <!-- welcome text -->
         <div class="gap-2rem">
-            <h1>Hi, <?php echo $_SESSION["user_fname"] ?></h1>
+            <h1>Admin Dashboard</h1>
         </div>
 
         <!-- card container -->

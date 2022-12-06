@@ -28,8 +28,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     ?>
 
     <div id="maincontainer">
-        <div id="titlebutton">
-            <p class="cusine"> <?php echo $cuisine ?></p>
+        <div id="titlebutton" class="">
+            <p class="cusine" style="padding-bottom: 1rem"> <?php echo $cuisine ?></p>
             <div id="title">
                 <h1><?php echo $recipe ?></h1>
                 <img src="<?php echo $img_url ?>" class="headline_img">
@@ -42,12 +42,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
         <div id="detailbox">
             <div id="url">
-                    <a style = "width:100%;" href="<?php echo $recipe_url ?>" target="_blank"><input type="submit" value="See the full recipe" ></a>
+                    <a style = "width:100%;" href="<?php echo $recipe_url ?>" target="_blank"><input type="submit" value="See the full recipe ⎘" ></a>
                 </button>
             </div>
             <br>
             <div id="cooktime">
-                <p class="detailheader">Recipe Time</p><br>
+                <h2 class="detailheader">Recipe Time</h2><br>
                 <p class="detailp">Prep Time: <?php echo $prep_time ?> Mins</p>
                 <p class="detailp">Cooking Time: <?php echo $cooking_time ?> Mins</p>
                 <p class="detailp orangetext">Total Time: <?php echo $total_time ?> Mins</p>
@@ -64,7 +64,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
             ?>
 
-            <p class="detailheader">Ingredients</p>
+            <h2 class="detailheader">Ingredients</h2>
             <?php
             // loop through ingredient_view where recipe_id matches
 
@@ -87,8 +87,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             ?>
 
             <br><br>
-            <hr>
-            <p class="detailheader">Share this Recipe</p>
+            
+            <h2 class="detailheader">Share this Recipe</h2>
             <br><br>
 
             <?php

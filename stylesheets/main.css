@@ -16,7 +16,7 @@
   --link: #0066cc;
 
   /* fonts */
-  --headline: "Helvetica";
+  --headline: "Gilroy";
   --bodycopy: "Helvetica";
   --bold: 800;
   --regular: 400;
@@ -36,8 +36,8 @@
 }
 
 @font-face {
-  font-family: "Helvetica";
-  src: url("../fonts/HelveticaNowDisplay-Bold.woff2") format("woff2");
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-ExtraBold.otf") format("opentype");
   font-weight: 800;
 }
 
@@ -84,12 +84,12 @@ option,
 input,
 button,
 ::placeholder {
-  font-family: var(--headline), sans-serif, Arial;
+  font-family: var(--bodycopy), sans-serif, Arial;
   font-weight: var(--regular);
   font-style: normal;
   margin: 0;
   color: var(--black);
-  letter-spacing: -0em;
+  letter-spacing: 0.01em;
 }
 
 p {
@@ -103,8 +103,7 @@ option {
 a:link,
 a:visited {
   text-decoration: none;
-  padding-bottom: 0.2rem;
-  border-bottom: 1px solid var(--transparent);
+  border-bottom: 1px solid var(--transparent) !important;
   display: inline-block;
 }
 
@@ -192,7 +191,6 @@ body {
   grid-gap: 4rem;
   padding: 4rem 0;
 }
-
 
 .main-container.small {
   max-width: 768px;

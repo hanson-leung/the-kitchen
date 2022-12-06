@@ -30,7 +30,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
            include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
         ?>
     <div class="main-container">
-
+    <h1>Search Results</h1>
     <?php
         echo $alert;
     ?>
