@@ -42,13 +42,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';;
 
                 <!-- search -->
                 <div id="search">
-                    <p class="filter-term"><strong>SEARCH</strong></p>
+                    <p class="filter-term"><strong>Search</strong></p>
                     <input class="searchbar" type="text" name="search" placeholder="What's on the menu?"/>
                 </div>
 
                 <!-- cuisine type -->
                 <div class="filterterm">
-                    <p class="filter-term"><strong>CUISINE</strong></p>
+                    <p class="filter-term"><strong>Cuisine</strong></p>
                     <select name="cuisine">
                         <option value="any" selected>No Preference</option>
                         <?php
@@ -63,7 +63,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';;
 
                 <!-- cooking time -->
                 <div class="filterterm">
-                    <p class="filter-term"><strong>COOKING TIME</strong></p>
+                    <p class="filter-term"><strong>Cooking Time</strong></p>
                     <select name="cooking_time">
                         <option value="any" selected>No Preference</option>
                         <option value="0">Quick</option>

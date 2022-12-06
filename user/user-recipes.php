@@ -36,11 +36,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <?php echo $alert; ?>
 
         <div class="gap-2rem">
-            <h1>Hi, <?php echo $_SESSION["user_fname"] ?></h1>
+            <h1>Your Recipes</h1>
         </div>
         
         <div>
-
             <?php echo "<p class='alert2'>" . $alert_2 . "</p>";?>
             <br>
 

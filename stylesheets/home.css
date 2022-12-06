@@ -14,8 +14,6 @@
 
 .filter-term {
   color: var(--orange);
-  font-size: 11pt;
-  letter-spacing: 1px;
 }
 
 #search {
