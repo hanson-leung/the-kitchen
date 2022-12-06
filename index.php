@@ -75,7 +75,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';;
                 <!-- ingredients -->
                 <div class="filterterm">
                     <p class="filter-term"><strong>INGREDIENT</strong></p>
-                    <select name="ingredients">
+                    <select name="ingredients[]" multiple">
                         <option value="any" selected>Select</option>
                         <?php
                         $sql = "SELECT * FROM ingredient";
