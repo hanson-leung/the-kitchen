@@ -29,6 +29,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
         <?php
            include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
         ?>
+    <div class="main-container">
 
     <?php
         echo $alert;
@@ -60,6 +61,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
         </div>
 
 
+    </div>
     </div>
 </script>
 </body>
