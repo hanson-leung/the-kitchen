@@ -62,8 +62,7 @@
 #pagebuttons {
   display: grid;
   grid-template-columns: auto auto;
-  margin-right: 70%;
-  margin-bottom: 10%;
+  width: fit-content;
 }
 
 @media only screen and (max-width: 768px) {
@@ -78,16 +77,6 @@
     grid-template-columns: repeat(1, 1fr);
     padding-bottom: 2rem;
   }
-}
-
-button[type="button"]:hover {
-  color: white;
-  background-color: var(--orange);
-}
-
-button {
-  background-color: white;
-  font-family: var(--headline), sans-serif, Arial;
 }
 
 body {

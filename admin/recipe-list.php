@@ -57,8 +57,8 @@ adminOnly();
                         echo
                         "<a class='card' href='" . $link . "/edit-dish.php?recipe=" . $recipe_id . "'>" .
                             "<img src='" . $img_url . "' class='card-img'>" .
-                            "<h2>" . $cuisine . "</h2>" .
-                            "<p>" . $recipe_url . "</p>" .
+                            "<div style='padding-bottom:.5rem'><h2>" . $recipe . "</h2></div>" .
+                            "<p>" . $cuisine . "</p>" .
                             "<p>" . $prep_time . "</p>" .
                             "<p>" . $cooking_time . "</p>" .
                             "<p>" . $total_time . "</p>
