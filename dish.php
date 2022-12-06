@@ -48,15 +48,15 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <br>
             <div id="cooktime">
                 <h2 class="detailheader">Recipe Time</h2><br>
-                <p class="detailp">Prep Time: <?php echo $prep_time ?> Mins</p>
-                <p class="detailp">Cooking Time: <?php echo $cooking_time ?> Mins</p>
-                <p class="detailp orangetext">Total Time: <?php echo $total_time ?> Mins</p>
+                <p class="detailp">Prep Time: <?php echo $prep_time?> Mins</p>
+                <p class="detailp">Cooking Time: <?php echo $cooking_time?> Mins</p>
+                <p class="detailp orangetext">Total Time: <?php echo $total_time?> Mins</p>
             </div>
             <br>
 
             <?php
-            $recipeTime = ["<strong><ul><li>'Prep Time:'</strong> $prep_time Mins</li>",
-                "<strong><li>'Cooking Time:'</strong> $cooking_time Mins</li>",
+            $recipeTime = ["<strong><ul><li>Prep Time:</strong> $prep_time Mins</li>",
+                "<strong><li>Cooking Time:</strong> $cooking_time Mins</li>",
                 "<strong><li>Total Time:</strong> $total_time Mins</li></ul>"
             ];
             $formatRecipeTime = implode(", ", $recipeTime)."<br>";
@@ -73,9 +73,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             $ingredient_results = $mysql->query($sql_ingredient);
 
             while ($currentrow = mysqli_fetch_array($ingredient_results)) {
-                echo "<div><ul>";
-                echo "<li><p class='detailp'>" . $currentrow["quantity"] . " " . $currentrow["unit"] . " " . $currentrow["ingredient"] . "</p></li>";
-                echo "</ul></div>";
+                echo "<div>";
+                echo "<p class='detailp'><ul><li>" . $currentrow["quantity"] . " " . $currentrow["unit"] . " " . $currentrow["ingredient"] . "</li></ul></p>";
+                echo "</div>";
 
                 array_push($allIngredients, "<ul><li>" . $currentrow["quantity"] . " " . $currentrow["unit"] . " " . $currentrow["ingredient"] . "</li></ul>");
             }
@@ -120,6 +120,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                 $message .= "Ingredients: " . $formatAllIngredients . "\r ";
                 $from = "thekitchenbot@gmail.com";
                 $headers = "FROM: The Kitchen < thekitchenbot@gmail.com>";
+                $headers .= "Content-type: text/html; charset=iso-8859-1" . "\r ";
                 $test = mail($to,$subject,$message,$headers);
 
                 if ($test == 1) {
