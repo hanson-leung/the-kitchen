@@ -57,8 +57,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                         echo
                         "<div class='grid-rows grid-gap-2rem'><a class='card' href='" . $link . "/dish.php?recipe=" . $recipe_id . "'>" .
                             "<img src='" . $img_url . "' class='card-img'>" .
-                            "<h2>" . $recipe . "</h2>" .
-                            "<p>" . $total_time . "</p></a><a class='editdish' href='" . $link . "/edit-dish.php?recipe=" . $recipe_id . "'><input type='submit' value='Edit Dish'></a></div> ";
+                            "<div class='grid-rows grid-gap-05rem'><h2>" . $recipe . "</h2>" .
+                            "<p>" . $total_time . "</p></div></a><a class='editdish' href='" . $link . "/edit-dish.php?recipe=" . $recipe_id . "'><input type='submit' value='Edit Dish'></a></div> ";
                 }
             ?>
         </div>

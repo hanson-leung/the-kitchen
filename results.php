@@ -50,8 +50,8 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
                         echo
                         "<a class='card' href='" . $link . "/recipe-analytics.php?recipe=" . $recipe_id . "'>" .
                             "<img src='" . $img_url . "' class='card-img'>" .
-                            "<h2>" . $recipe . "</h2>" .
-                            "<p class='cardmargin'>" . $total_time . "</p></a>";
+                            "<div class='grid-rows grid-gap-05rem'><h2>" . $recipe . "</h2>" .
+                            "<p class='cardmargin'>" . $total_time . "</p></div></a>";
                 }
             ?>
         </div>
