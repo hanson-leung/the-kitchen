@@ -1,7 +1,7 @@
 <?php
 session_start();
 // check if on localhost or on server
-if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
+if ($_SERVER['REMOTE_ADDR'] == '127.0.0.1') {
     $link = "";
 } else {
     $_SERVER['DOCUMENT_ROOT'] = '/home/hansonle/public_html/acad276/the-kitchen';
@@ -15,19 +15,19 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';;
 
 <html>
 <!-- begin header -->
-    <!-- additional stylesheets -->
-    <link rel="stylesheet" href="<?php echo $link ?>/stylesheets/home.css"/>
+<!-- additional stylesheets -->
+<link rel="stylesheet" href="<?php echo $link ?>/stylesheets/home.css"/>
 
 <body>
-    <div  class="root">
+<div class="root">
     <!-- insert navbar -->
-        <?php
-           include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
-           echo $alert;
-        ?>
+    <?php
+    include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
+    echo $alert;
+    ?>
 
     <div class="main-container">
-        <div class="gap-2rem" >
+        <div class="gap-2rem">
             <h1>What's Cookin', Good Lookin'?</h1>
             <p>
                 Find your next favorite recipe, tailored specifically for you.
@@ -60,7 +60,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';;
                         ?>
                     </select>
                 </div>
-                        
+
                 <!-- cooking time -->
                 <div class="filterterm">
                     <p class="filter-term"><strong>COOKING TIME</strong></p>
@@ -73,19 +73,34 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';;
                 </div>
 
                 <!-- ingredients -->
-                <!-- <div>
-                <p class="filter-term">Ingredients</p>
-                <select name="ingredients[]" multiple>
-                    <option value="all">Select</option>
-                    <?php
-                $sql = "SELECT * FROM ingredient";
-                $results = $mysql->query($sql);
-                while ($currentrow = $results->fetch_assoc()) {
-                    echo "<option value='" . $currentrow["ingredient_id"] . "'>" . $currentrow["ingredient"] . "</option>";
-                }
-                ?>
-                </select>
-            </div> -->
+                <div class="filterterm">
+                    <p class="filter-term"><strong>INGREDIENT</strong></p>
+                    <select name="ingredients">
+                        <option value="any" selected>Select</option>
+                        <?php
+                        $sql = "SELECT * FROM ingredient";
+                        $results = $mysql->query($sql);
+                        while ($currentrow = $results->fetch_assoc()) {
+                            echo "<option value='" . $currentrow["ingredient_id"] . "'>" . $currentrow["ingredient"] . "</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+
+                <!-- ingredients -->
+                <!--<div class="filterterm">
+                    <p class="filter-term"><strong>INGREDIENT</strong></p>
+                    <select name="ingredients[]" multiple>
+                        <option value="all">Select</option>
+                        <?php
+/*                        $sql = "SELECT * FROM ingredient";
+                        $results = $mysql->query($sql);
+                        while ($currentrow = $results->fetch_assoc()) {
+                            echo "<option value='" . $currentrow["ingredient_id"] . "'>" . $currentrow["ingredient"] . "</option>";
+                        }
+                        */?>
+                    </select>
+                </div>-->
 
                 <!-- restrictions -->
                 <!-- <div>
@@ -93,16 +108,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';;
                 <select name="allergies">
                     <option value="all">Select</option>
                     <?php
-                $sql = "SELECT * FROM ingredient";
+/*                $sql = "SELECT * FROM ingredient";
                 $results = $mysql->query($sql);
                 while ($currentrow = $results->fetch_assoc()) {
                     echo "<option>" . $currentrow["ingredient"] . "</option>";
                 }
-                ?>
+                */?>
                 </select>
             </div> -->
-                
-                <div id="submit"  >
+
+                <div id="submit">
                     <p class="filter-term">&nbsp</p>
                     <input type="submit" style="width:auto;"/>
                 </div>
@@ -113,8 +128,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';;
                 $ranNum = rand(1, 56);
                 ?>
                 <p>
-                         Or, <a class= "surprisebutton" href="<?php echo $link ?>/dish.php?recipe=<?php echo $ranNum?>" ><strong><span>surprise me!</span></strong></a>
-                   </p>
+                    Or, <a class="surprisebutton"
+                           href="<?php echo $link ?>/dish.php?recipe=<?php echo $ranNum ?>"><strong><span>surprise me!</span></strong></a>
+                </p>
             </div>
         </div>
     </div>
