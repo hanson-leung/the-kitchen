@@ -33,6 +33,11 @@ $sql_pagination = "LIMIT " . $limit . " OFFSET " . $offset;
     $sql_conditional = $sql_conditional . "AND cuisine_id = '" . $_REQUEST["cuisine"] . "' ";
     }
 
+//    // if user selects an ingredient
+//    if ($_REQUEST['ingredients'] != "any") {
+//        $sql_conditional = $sql_conditional . "AND ingredient_id = '" . $_REQUEST["ingredients"] . "' ";
+//    }
+
     // if user selects a cooking time
     if ($_REQUEST['cooking_time'] != "any") {
 

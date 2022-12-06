@@ -37,6 +37,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
 
         <div class="results-container grid-gap-2rem">
             <?php
+                //echo $sql;
                 //  loop through results
                 while ($currentrow = mysqli_fetch_array($results)) {
                         $recipe_id = $currentrow["recipe_id"];
@@ -44,6 +45,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
                         $img_url = $currentrow["img_url"];
                         $cuisine =  $currentrow["cuisine"];
                         $total_time = ($currentrow["total_time"]/60) . " min";
+
 
                         echo
                         "<a class='card' href='" . $link . "/recipe-analytics.php?recipe=" . $recipe_id . "'>" .
