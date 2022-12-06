@@ -55,8 +55,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <br>
 
             <?php
-            $recipeTime = ["<strong><ul><li>Prep Time:</strong> $prep_time Mins</li>",
-                "<strong><li>Cooking Time:</strong> $cooking_time Mins</li>",
+            $recipeTime = ["<strong><ul><li>'Prep Time:'</strong> $prep_time Mins</li>",
+                "<strong><li>'Cooking Time:'</strong> $cooking_time Mins</li>",
                 "<strong><li>Total Time:</strong> $total_time Mins</li></ul>"
             ];
             $formatRecipeTime = implode(", ", $recipeTime)."<br>";
@@ -113,7 +113,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                 $to = $_REQUEST["destinationemail"];
                 $subject = "Ingredients for " . $recipe . "";
                 $url = $recipe_url;
-                $message = "<strong>Recipe name: </strong>" . $recipe . "<br>" . "<strong>Cuisine: </strong>" . $cuisine . "<br>"  . "<strong>Url: </strong>" . $recipe_url . "<br>" . "<strong>Time: </strong>" . $formatRecipeTime . "<br>" . "<strong>All ingredients: </strong>" . $formatAllIngredients;
+                $message = "Recipe name: " . $recipe . "\r ";
+                $message .= "Cuisine name: " . $cuisine . "\r ";
+                $message .= "Recipe URL: " . $recipe_url . "\r ";
+                $message .= "Time: " . $formatRecipeTime . "\r ";
+                $message .= "Ingredients: " . $formatAllIngredients . "\r ";
                 $from = "thekitchenbot@gmail.com";
                 $headers = "FROM: The Kitchen < thekitchenbot@gmail.com>";
                 $test = mail($to,$subject,$message,$headers);
@@ -128,7 +132,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
                     ?>
                         <br><br>
                     <div id="url">
-                        <a style = "width:100%;" href="<?php echo $link ?>index.php"><input type="submit" value="Back to Homepage" style="background-color: var(--orange); color:white;"></a>
+                        <a style = "width:100%;" href="<?php echo $link ?>/index.php"><input type="submit" value="Back to Homepage" style="background-color: var(--orange); color:white;"></a>
                         </button>
                     </div>
                         <?php
