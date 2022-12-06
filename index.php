@@ -110,7 +110,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';;
             </form>
             <div class="surprise">
                 <?php
-                $ranNum = rand(1, 30);
+                $ranNum = rand(1, 56);
                 ?>
                 <p>
                          Or, <a class= "surprisebutton" href="<?php echo $link ?>/dish.php?recipe=<?php echo $ranNum?>" ><strong><span>surprise me!</span></strong></a>
