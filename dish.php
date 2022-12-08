@@ -55,9 +55,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
             <br>
 
             <?php
-            $recipeTime = ["<strong><ul><li>Prep Time:</strong> $prep_time Mins</li>",
-                "<strong><li>Cooking Time:</strong> $cooking_time Mins</li>",
-                "<strong><li>Total Time:</strong> $total_time Mins</li></ul>"
+            $recipeTime = ["- Prep Time: $prep_time Mins \r",
+                "- Cooking Time: $cooking_time Mins \r",
+                "- Total Time: $total_time Mins \r"
             ];
             $formatRecipeTime = implode(", ", $recipeTime)."<br>";
             $formatRecipeTime = str_replace(',', '', $formatRecipeTime);
@@ -74,10 +74,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
             while ($currentrow = mysqli_fetch_array($ingredient_results)) {
                 echo "<div>";
-                echo "<p class='detailp'><ul><li>" . $currentrow["quantity"] . " " . $currentrow["unit"] . " " . $currentrow["ingredient"] . "</li></ul></p>";
+                echo "<p class='detailp'>" . $currentrow["quantity"] . " " . $currentrow["unit"] . " " . $currentrow["ingredient"] . "</p>";
                 echo "</div>";
 
-                array_push($allIngredients, "<ul><li>" . $currentrow["quantity"] . " " . $currentrow["unit"] . " " . $currentrow["ingredient"] . "</li></ul>");
+                array_push($allIngredients, "- " . $currentrow["quantity"] . " " . $currentrow["unit"] . " " . $currentrow["ingredient"] . "\r");
             }
 
 
