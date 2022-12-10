@@ -4,8 +4,8 @@ session_start();
 if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     $link = "";
 } else {
-    $_SERVER['DOCUMENT_ROOT'] = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
-    $link = $_SERVER['DOCUMENT_ROOT'];
+    $_SERVER['DOCUMENT_ROOT'] = '/home/hansonle/public_html/acad276/the-kitchen';
+    $link = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
 }
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_check.php';
@@ -18,7 +18,7 @@ adminOnly();
 <!-- begin header -->
 
     <!-- additional stylesheets -->
-    <link rel="stylesheet" href="<?php echo $link ?>/stylesheets/recipe-list.css"/>
+    <link rel="stylesheet" href="<?php echo $link ?>/stylesheets/results.css"/>
 
 <!-- insert php logic -->
 <?php
@@ -31,14 +31,16 @@ adminOnly();
         <?php
            include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
         ?>
-
-<p>There are 
-    <?php
-     echo $num_results;
-    ?>
- results.</p>
-
-        <div class="results-container grid-gap-2rem">
+        <div class="main-container small">
+        <!-- welcome text -->
+        <div class="gap-2rem">
+        <h1>Modify Recipes</h1>
+        </div>
+        <div class="grid-gap-2rem">
+            <p>There are <?php echo $num_results ?> recipes. Click on each recipe to modify.</p>
+</div>
+ 
+        <div class="results-container2 grid-gap-2rem">
             <?php
                 //  loop through results
                 while ($currentrow = mysqli_fetch_array($results)) {
@@ -55,8 +57,8 @@ adminOnly();
                         echo
                         "<a class='card' href='" . $link . "/edit-dish.php?recipe=" . $recipe_id . "'>" .
                             "<img src='" . $img_url . "' class='card-img'>" .
-                            "<h2>" . $cuisine . "</h2>" .
-                            "<p>" . $recipe_url . "</p>" .
+                            "<div style='padding-bottom:.5rem'><h2>" . $recipe . "</h2></div>" .
+                            "<p>" . $cuisine . "</p>" .
                             "<p>" . $prep_time . "</p>" .
                             "<p>" . $cooking_time . "</p>" .
                             "<p>" . $total_time . "</p>
@@ -66,14 +68,7 @@ adminOnly();
         </div>
 
         <!-- next/prev page buttons -->
-        <div class="grid-rows grid-gap-2rem">
-            <button onclick="nextpage()">
-                Next Page
-            </button>
-            <button onclick="prevpage()">
-                Previous Page
-            </button>
-        </div>
+        
 
 
     </div>

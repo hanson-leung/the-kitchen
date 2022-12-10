@@ -16,7 +16,7 @@
   --link: #0066cc;
 
   /* fonts */
-  --headline: "Helvetica";
+  --headline: "Gilroy";
   --bodycopy: "Helvetica";
   --bold: 800;
   --regular: 400;
@@ -36,8 +36,8 @@
 }
 
 @font-face {
-  font-family: "Helvetica";
-  src: url("../fonts/HelveticaNowDisplay-Bold.woff2") format("woff2");
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-ExtraBold.otf") format("opentype");
   font-weight: 800;
 }
 
@@ -48,7 +48,8 @@
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--headline), sans-serif, Arial;
   font-weight: var(--bold);
   font-style: normal;
@@ -64,6 +65,18 @@ h2 {
   font-size: 16px;
 }
 
+h3 {
+  font-size: 20px;
+  font-weight: normal;
+  color: var(--orange);
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 46px;
+  }
+}
+
 p,
 a,
 select,
@@ -71,12 +84,12 @@ option,
 input,
 button,
 ::placeholder {
-  font-family: var(--headline), sans-serif, Arial;
+  font-family: var(--bodycopy), sans-serif, Arial;
   font-weight: var(--regular);
   font-style: normal;
   margin: 0;
   color: var(--black);
-  letter-spacing: -0em;
+  letter-spacing: 0.01em;
 }
 
 p {
@@ -90,13 +103,48 @@ option {
 a:link,
 a:visited {
   text-decoration: none;
-  padding-bottom: 0.2rem;
-  border-bottom: 1px solid var(--transparent);
+  border-bottom: 1px solid var(--transparent) !important;
   display: inline-block;
+}
+
+a.link:hover {
+  color: var(--hover-grey);
+}
+
+a.link2:hover {
+  color: var(--hover-grey);
+}
+
+a.link3:hover {
+  color: var(--hover-grey);
+}
+
+a.link4:hover {
+  color: var(--hover-grey);
 }
 
 a.link {
   border-bottom: 1px solid var(--black);
+  width: auto;
+}
+
+a.link2 {
+  border-bottom: 1px solid var(--grey);
+  width: fit-content;
+  margin-left: 50px;
+}
+
+a.link3 {
+  border-bottom: 1px solid var(--grey);
+  width: fit-content;
+}
+
+a.link4 {
+  width: fit-content;
+}
+
+.menu:hover {
+  color: var(--hover-grey);
 }
 
 /* general */
@@ -104,6 +152,11 @@ a.link {
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+mark {
+  background-color: var(--orange);
+  color: white;
 }
 
 html,
@@ -120,19 +173,16 @@ body {
 
 body {
   padding: 0 4rem;
-  background-image: url("../uploads/branding/Background_final.jpg");
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    padding: 0 2rem;
+  }
 }
 
 .root {
   max-width: 1440px;
-  margin: 0 auto;
-}
-
-.root.small {
-  max-width: 768px;
   margin: 0 auto;
 }
 
@@ -142,28 +192,73 @@ body {
   padding: 4rem 0;
 }
 
+.main-container.small {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  .bigcontainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* buttons */
 
 input,
 select,
-button {
+button,
+.button {
   border: 1px solid var(--grey);
   border-radius: 6px;
-  width: 100%;
-  height: 3.6rem;
   padding: 1rem;
+}
+
+input {
+  width: 100%;
 }
 
 select,
 button,
+.button,
 input[type="submit"] {
   appearance: none;
   cursor: pointer;
 }
 
+.button,
 button,
 input[type="submit"] {
   background-color: var(--lightgrey);
+}
+
+input[type="submit"]:hover {
+  color: white;
+  background-color: var(--orange);
+}
+
+input[type="text"] {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+input[type="email"] {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+input[type="tel"] {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+input[type="checkbox"] {
+  width: 5%;
+  border: 1px solid var(--grey);
+  border-radius: 6px;
+  height: auto;
+  padding: auto;
+  font-family: "Helvetica";
 }
 
 /* grid */
@@ -177,6 +272,10 @@ input[type="submit"] {
   display: grid;
   grid-auto-flow: row;
   align-items: center;
+}
+
+.grid-gap-05rem {
+  grid-gap: 0.5rem;
 }
 
 .grid-gap-2rem {
@@ -199,6 +298,7 @@ input[type="submit"] {
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  gap: 2rem;
 }
 
 .header {
@@ -247,4 +347,41 @@ input[type="submit"] {
   border: 1px solid var(--yellow);
   background-color: var(--yellow-20pct);
   padding: 2rem;
+}
+
+/*for categories.php*/
+
+.topcontainer {
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 3rem;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .topcontainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*for users.php*/
+
+.container {
+  border-radius: 6px;
+  background-color: var(--lightgrey);
+  padding: 1rem;
+  border: 1px solid var(--grey);
+  width: fit-content;
+}
+
+.bigcontainer {
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 1rem;
+}
+
+@media (min-width: 900px) {
+  .bigcontainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

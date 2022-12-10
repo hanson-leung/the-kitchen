@@ -16,27 +16,27 @@
                 </a>
             </div>
             <div id="dropdown" class="grid-rows grid-gap-2rem">
-                <a href="' . $link . '/user/profile.php">
+                <a class = "link4" href="' . $link . '/user/profile.php">
                     Account
                 </a>
-                <a href="' . $link . '/user/user-recipes.php">
+                <a class = "link4" href="' . $link . '/user/user-recipes.php">
                     Your Recipes
                 </a>
-                <a href="' . $link . '/add-dish.php">
+                <a class = "link4" href="' . $link . '/add-dish.php">
                     Add Recipes
                 </a>';
 
             if ($_SESSION['logged_in'] == 1 && $_SESSION['security_level'] >= 1) {
                 echo
                 '
-                    <a href="' . $link . '/admin/admin-dashboard.php">
+                    <a class = "link4" href="' . $link . '/admin/admin-dashboard.php">
                         Admin Panel
                     </a>
                 ';
             }
 
             echo
-                '<a href="' . $link . '/account/logout-complete.php">
+                '<a class = "link4" href="' . $link . '/account/logout-complete.php">
                     Log Out
                 </a>
             </div>

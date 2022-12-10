@@ -4,8 +4,8 @@ session_start();
 if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     $link = "";
 } else {
-    $_SERVER['DOCUMENT_ROOT'] = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
-    $link = $_SERVER['DOCUMENT_ROOT'];
+    $_SERVER['DOCUMENT_ROOT'] = '/home/hansonle/public_html/acad276/the-kitchen';
+    $link = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
 }
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_check.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
@@ -19,14 +19,17 @@ if($_SESSION["security_level"]==1 || $_SESSION["security_level"]==2) {
         $status = "2";
 }
 
+$prep_time = round(($_REQUEST["prep_time"] * 60), 1);
+$cooking_time = round(($_REQUEST["cooking_time"] * 60), 1);
+
 $sql = "INSERT INTO recipe
         (recipe, cuisine_id, user_id, prep_time, cooking_time, img_url, recipe_url, status_id)
         VALUES 
         ('" . $_REQUEST["recipe"] . "', 
         '" . $_REQUEST["cuisine"] . "', 
         '" . $_REQUEST["user_id"] . "', 
-        '" . $_REQUEST["prep_time"] . "', 
-        '" . $_REQUEST["cooking_time"] . "', 
+        '" . $prep_time . "', 
+        '" . $cooking_time . "', 
         '" . $_REQUEST["img_url"] . "', 
         '" . $_REQUEST["recipe_url"] . "', 
         '" . $status . "')";

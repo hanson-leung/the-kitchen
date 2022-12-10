@@ -4,8 +4,8 @@ session_start();
 if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     $link = "";
 } else {
-    $_SERVER['DOCUMENT_ROOT'] = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
-    $link = $_SERVER['DOCUMENT_ROOT'];
+    $_SERVER['DOCUMENT_ROOT'] = '/home/hansonle/public_html/acad276/the-kitchen';
+    $link = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
 }
 ?>
 
@@ -16,7 +16,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ?>
     <!-- additional stylesheets -->
-    <link rel="stylesheet" href="stylesheets/results.css"/>
+    <link rel="stylesheet" href="<?php echo $link ?>/stylesheets/results.css"/>
 
 <!-- insert php logic -->
 <?php
@@ -29,13 +29,15 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
         <?php
            include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
         ?>
-
+    <div class="main-container">
+    <h1>Search Results</h1>
     <?php
         echo $alert;
     ?>
 
         <div class="results-container grid-gap-2rem">
             <?php
+                //echo $sql;
                 //  loop through results
                 while ($currentrow = mysqli_fetch_array($results)) {
                         $recipe_id = $currentrow["recipe_id"];
@@ -44,26 +46,24 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
                         $cuisine =  $currentrow["cuisine"];
                         $total_time = ($currentrow["total_time"]/60) . " min";
 
+
                         echo
-                        "<a class='card' href='" . $link . "/dish.php?recipe=" . $recipe_id . "'>" .
+                        "<a class='card' href='" . $link . "/recipe-analytics.php?recipe=" . $recipe_id . "'>" .
                             "<img src='" . $img_url . "' class='card-img'>" .
-                            "<h2>" . $recipe . "</h2>" .
-                            "<p>" . $total_time . "</p></a>";
+                            "<div class='grid-rows grid-gap-05rem'><h2>" . $recipe . "</h2>" .
+                            "<p class='cardmargin'>" . $total_time . "</p></div></a>";
                 }
             ?>
         </div>
 
         <!-- next/prev page buttons -->
-        <div class="grid-rows grid-gap-2rem">
-            <a href=>
-                Next Page
-            </a>
-            <a onclick="prevpage()">
-                Previous Page
-            </a>
+        <div id="pagebuttons" class="grid-columns grid-gap-2rem">
+                <?php echo $button_next_page ?>
+                <?php echo $button_previous_page ?>
         </div>
 
 
+    </div>
     </div>
 </script>
 </body>

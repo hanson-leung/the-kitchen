@@ -1,5 +1,12 @@
 <?php
 session_start();
+// check if on localhost or on server
+if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
+    $link = "";
+} else {
+    $_SERVER['DOCUMENT_ROOT'] = '/home/hansonle/public_html/acad276/the-kitchen';
+    $link = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
+}
 ?>
 
 <html>
@@ -11,15 +18,15 @@ session_start();
     if ($_REQUEST["code"] == "403") {
         $error = "403 Forbidden Access";
         $desc = "The page your are trying to access has restricted access.";
-        $action = "Please <a href='<?php echo $link ?>/account/login.php' class='link'>login</a> to see this page.";
+        $action = "Please <a href='" . $link . "/account/login.php' class='link'>login</a> to see this page.";
     } elseif ($_REQUEST["code"] == "404") {
         $error = "404 Page Not Found";
         $desc = "The page your are looking for cannot be found or may be been moved.";
-        $action = "Let's take you <a href='<?php echo $link ?>/index.php' class='link'>home</a>.";
+        $action = "Let's take you <a href='" . $link . "/index.php' class='link'>home</a>.";
     } else {
         $error = "An Unknown Error Occurred";
         $desc = "It's not your fault, something is going on. Please try again in a few minutes.";
-        $action = "Let's take you <a href='<?php echo $link ?>/index.php' class='link' >home</a>.";
+        $action = "Let's take you <a href='" . $link . "/index.php' class='link' >home</a>.";
     }
 
 

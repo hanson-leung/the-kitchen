@@ -1,31 +1,30 @@
 <?php
 session_start();
 // check if on localhost or on server
-if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
+if ($_SERVER['REMOTE_ADDR'] == '127.0.0.1') {
     $link = "";
 } else {
-    $_SERVER['DOCUMENT_ROOT'] = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
-    $link = $_SERVER['DOCUMENT_ROOT'];
+    $_SERVER['DOCUMENT_ROOT'] = '/home/hansonle/public_html/acad276/the-kitchen';
+    $link = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
 }
+
 include $_SERVER['DOCUMENT_ROOT'] . '/logic/db-connect.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
-include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';;
 ?>
 
 <html>
 <!-- begin header -->
-<?php
-?>
-    <!-- additional stylesheets -->
-    <link rel="stylesheet" href="<?php echo $link ?>/stylesheets/home.css"/>
+<!-- additional stylesheets -->
+<link rel="stylesheet" href="<?php echo $link ?>/stylesheets/home.css"/>
 
 <body>
-    <div  class="root">
+<div class="root">
     <!-- insert navbar -->
-        <?php
-           include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
-           echo $alert;
-        ?>
+    <?php
+    include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
+    echo $alert;
+    ?>
 
     <div class="main-container">
         <div class="gap-2rem">
@@ -36,20 +35,20 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';
         </div>
 
         <div class="searchbox grid-rows grid-gap-2rem">
-            <form class="filter" action="results.php">
+            <form class="filter" action="<?php echo $link ?>/search-analytics.php">
                 <div>
                     <input name="page" type="hidden" value="1"/>
                 </div>
 
                 <!-- search -->
                 <div id="search">
-                    <p class="filter-term"><strong>SEARCH</strong></p>
+                    <p class="filter-term"><strong>Search</strong></p>
                     <input class="searchbar" type="text" name="search" placeholder="What's on the menu?"/>
                 </div>
 
                 <!-- cuisine type -->
-                <div>
-                    <p class="filter-term"><strong>CUISINE</strong></p>
+                <div class="filterterm">
+                    <p class="filter-term"><strong>Cuisine</strong></p>
                     <select name="cuisine">
                         <option value="any" selected>No Preference</option>
                         <?php
@@ -63,8 +62,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';
                 </div>
 
                 <!-- cooking time -->
-                <div>
-                    <p class="filter-term"><strong>COOKING TIME</strong></p>
+                <div class="filterterm">
+                    <p class="filter-term"><strong>Cooking Time</strong></p>
                     <select name="cooking_time">
                         <option value="any" selected>No Preference</option>
                         <option value="0">Quick</option>
@@ -74,19 +73,34 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';
                 </div>
 
                 <!-- ingredients -->
-                <!-- <div>
-                <p class="filter-term">Ingredients</p>
-                <select name="ingredients[]" multiple>
-                    <option value="all">Select</option>
-                    <?php
-                $sql = "SELECT * FROM ingredient";
-                $results = $mysql->query($sql);
-                while ($currentrow = $results->fetch_assoc()) {
-                    echo "<option value='" . $currentrow["ingredient_id"] . "'>" . $currentrow["ingredient"] . "</option>";
-                }
-                ?>
-                </select>
-            </div> -->
+                <div class="filterterm">
+                    <p class="filter-term"><strong>Ingredient</strong></p>
+                    <select name="ingredients" multiple>
+                        <option value="any" selected>Select</option>
+                        <?php
+                        $sql = "SELECT * FROM ingredient";
+                        $results = $mysql->query($sql);
+                        while ($currentrow = $results->fetch_assoc()) {
+                            echo "<option value='" . $currentrow["ingredient_id"] . "'>" . $currentrow["ingredient"] . "</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+
+                <!-- ingredients -->
+                <!--<div class="filterterm">
+                    <p class="filter-term"><strong>INGREDIENT</strong></p>
+                    <select name="ingredients[]" multiple>
+                        <option value="all">Select</option>
+                        <?php
+/*                        $sql = "SELECT * FROM ingredient";
+                        $results = $mysql->query($sql);
+                        while ($currentrow = $results->fetch_assoc()) {
+                            echo "<option value='" . $currentrow["ingredient_id"] . "'>" . $currentrow["ingredient"] . "</option>";
+                        }
+                        */?>
+                    </select>
+                </div>-->
 
                 <!-- restrictions -->
                 <!-- <div>
@@ -94,24 +108,28 @@ include $_SERVER['DOCUMENT_ROOT'] . '/logic/index_logic.php';
                 <select name="allergies">
                     <option value="all">Select</option>
                     <?php
-                $sql = "SELECT * FROM ingredient";
+/*                $sql = "SELECT * FROM ingredient";
                 $results = $mysql->query($sql);
                 while ($currentrow = $results->fetch_assoc()) {
                     echo "<option>" . $currentrow["ingredient"] . "</option>";
                 }
-                ?>
+                */?>
                 </select>
             </div> -->
 
-                <div id="submit" >
+                <div id="submit">
                     <p class="filter-term">&nbsp</p>
-                    <input type="submit"/>
+                    <input type="submit" style="width:auto;"/>
                 </div>
 
             </form>
-            <div>
+            <div class="surprise">
+                <?php
+                $ranNum = rand(1, 56);
+                ?>
                 <p>
-                    Or, <a href="dish.php?recipe=16" style="color:var(--orange);"><strong>surprise me!</strong></a>
+                    Or, <a class="surprisebutton"
+                           href="<?php echo $link ?>/dish.php?recipe=<?php echo $ranNum ?>"><strong><span>surprise me!</span></strong></a>
                 </p>
             </div>
         </div>

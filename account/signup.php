@@ -4,8 +4,8 @@ session_start();
 if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     $link = "";
 } else {
-    $_SERVER['DOCUMENT_ROOT'] = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
-    $link = $_SERVER['DOCUMENT_ROOT'];
+    $_SERVER['DOCUMENT_ROOT'] = '/home/hansonle/public_html/acad276/the-kitchen';
+    $link = 'https://webdev.iyaclasses.com/~hansonle/acad276/the-kitchen';
 }
 ?>
 
@@ -16,7 +16,8 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
     include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
     include $_SERVER['DOCUMENT_ROOT'] . '/logic/login_logic.php';
 ?>
-
+<!-- additional stylesheets -->
+<link rel="stylesheet" href="<?php echo $link ?>/stylesheets/signup.css"/>
 
 <!-- begin body -->
 <body>
@@ -26,7 +27,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
            include $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php';
         ?>
 
-    <div class="main-container">
+    <div class="main-container small">
         <div class="gap-2rem">
             <h1>Join Us</h1>
             <p>
@@ -58,7 +59,7 @@ if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
                     <input class="" type="hidden" name="security-level" value="0" required/>
                 </div>
                 <div id="submit" >
-                    <input type="submit"/>
+                    <input type="submit" style="width:auto;"/>
                 </div>
 
             </form>
